@@ -2557,12 +2557,215 @@
                     </div>
                 </div>
                 <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
-                    📊 Revenue tracking coming soon. What should we track? Actual income or project financials?
+                    💰 Tracking actual income from Piggy Bank ventures. Currently $0 - ready to populate when revenue starts flowing.
                 </p>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Skills Section - Add to ops-sections -->
+<div class="ops-section" id="skills-section">
+    <div class="ops-section-header" onclick="toggleOpsSection('skills-section')">
+        <div class="ops-section-title">
+            <span>🛠️</span>
+            <span>Skills</span>
+            <span class="ops-section-badge blue" id="skills-count">99</span>
+        </div>
+        <span class="ops-section-toggle">▼</span>
+    </div>
+    <div class="ops-section-content">
+        <div class="ops-section-body">
+            <div class="skills-stats">
+                <div class="skill-stat-card">
+                    <div class="skill-stat-label">Total Skills</div>
+                    <div class="skill-stat-value">99</div>
+                    <div class="skill-stat-change">+26 this week</div>
+                </div>
+                <div class="skill-stat-card">
+                    <div class="skill-stat-label">Latest Addition</div>
+                    <div class="skill-stat-value">Today</div>
+                    <div class="skill-stat-change">Daily discovery @ 4am</div>
+                </div>
+                <div class="skill-stat-card">
+                    <div class="skill-stat-label">Next Milestone</div>
+                    <div class="skill-stat-value">100</div>
+                    <div class="skill-stat-change">1 skill away 🎯</div>
+                </div>
+            </div>
+            
+            <div class="skills-categories">
+                <div class="skills-category-title">Skill Categories</div>
+                <div class="skills-category-grid">
+                    <div class="skill-category">
+                        <span class="skill-category-icon">💰</span>
+                        <span class="skill-category-name">Finance & Payments</span>
+                        <span class="skill-category-count">8</span>
+                    </div>
+                    <div class="skill-category">
+                        <span class="skill-category-icon">📄</span>
+                        <span class="skill-category-name">Documents</span>
+                        <span class="skill-category-count">6</span>
+                    </div>
+                    <div class="skill-category">
+                        <span class="skill-category-icon">🛒</span>
+                        <span class="skill-category-name">E-commerce</span>
+                        <span class="skill-category-count">5</span>
+                    </div>
+                    <div class="skill-category">
+                        <span class="skill-category-icon">📊</span>
+                        <span class="skill-category-name">Analytics</span>
+                        <span class="skill-category-count">7</span>
+                    </div>
+                    <div class="skill-category">
+                        <span class="skill-category-icon">🎨</span>
+                        <span class="skill-category-name">Content Creation</span>
+                        <span class="skill-category-count">12</span>
+                    </div>
+                    <div class="skill-category">
+                        <span class="skill-category-icon">📱</span>
+                        <span class="skill-category-name">Social Media</span>
+                        <span class="skill-category-count">8</span>
+                    </div>
+                    <div class="skill-category">
+                        <span class="skill-category-icon">🎯</span>
+                        <span class="skill-category-name">Lead Gen & Sales</span>
+                        <span class="skill-category-count">6</span>
+                    </div>
+                    <div class="skill-category">
+                        <span class="skill-category-icon">🎵</span>
+                        <span class="skill-category-name">Music Industry</span>
+                        <span class="skill-category-count">5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-recent">
+                <div class="skills-recent-title">Recently Installed (Feb 9, 4am)</div>
+                <div class="skills-recent-list">
+                    <span class="skill-tag">apollo</span>
+                    <span class="skill-tag">highlevel</span>
+                    <span class="skill-tag">shopify-admin-api</span>
+                    <span class="skill-tag">woocommerce</span>
+                    <span class="skill-tag">paypal</span>
+                    <span class="skill-tag">xero</span>
+                    <span class="skill-tag">docs-cog</span>
+                    <span class="skill-tag">pdf-construction</span>
+                    <span class="skill-tag">mission-control</span>
+                    <span class="skill-tag">+17 more</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Skills Section Styles */
+.skills-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-stat-card {
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.skill-stat-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.skill-stat-value {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+}
+
+.skill-stat-change {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+.skills-categories {
+    margin-bottom: 1.5rem;
+}
+
+.skills-category-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.skills-category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.skill-category {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.skill-category-icon {
+    font-size: 1.25rem;
+}
+
+.skill-category-name {
+    flex: 1;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.skill-category-count {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    background: var(--bg-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.skills-recent {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.skills-recent-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.skills-recent-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    padding: 0.375rem 0.75rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--text-primary);
+}
+</style>
+
 
 <script>
 // Toggle ops section expand/collapse
@@ -2577,7 +2780,7 @@ function toggleOpsSection(sectionId) {
 
 // Restore section states from localStorage
 function restoreOpsSectionStates() {
-    ['bot-health-section', 'cron-jobs-section', 'revenue-section'].forEach(sectionId => {
+    ['bot-health-section', 'cron-jobs-section', 'revenue-section', 'skills-section'].forEach(sectionId => {
         const wasExpanded = localStorage.getItem(`ops-${sectionId}`) === 'true';
         if (wasExpanded) {
             document.getElementById(sectionId).classList.add('expanded');
