@@ -2446,6 +2446,30 @@
     font-weight: 500;
 }
 
+.cron-category {
+    margin-bottom: 1.5rem;
+}
+
+.cron-category-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.cron-agent {
+    display: inline-block;
+    margin-left: 0.75rem;
+    padding: 0.125rem 0.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-blue);
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
 /* Revenue Styles */
 .revenue-grid {
     display: grid;
@@ -2841,34 +2865,68 @@ async function loadBotHealth() {
 
 // Load cron jobs data
 async function loadCronJobs() {
-    try {
-        // Read from crons.json
-        const response = await fetch('data/crons.json');
-        const data = await response.json();
+    const cronJobs = [
+        // RECURRING TASKS
+        { category: 'Recurring', name: 'Daily Skill Discovery', schedule: 'Every day @ 4:00 AM CST', next: 'Tomorrow 4:00 AM', agent: 'main' },
+        { category: 'Recurring', name: 'Sunday Skill & Cron Review', schedule: 'Every Sunday @ 8:00 AM CST', next: 'Next Sunday 8:00 AM', agent: 'main' },
+        { category: 'Recurring', name: 'Weekly Bot Report Collection', schedule: 'Every Sunday @ 8:00 PM CST', next: 'Today 8:00 PM', agent: 'main' },
+        { category: 'Recurring', name: '48-Hour Autonomous Test', schedule: 'Feb 9 @ 9:00 AM', next: 'Next Sunday 9:00 AM', agent: 'main' },
+        { category: 'Recurring', name: 'Co-Writer Placement Review', schedule: 'Feb 9 @ 10:00 AM', next: 'Next Sunday 10:00 AM', agent: 'main' },
+        { category: 'Recurring', name: 'Songwriter Database Review', schedule: 'Feb 9 @ 11:00 AM', next: 'Next Sunday 11:00 AM', agent: 'main' },
         
-        // For now, showing placeholder - will integrate with real cron API
-        const crons = [
-            { name: 'Daily Skill Discovery', schedule: 'Every day @ 4:00 AM', next: 'Tomorrow, 4:00 AM' },
-            { name: 'Weekly Bot Review', schedule: 'Every Sunday @ 8:00 PM', next: 'Today, 8:00 PM' },
-            { name: 'Email Check', schedule: 'Every 4 hours', next: 'In 2 hours' },
-            { name: 'Birthday Reminders', schedule: 'Varies', next: '15 upcoming' }
-        ];
+        // SUNDAY DISCUSSIONS
+        { category: 'Sunday Discussions', name: '#4: YouTube AI Music Channel', schedule: 'Today @ 12:00 PM', next: 'Today 12:00 PM', agent: 'main' },
+        { category: 'Sunday Discussions', name: '#5: Website Building Business', schedule: 'Today @ 1:00 PM', next: 'Today 1:00 PM', agent: 'main' },
+        { category: 'Sunday Discussions', name: '#6: AI Content Video Review', schedule: 'Today @ 2:00 PM', next: 'Today 2:00 PM', agent: 'main' },
+        { category: 'Sunday Discussions', name: '#7: Master Project Ideas', schedule: 'Today @ 3:00 PM', next: 'Today 3:00 PM', agent: 'main' },
+        { category: 'Sunday Discussions', name: '#8: Operation Piggy Bank', schedule: 'Today @ 3:30 PM', next: 'Today 3:30 PM', agent: 'main' },
+        
+        // BIRTHDAY REMINDERS
+        { category: 'Birthday Reminders', name: 'Jacob Plant (client)', schedule: 'Feb 16', next: 'In 7 days', agent: 'penny' },
+        { category: 'Birthday Reminders', name: 'Freddie Lloyd', schedule: 'Feb 23', next: 'In 14 days', agent: 'penny' },
+        { category: 'Birthday Reminders', name: 'Ashley Fitelson', schedule: 'Apr 2', next: 'In 52 days', agent: 'penny' },
+        { category: 'Birthday Reminders', name: 'Jeff Hartford', schedule: 'Apr 16', next: 'In 66 days', agent: 'penny' },
+        { category: 'Birthday Reminders', name: 'Sophia Wardman', schedule: 'Apr 22', next: 'In 72 days', agent: 'penny' },
+        { category: 'Birthday Reminders', name: 'Presley Nardella - 2wk notice', schedule: 'Apr 9', next: 'In 59 days', agent: 'penny' },
+        { category: 'Birthday Reminders', name: 'Presley Nardella (33rd)', schedule: 'Apr 23', next: 'In 73 days', agent: 'penny' },
+        { category: 'Birthday Reminders', name: 'Jon & Jill Gray (dual)', schedule: 'Oct 8', next: 'In 241 days', agent: 'penny' },
+        { category: 'Birthday Reminders', name: 'Annaca & Matt (dual)', schedule: 'Oct 18', next: 'In 251 days', agent: 'penny' },
+        { category: 'Birthday Reminders', name: 'Jeff Gray (father)', schedule: 'Nov 12', next: 'In 276 days', agent: 'penny' },
+        { category: 'Birthday Reminders', name: 'Ellie Gray (niece)', schedule: 'Dec 7', next: 'In 301 days', agent: 'penny' },
+        { category: 'Birthday Reminders', name: 'Neil Gray (brother)', schedule: 'Dec 22', next: 'In 316 days', agent: 'penny' }
+    ];
 
-        const cronList = document.getElementById('cron-list');
-        document.getElementById('cron-count').textContent = 23; // Total from real data
+    const grouped = {};
+    cronJobs.forEach(job => {
+        if (!grouped[job.category]) grouped[job.category] = [];
+        grouped[job.category].push(job);
+    });
 
-        cronList.innerHTML = crons.map(cron => `
-            <div class="cron-item">
-                <div class="cron-info">
-                    <div class="cron-name">${cron.name}</div>
-                    <div class="cron-schedule">${cron.schedule}</div>
-                </div>
-                <div class="cron-next">${cron.next}</div>
+    const cronList = document.getElementById('cron-list');
+    document.getElementById('cron-count').textContent = cronJobs.length;
+
+    let html = '';
+    Object.keys(grouped).forEach(category => {
+        html += `
+            <div class="cron-category">
+                <div class="cron-category-title">${category} (${grouped[category].length})</div>
+                ${grouped[category].map(job => `
+                    <div class="cron-item">
+                        <div class="cron-info">
+                            <div class="cron-name">${job.name}</div>
+                            <div class="cron-schedule">
+                                <span>${job.schedule}</span>
+                                <span class="cron-agent">${job.agent}</span>
+                            </div>
+                        </div>
+                        <div class="cron-next">${job.next}</div>
+                    </div>
+                `).join('')}
             </div>
-        `).join('');
-    } catch (error) {
-        console.error('Failed to load cron jobs:', error);
-    }
+        `;
+    });
+
+    cronList.innerHTML = html;
 }
 
 // Initialize ops sections
