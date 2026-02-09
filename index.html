@@ -1064,9 +1064,9 @@
 
     <script>
         const AGENTS = [
-            { id: 'boris', name: 'Boris', role: 'Master Controller', avatar: '🤖', status: 'live', lastActivity: '2 min ago', taskCount: 5 },
-            { id: 'archie', name: 'Archie', role: 'Knowledge Scout', avatar: '🔍', status: 'live', lastActivity: '15 min ago', taskCount: 2 },
-            { id: 'penny', name: 'Penny', role: 'Music Data Specialist', avatar: '🎵', status: 'idle', lastActivity: '2 hours ago', taskCount: 1 }
+            { id: 'boris', name: 'Boris', role: 'Master Controller', avatar: '🤖', status: 'live', lastActivity: '2 min ago', taskCount: 0 },
+            { id: 'archie', name: 'Archie', role: 'Knowledge Scout', avatar: '🔍', status: 'live', lastActivity: '15 min ago', taskCount: 0 },
+            { id: 'penny', name: 'Penny', role: 'Personal Assistant', avatar: '🎵', status: 'idle', lastActivity: '2 hours ago', taskCount: 0 }
         ];
 
         const COLUMNS = [
@@ -1092,7 +1092,7 @@
                 
                 allTasks.forEach((task, index) => {
                     if (!task.agent) {
-                        task.agent = AGENTS[index % AGENTS.length].id;
+                        task.agent = 'boris';
                     }
                 });
 
@@ -1106,6 +1106,10 @@
         }
 
         function renderAgents() {
+            // Calculate task counts dynamically
+            AGENTS.forEach(agent => {
+                agent.taskCount = allTasks.filter(t => t.agent === agent.id).length;
+            });
             const container = document.getElementById('agent-list');
             container.innerHTML = AGENTS.map(agent => `
                 <div class="agent-card ${selectedAgent === agent.id ? 'active' : ''}" onclick="selectAgent('${agent.id}')">
@@ -1238,10 +1242,11 @@
             console.log('Task updated:', currentTask);
             
             closeModal();
+            renderAgents();
             renderKanban();
             updateStats();
             
-            alert('Changes saved! (In production, this would update the server)');
+            // Changes saved and UI updated
         }
 
         function selectAgent(agentId) {
