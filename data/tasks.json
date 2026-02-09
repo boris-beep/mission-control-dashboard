@@ -413,6 +413,97 @@
         }
       ],
       "createdAt": "2026-02-07T18:00:00Z"
+    },
+    {
+      "id": "task_009",
+      "title": "Songwriter Intelligence Tool - Weekly Scanning",
+      "description": "Automated weekly songwriter placement tracking for Red Wire. Scans 31 playlists (9K+ tracks), detects spikes, extracts credits from Apple Music. Delivers visual HTML presentations + reports every Sunday 11am.",
+      "status": "permanent",
+      "project": "circuit-group",
+      "priority": "high",
+      "tags": [
+        "songwriter-tool",
+        "red-wire",
+        "weekly"
+      ],
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Week 1 scan completed (Feb 8)",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "Week 2 scan scheduled (Feb 15 @ 11am)",
+          "done": false
+        }
+      ],
+      "dod": "Weekly scans running automatically, reports delivered to Drive, Red Wire opportunities identified",
+      "comments": [
+        {
+          "id": "comment_001",
+          "author": "Boris",
+          "text": "Week 1 baseline complete. 9,159 tracks monitored. Next scan Sunday Feb 15 @ 11am CST.",
+          "timestamp": "2026-02-08T18:00:00Z"
+        }
+      ],
+      "createdAt": "2026-02-01T12:00:00Z"
+    },
+    {
+      "id": "task_010",
+      "title": "Content Bot - AI Video Marketplace",
+      "description": "Autonomous AI bot creating trending video library for DJs/music creators. Subscription model ($99-299/month). Bot generates 100+ videos, sells to multiple clients = 10x leverage. Targets electronic music, meme culture, youth trends.",
+      "status": "backlog",
+      "project": "piggy-bank",
+      "priority": "low",
+      "tags": [
+        "content-bot",
+        "video",
+        "revenue",
+        "saas"
+      ],
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Research AI video platforms completed",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "API cost comparison completed",
+          "done": true
+        },
+        {
+          "id": "sub_003",
+          "title": "Define video niche strategy",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Build autonomous generation pipeline",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Create subscription marketplace",
+          "done": false
+        },
+        {
+          "id": "sub_006",
+          "title": "Beta test with Noizu/David roster",
+          "done": false
+        }
+      ],
+      "dod": "Working video library, subscription platform live, first paying customers",
+      "comments": [
+        {
+          "id": "comment_001",
+          "author": "Boris",
+          "text": "Phase 1 research complete. Platform evaluation done. Awaiting go/no-go decision.",
+          "timestamp": "2026-02-05T18:00:00Z"
+        }
+      ],
+      "createdAt": "2026-02-05T12:00:00Z"
     }
   ],
   "projects": [
