@@ -504,6 +504,56 @@
         }
       ],
       "createdAt": "2026-02-05T12:00:00Z"
+    },
+    {
+      "id": "task_011",
+      "title": "Website Building Business - AI Automation Agency",
+      "description": "Piggy Bank revenue vertical. Build production websites in 20-25 minutes using React/Tailwind/shadcn. Test results: 3 sites in 70 minutes, $0 cost. Ready to sell to DJs, service businesses, startups. $2K-5K per site.",
+      "status": "backlog",
+      "project": "piggy-bank",
+      "priority": "medium",
+      "tags": [
+        "website-building",
+        "revenue",
+        "validated"
+      ],
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Test completed - 3 production sites built",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "Define pricing tiers ($2K/$3.5K/$5K)",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Create portfolio showcase site",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Set up lead generation funnel",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "First 3 paying customers",
+          "done": false
+        }
+      ],
+      "dod": "3 paying customers, $6K-15K revenue generated, proven delivery process",
+      "comments": [
+        {
+          "id": "comment_001",
+          "author": "Boris",
+          "text": "Weekend validation complete. Built DJ portfolio (Aether), AI agency landing (somecommon), and HVAC local site in 70 minutes total. All production-ready.",
+          "timestamp": "2026-02-08T15:10:00Z"
+        }
+      ],
+      "createdAt": "2026-02-08T14:00:00Z"
     }
   ],
   "projects": [
