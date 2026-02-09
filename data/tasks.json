@@ -1,0 +1,203 @@
+{
+  "tasks": [
+    {
+      "id": "task_001",
+      "title": "Mission Control Setup",
+      "description": "Complete Mission Control dashboard deployment with GitHub Pages and webhook integration",
+      "status": "in_progress",
+      "priority": "high",
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Install prerequisites (Tailscale + GitHub CLI)",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "Copy dashboard files to workspace",
+          "done": true
+        },
+        {
+          "id": "sub_003",
+          "title": "Create GitHub repository",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Configure webhook transform",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Enable GitHub Pages",
+          "done": false
+        }
+      ],
+      "dod": "Dashboard live on GitHub Pages, real-time updates working, David can view all projects",
+      "comments": [],
+      "createdAt": "2026-02-09T11:11:00Z",
+      "processingStartedAt": "2026-02-09T11:11:00Z"
+    },
+    {
+      "id": "task_002",
+      "title": "Co-Writer Placement Tracking - Go/No-Go Decision",
+      "description": "Review business plan and data research for songwriter placement tracking service. Decision needed on MVP timeline and approach.",
+      "status": "review",
+      "priority": "high",
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Complete business plan document",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "Complete data sources research",
+          "done": true
+        },
+        {
+          "id": "sub_003",
+          "title": "Test Apple Music API charts approach",
+          "done": true
+        },
+        {
+          "id": "sub_004",
+          "title": "Test MusicBrainz backup source",
+          "done": true
+        }
+      ],
+      "dod": "Go/no-go decision from David, timeline set if approved",
+      "comments": [
+        {
+          "id": "comment_001",
+          "author": "Boris",
+          "text": "Business plan complete. Apple Music charts + MusicBrainz validated as viable MVP approach. Ready for review.",
+          "timestamp": "2026-02-09T10:00:00Z"
+        }
+      ],
+      "createdAt": "2026-02-06T18:00:00Z"
+    },
+    {
+      "id": "task_003",
+      "title": "Build Songwriter Database (If Approved)",
+      "description": "Build searchable songwriter database from scratch. Phase 1: Foundation (20K tracks), Phase 2: Continuous growth, Phase 3: Search functionality.",
+      "status": "backlog",
+      "priority": "high",
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Set up PostgreSQL database on Railway",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Design database schema (tracks, songwriters, mappings)",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Build initial scanner (top 1000 per genre)",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Integrate ACRCloud API (songwriter credits)",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Build Friday release scanner",
+          "done": false
+        },
+        {
+          "id": "sub_006",
+          "title": "Build search endpoint",
+          "done": false
+        }
+      ],
+      "dod": "20K+ tracks with searchable songwriter credits, Friday scanner running automatically",
+      "comments": [],
+      "createdAt": "2026-02-09T11:00:00Z"
+    },
+    {
+      "id": "task_004",
+      "title": "48-Hour API Cost Optimization Test",
+      "description": "Reduce API costs by 30% through ClawRouter integration, Archie optimization, caching, and heartbeat efficiency. Autonomous execution approved.",
+      "status": "backlog",
+      "priority": "high",
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Baseline cost measurement",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Research and implement ClawRouter",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Optimize Archie X scanning patterns",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Implement context caching (SOUL.md, AGENTS.md, HEARTBEAT.md)",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Optimize heartbeat protocols",
+          "done": false
+        },
+        {
+          "id": "sub_006",
+          "title": "Measure final results and document learnings",
+          "done": false
+        }
+      ],
+      "dod": "30% API cost reduction achieved, documented approach for scaling",
+      "comments": [],
+      "createdAt": "2026-02-09T09:00:00Z"
+    },
+    {
+      "id": "task_005",
+      "title": "Piggy Bank Bot - Revenue Engine Setup",
+      "description": "Set up complete sales infrastructure using new skills: Apollo (lead gen) + GoHighLevel (CRM) + YC outreach templates + DM automation.",
+      "status": "backlog",
+      "priority": "high",
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Configure Apollo.io integration",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Set up GoHighLevel CRM",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Implement YC cold outreach templates",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Configure DM automation workflows",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Define first revenue vertical to target",
+          "done": false
+        }
+      ],
+      "dod": "Sales pipeline operational, first leads being processed",
+      "comments": [],
+      "createdAt": "2026-02-09T10:20:00Z"
+    }
+  ],
+  "lastUpdated": "2026-02-09T11:11:00Z"
+}
