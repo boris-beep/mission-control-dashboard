@@ -554,6 +554,61 @@
         }
       ],
       "createdAt": "2026-02-08T14:00:00Z"
+    },
+    {
+      "id": "task_012",
+      "title": "YouTube Music Video Automation - Study/Sleep/Lofi Channels",
+      "description": "Create AI-generated visual content for David's music tracks. Target niche YouTube channels (study music, sleep music, lofi, chill, ambient) for AdSense revenue. David provides real music, we automate video creation and upload pipeline.",
+      "status": "backlog",
+      "project": "piggy-bank",
+      "priority": "medium",
+      "tags": [
+        "youtube",
+        "music-video",
+        "adsense",
+        "revenue",
+        "automation"
+      ],
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Define target niches and channel strategy",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Test AI video generation tools (Remotion, video-cog, tube-cog)",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Build automated video creation pipeline",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "YouTube channel setup and optimization",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Upload automation and scheduling",
+          "done": false
+        },
+        {
+          "id": "sub_006",
+          "title": "Test with first 10 tracks",
+          "done": false
+        },
+        {
+          "id": "sub_007",
+          "title": "Monetization setup (AdSense)",
+          "done": false
+        }
+      ],
+      "dod": "Automated pipeline: David provides track → AI generates visuals → uploads to YouTube → monetized",
+      "comments": [],
+      "createdAt": "2026-02-09T11:40:00Z"
     }
   ],
   "projects": [
