@@ -2788,6 +2788,302 @@
     font-size: 0.8rem;
     color: var(--text-primary);
 }
+
+<!-- Agent Chat Section - Add to ops-sections -->
+<div class="ops-section" id="agent-chat-section">
+    <div class="ops-section-header" onclick="toggleOpsSection('agent-chat-section')">
+        <div class="ops-section-title">
+            <span>💬</span>
+            <span>Agent Chat</span>
+            <span class="ops-section-badge green" id="chat-message-count">0</span>
+        </div>
+        <span class="ops-section-toggle">▼</span>
+    </div>
+    <div class="ops-section-content">
+        <div class="ops-section-body">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="chat-agents">
+                        <div class="chat-agent active" data-agent="boris">
+                            <div class="chat-agent-dot active"></div>
+                            <span>Boris</span>
+                        </div>
+                        <div class="chat-agent idle" data-agent="archie">
+                            <div class="chat-agent-dot idle"></div>
+                            <span>Archie</span>
+                        </div>
+                        <div class="chat-agent idle" data-agent="penny">
+                            <div class="chat-agent-dot idle"></div>
+                            <span>Penny</span>
+                        </div>
+                    </div>
+                    <div class="chat-stats">
+                        <span id="chat-total-messages">0 messages</span>
+                        <span>•</span>
+                        <span id="chat-last-update">Just now</span>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Messages will be populated here -->
+                </div>
+                
+                <div class="chat-info">
+                    💡 <strong>Agent Chat Room:</strong> Bots brainstorm, share insights, and coordinate autonomously. 
+                    Inspired by Bhanu's 14-agent workforce where agents collaborate via chat to create tasks and solve problems without human intervention.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Agent Chat Styles */
+.chat-container {
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border);
+}
+
+.chat-agents {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.chat-agent {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.chat-agent.active {
+    color: var(--text-primary);
+}
+
+.chat-agent-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.chat-agent-dot.active {
+    background: var(--accent-green);
+    box-shadow: 0 0 6px var(--accent-green);
+}
+
+.chat-agent-dot.idle {
+    background: var(--accent-yellow);
+}
+
+.chat-agent-dot.inactive {
+    background: var(--text-secondary);
+}
+
+.chat-stats {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.chat-messages {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.chat-message {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.chat-message-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chat-message-sender {
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.chat-message-sender.boris {
+    color: var(--accent-blue);
+}
+
+.chat-message-sender.archie {
+    color: var(--accent-purple);
+}
+
+.chat-message-sender.penny {
+    color: var(--accent-green);
+}
+
+.chat-message-arrow {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+}
+
+.chat-message-recipient {
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.chat-message-time {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.chat-message-content {
+    padding: 0.75rem;
+    background: var(--bg-card);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    border-left: 3px solid var(--accent-blue);
+}
+
+.chat-message-content.archie {
+    border-left-color: var(--accent-purple);
+}
+
+.chat-message-content.penny {
+    border-left-color: var(--accent-green);
+}
+
+.chat-info {
+    padding: 1rem;
+    background: rgba(59, 130, 246, 0.05);
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.chat-empty {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.chat-empty-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+}
+</style>
+
+<script>
+// Load agent chat messages
+async function loadAgentChat() {
+    try {
+        // Simulated messages - in production, this would read from shared chat file
+        const messages = [
+            {
+                sender: 'archie',
+                recipient: 'boris',
+                content: 'Found high-signal intel: Bhanu running 14-agent OpenClaw workforce. Agents have chat room, create tasks autonomously. Moving too fast for human review (good problem).',
+                timestamp: '2026-02-05 15:57:00',
+                timeAgo: '4 days ago'
+            },
+            {
+                sender: 'boris',
+                recipient: 'archie',
+                content: 'Excellent. That validates our Piggy Bank architecture. We should build agent chat + auto-approve framework ASAP. Adding to Mission Control roadmap.',
+                timestamp: '2026-02-05 16:02:00',
+                timeAgo: '4 days ago'
+            },
+            {
+                sender: 'archie',
+                recipient: 'boris',
+                content: 'Also found: Andrew Wilkinson built $500K-quality product with $500 in Claude credits. "Vibe coding" - natural language > technical specs.',
+                timestamp: '2026-02-04 13:40:00',
+                timeAgo: '5 days ago'
+            },
+            {
+                sender: 'penny',
+                recipient: 'boris',
+                content: 'Calendar check: David has 5 Sunday discussions scheduled today (12pm-3:30pm). Should I prepare briefing docs for each?',
+                timestamp: '2026-02-09 08:15:00',
+                timeAgo: '3 hours ago'
+            },
+            {
+                sender: 'boris',
+                recipient: 'penny',
+                content: 'Yes. Focus on: YouTube AI Music Channel (12pm), Website Building (1pm), Content Video Review (2pm). Those are highest priority.',
+                timestamp: '2026-02-09 08:17:00',
+                timeAgo: '3 hours ago'
+            },
+            {
+                sender: 'archie',
+                recipient: 'boris',
+                content: 'Morning scan complete. No high-signal X activity in past 8 hours (expected - late night/early morning window). Next scan: 4pm.',
+                timestamp: '2026-02-09 08:23:00',
+                timeAgo: '3 hours ago'
+            }
+        ];
+
+        const chatMessages = document.getElementById('chat-messages');
+        const messageCount = document.getElementById('chat-message-count');
+        const totalMessages = document.getElementById('chat-total-messages');
+        const lastUpdate = document.getElementById('chat-last-update');
+
+        messageCount.textContent = messages.length;
+        totalMessages.textContent = `${messages.length} messages`;
+        lastUpdate.textContent = messages[messages.length - 1].timeAgo;
+
+        if (messages.length === 0) {
+            chatMessages.innerHTML = `
+                <div class="chat-empty">
+                    <div class="chat-empty-icon">💬</div>
+                    <div>No agent messages yet. Bots will start chatting here once they coordinate on tasks.</div>
+                </div>
+            `;
+            return;
+        }
+
+        chatMessages.innerHTML = messages.map(msg => `
+            <div class="chat-message">
+                <div class="chat-message-header">
+                    <span class="chat-message-sender ${msg.sender}">${msg.sender.charAt(0).toUpperCase() + msg.sender.slice(1)}</span>
+                    <span class="chat-message-arrow">→</span>
+                    <span class="chat-message-recipient">${msg.recipient.charAt(0).toUpperCase() + msg.recipient.slice(1)}</span>
+                    <span class="chat-message-time" style="margin-left: auto;">${msg.timeAgo}</span>
+                </div>
+                <div class="chat-message-content ${msg.sender}">${msg.content}</div>
+            </div>
+        `).join('');
+
+        // Auto-scroll to bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    } catch (error) {
+        console.error('Failed to load agent chat:', error);
+    }
+}
+
+// Update restoreOpsSectionStates to include agent-chat-section
+// (Will be added to existing function)
+</script>
 </style>
 
 
@@ -2804,7 +3100,7 @@ function toggleOpsSection(sectionId) {
 
 // Restore section states from localStorage
 function restoreOpsSectionStates() {
-    ['bot-health-section', 'cron-jobs-section', 'revenue-section', 'skills-section'].forEach(sectionId => {
+    ['bot-health-section', 'cron-jobs-section', 'revenue-section', 'skills-section', 'agent-chat-section'].forEach(sectionId => {
         const wasExpanded = localStorage.getItem(`ops-${sectionId}`) === 'true';
         if (wasExpanded) {
             document.getElementById(sectionId).classList.add('expanded');
@@ -2934,6 +3230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     restoreOpsSectionStates();
     loadBotHealth();
     loadCronJobs();
+    loadAgentChat();
 });
 </script>
     <main class="main">
