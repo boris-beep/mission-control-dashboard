@@ -5,7 +5,9 @@
       "title": "Mission Control Setup",
       "description": "Complete Mission Control dashboard deployment with GitHub Pages and webhook integration",
       "status": "in_progress",
+      "project": "infrastructure",
       "priority": "high",
+      "tags": ["setup", "infrastructure"],
       "subtasks": [
         {
           "id": "sub_001",
@@ -20,16 +22,21 @@
         {
           "id": "sub_003",
           "title": "Create GitHub repository",
-          "done": false
+          "done": true
         },
         {
           "id": "sub_004",
+          "title": "Fix dashboard configuration",
+          "done": true
+        },
+        {
+          "id": "sub_005",
           "title": "Configure webhook transform",
           "done": false
         },
         {
-          "id": "sub_005",
-          "title": "Enable GitHub Pages",
+          "id": "sub_006",
+          "title": "Enable real-time updates",
           "done": false
         }
       ],
@@ -43,7 +50,9 @@
       "title": "Co-Writer Placement Tracking - Go/No-Go Decision",
       "description": "Review business plan and data research for songwriter placement tracking service. Decision needed on MVP timeline and approach.",
       "status": "review",
+      "project": "piggy-bank",
       "priority": "high",
+      "tags": ["business-plan", "revenue"],
       "subtasks": [
         {
           "id": "sub_001",
@@ -82,7 +91,9 @@
       "title": "Build Songwriter Database (If Approved)",
       "description": "Build searchable songwriter database from scratch. Phase 1: Foundation (20K tracks), Phase 2: Continuous growth, Phase 3: Search functionality.",
       "status": "backlog",
+      "project": "piggy-bank",
       "priority": "high",
+      "tags": ["database", "revenue"],
       "subtasks": [
         {
           "id": "sub_001",
@@ -124,7 +135,9 @@
       "title": "48-Hour API Cost Optimization Test",
       "description": "Reduce API costs by 30% through ClawRouter integration, Archie optimization, caching, and heartbeat efficiency. Autonomous execution approved.",
       "status": "backlog",
+      "project": "operations",
       "priority": "high",
+      "tags": ["optimization", "cost-reduction"],
       "subtasks": [
         {
           "id": "sub_001",
@@ -166,7 +179,9 @@
       "title": "Piggy Bank Bot - Revenue Engine Setup",
       "description": "Set up complete sales infrastructure using new skills: Apollo (lead gen) + GoHighLevel (CRM) + YC outreach templates + DM automation.",
       "status": "backlog",
+      "project": "piggy-bank",
       "priority": "high",
+      "tags": ["revenue", "sales"],
       "subtasks": [
         {
           "id": "sub_001",
@@ -199,5 +214,14 @@
       "createdAt": "2026-02-09T10:20:00Z"
     }
   ],
-  "lastUpdated": "2026-02-09T11:11:00Z"
+  "projects": [
+    { "id": "infrastructure", "name": "Infrastructure", "color": "#8b5cf6", "icon": "🔧" },
+    { "id": "piggy-bank", "name": "Piggy Bank (Revenue)", "color": "#10b981", "icon": "🐷" },
+    { "id": "operations", "name": "Operations", "color": "#f59e0b", "icon": "⚙️" }
+  ],
+  "activities": [
+    { "type": "created", "actor": "Boris", "task": "Mission Control Setup", "time": "2 hours ago" },
+    { "type": "moved", "actor": "Boris", "task": "Mission Control Setup", "from": "backlog", "to": "in_progress", "time": "2 hours ago" }
+  ],
+  "lastUpdated": "2026-02-09T11:25:00Z"
 }
