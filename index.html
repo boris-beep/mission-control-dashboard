@@ -566,6 +566,127 @@
             font-size: 0.875rem;
         }
 
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-overlay.visible {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid var(--border);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .modal-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-section-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .modal-section-content {
+            font-size: 0.925rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .subtask-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .subtask-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: var(--bg-card);
+            border-radius: 6px;
+        }
+
+        .subtask-checkbox {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            border: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .subtask-checkbox.done {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .subtask-checkbox.done::after {
+            content: '✓';
+            color: white;
+            font-size: 0.75rem;
+        }
+
+        .subtask-text {
+            flex: 1;
+            font-size: 0.875rem;
+        }
+
+        .subtask-text.done {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+
         /* Expandable Ops Sections */
         .ops-sections {
             padding: 1rem;
@@ -638,6 +759,28 @@
         .ops-section-content {
             padding: 1rem;
             border-top: 1px solid var(--border);
+        }
+
+        .ops-item {
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .ops-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .ops-item-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .ops-item-detail {
+            color: var(--text-muted);
+            font-size: 0.8rem;
         }
 
         /* Responsive */
@@ -755,7 +898,7 @@
             <!-- Ops Sections -->
             <div class="ops-sections">
                 <div class="ops-section expanded">
-                    <div class="ops-section-header">
+                    <div class="ops-section-header" onclick="toggleOpsSection(this)">
                         <div class="ops-section-title">
                             <span class="ops-section-icon">🤖</span>
                             <span>Bot Health</span>
@@ -771,7 +914,7 @@
                 </div>
 
                 <div class="ops-section">
-                    <div class="ops-section-header">
+                    <div class="ops-section-header" onclick="toggleOpsSection(this)">
                         <div class="ops-section-title">
                             <span class="ops-section-icon">⏰</span>
                             <span>Scheduled Tasks</span>
@@ -781,13 +924,28 @@
                     </div>
                     <div class="ops-section-body">
                         <div class="ops-section-content">
-                            <p style="color: var(--text-muted); font-size: 0.85rem;">23 cron jobs active • Next: Hourly memory sync @ :00</p>
+                            <div class="ops-item">
+                                <div class="ops-item-title">Hourly Memory Sync</div>
+                                <div class="ops-item-detail">Every hour @ :00 • Last run: 10 min ago</div>
+                            </div>
+                            <div class="ops-item">
+                                <div class="ops-item-title">Daily Skill Discovery</div>
+                                <div class="ops-item-detail">Every day @ 4:00 AM CST • Last run: 11 hours ago</div>
+                            </div>
+                            <div class="ops-item">
+                                <div class="ops-item-title">Weekly Songwriter Scan</div>
+                                <div class="ops-item-detail">Every Sunday @ 11:00 AM CST • Next: Feb 15</div>
+                            </div>
+                            <div class="ops-item">
+                                <div class="ops-item-title">+ 20 more cron jobs</div>
+                                <div class="ops-item-detail">Email checks, memory saves, bot coordination, birthday reminders</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="ops-section">
-                    <div class="ops-section-header">
+                    <div class="ops-section-header" onclick="toggleOpsSection(this)">
                         <div class="ops-section-title">
                             <span class="ops-section-icon">💰</span>
                             <span>Revenue Tracking</span>
@@ -797,13 +955,20 @@
                     </div>
                     <div class="ops-section-body">
                         <div class="ops-section-content">
-                            <p style="color: var(--text-muted); font-size: 0.85rem;">Piggy Bank revenue: $0 • Infrastructure phase</p>
+                            <div class="ops-item">
+                                <div class="ops-item-title">Piggy Bank Revenue</div>
+                                <div class="ops-item-detail">$0 generated • Infrastructure phase</div>
+                            </div>
+                            <div class="ops-item">
+                                <div class="ops-item-title">Website Business</div>
+                                <div class="ops-item-detail">Ready to launch • Awaiting infrastructure completion</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="ops-section">
-                    <div class="ops-section-header">
+                    <div class="ops-section-header" onclick="toggleOpsSection(this)">
                         <div class="ops-section-title">
                             <span class="ops-section-icon">🛠️</span>
                             <span>Skills</span>
@@ -813,12 +978,45 @@
                     </div>
                     <div class="ops-section-body">
                         <div class="ops-section-content">
-                            <p style="color: var(--text-muted); font-size: 0.85rem;">100 total skills • Latest: twitter (X API reading)</p>
+                            <div class="ops-item">
+                                <div class="ops-item-title">Total Skills Installed</div>
+                                <div class="ops-item-detail">100 skills across 15 categories</div>
+                            </div>
+                            <div class="ops-item">
+                                <div class="ops-item-title">Recent Additions</div>
+                                <div class="ops-item-detail">twitter, tg-voice-whisper • Installed today</div>
+                            </div>
+                            <div class="ops-item">
+                                <div class="ops-item-title">Next Discovery</div>
+                                <div class="ops-item-detail">Tomorrow @ 4:00 AM CST</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title"></h2>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-section" id="modal-description-section">
+                <h3 class="modal-section-title">Description</h3>
+                <div class="modal-section-content" id="modal-description"></div>
+            </div>
+            <div class="modal-section" id="modal-subtasks-section">
+                <h3 class="modal-section-title">Subtasks</h3>
+                <div class="subtask-list" id="modal-subtasks"></div>
+            </div>
+            <div class="modal-section" id="modal-dod-section">
+                <h3 class="modal-section-title">Definition of Done</h3>
+                <div class="modal-section-content" id="modal-dod"></div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -887,6 +1085,7 @@
 
                 renderAgents();
                 renderKanban();
+                renderBotHealth();
                 updateStats();
             } catch (error) {
                 console.error('Failed to load data:', error);
@@ -914,6 +1113,16 @@
                         </span>
                         <span>${agent.lastActivity}</span>
                     </div>
+                </div>
+            `).join('');
+        }
+
+        function renderBotHealth() {
+            const container = document.getElementById('bot-health-content');
+            container.innerHTML = AGENTS.map(agent => `
+                <div class="ops-item">
+                    <div class="ops-item-title">${agent.avatar} ${agent.name} - ${agent.status.toUpperCase()}</div>
+                    <div class="ops-item-detail">${agent.currentTask} • Last active: ${agent.lastActivity}</div>
                 </div>
             `).join('');
         }
@@ -957,7 +1166,7 @@
             const agent = AGENTS.find(a => a.id === task.agent);
 
             return `
-                <div class="task-card ${task.priority ? 'priority-' + task.priority : ''}">
+                <div class="task-card ${task.priority ? 'priority-' + task.priority : ''}" onclick='openTaskModal(${JSON.stringify(task).replace(/'/g, "\\'")})'  >
                     <div class="task-header">
                         <div class="task-title">${task.title}</div>
                     </div>
@@ -985,6 +1194,38 @@
             `;
         }
 
+        function openTaskModal(task) {
+            document.getElementById('modal-title').textContent = task.title;
+            document.getElementById('modal-description').textContent = task.description;
+            
+            if (task.subtasks && task.subtasks.length > 0) {
+                document.getElementById('modal-subtasks-section').style.display = 'block';
+                document.getElementById('modal-subtasks').innerHTML = task.subtasks.map(subtask => `
+                    <div class="subtask-item">
+                        <div class="subtask-checkbox ${subtask.done ? 'done' : ''}"></div>
+                        <div class="subtask-text ${subtask.done ? 'done' : ''}">${subtask.title}</div>
+                    </div>
+                `).join('');
+            } else {
+                document.getElementById('modal-subtasks-section').style.display = 'none';
+            }
+
+            if (task.dod) {
+                document.getElementById('modal-dod-section').style.display = 'block';
+                document.getElementById('modal-dod').textContent = task.dod;
+            } else {
+                document.getElementById('modal-dod-section').style.display = 'none';
+            }
+
+            document.getElementById('modal-overlay').classList.add('visible');
+        }
+
+        function closeModal(event) {
+            if (!event || event.target.id === 'modal-overlay') {
+                document.getElementById('modal-overlay').classList.remove('visible');
+            }
+        }
+
         function selectAgent(agentId) {
             selectedAgent = selectedAgent === agentId ? null : agentId;
             renderAgents();
@@ -1005,25 +1246,24 @@
             document.getElementById('priority-count').textContent = allTasks.filter(t => t.priority === 'high').length;
         }
 
+        function toggleOpsSection(header) {
+            header.parentElement.classList.toggle('expanded');
+        }
+
         // Filter handlers
-        document.querySelectorAll('.filter-chip').forEach(chip => {
-            chip.addEventListener('click', function() {
-                document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-                this.classList.add('active');
-                selectedProject = this.dataset.filter;
-                renderKanban();
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.filter-chip').forEach(chip => {
+                chip.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedProject = this.dataset.filter;
+                    renderKanban();
+                });
             });
-        });
 
-        // Ops section toggles
-        document.querySelectorAll('.ops-section-header').forEach(header => {
-            header.addEventListener('click', function() {
-                this.parentElement.classList.toggle('expanded');
-            });
+            // Initialize
+            loadData();
         });
-
-        // Initialize
-        loadData();
     </script>
 </body>
 </html>
