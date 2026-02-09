@@ -10,7 +10,6 @@
             --bg-secondary: #12121a;
             --bg-card: #1a1a24;
             --bg-hover: #22222e;
-            --bg-modal: #12121a;
             --text-primary: #ffffff;
             --text-secondary: #9ca3af;
             --text-muted: #6b7280;
@@ -38,7 +37,7 @@
             line-height: 1.6;
         }
 
-        /* Header */
+        /* === HEADER === */
         header {
             background: var(--bg-secondary);
             border-bottom: 1px solid var(--border);
@@ -86,6 +85,7 @@
         .stat-value {
             font-size: 1.5rem;
             font-weight: 700;
+            color: var(--text-primary);
         }
 
         .stat-label {
@@ -157,13 +157,13 @@
             color: var(--text-primary);
         }
 
-        /* Main Layout */
+        /* === MAIN LAYOUT === */
         .container {
             display: flex;
-            height: calc(100vh - 60px);
+            height: calc(100vh - 65px);
         }
 
-        /* Sidebar */
+        /* === SIDEBAR - AGENT ROSTER === */
         .sidebar {
             width: 280px;
             background: var(--bg-secondary);
@@ -264,6 +264,11 @@
             color: var(--accent-yellow);
         }
 
+        .agent-status-indicator.offline {
+            background: rgba(107, 114, 128, 0.15);
+            color: var(--text-muted);
+        }
+
         .agent-meta {
             display: flex;
             justify-content: space-between;
@@ -271,7 +276,13 @@
             color: var(--text-muted);
         }
 
-        /* Main Content */
+        .agent-task-count {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* === MAIN CONTENT === */
         .main-content {
             flex: 1;
             display: flex;
@@ -279,6 +290,7 @@
             overflow: hidden;
         }
 
+        /* Mission Statement Bar */
         .mission-bar {
             background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
             border-bottom: 1px solid var(--border);
@@ -299,6 +311,7 @@
             line-height: 1.5;
         }
 
+        /* Filters Bar */
         .filters-bar {
             padding: 1rem 1.5rem;
             background: var(--bg-secondary);
@@ -343,7 +356,7 @@
             color: white;
         }
 
-        /* Kanban */
+        /* Kanban Board */
         .kanban-container {
             flex: 1;
             overflow-x: auto;
@@ -359,8 +372,8 @@
         }
 
         .kanban-column {
-            min-width: 340px;
-            max-width: 340px;
+            min-width: 320px;
+            max-width: 320px;
             display: flex;
             flex-direction: column;
             background: var(--bg-secondary);
@@ -448,10 +461,17 @@
             border-left: 3px solid var(--accent-yellow);
         }
 
+        .task-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
         .task-title {
             font-weight: 600;
             font-size: 0.925rem;
-            margin-bottom: 0.75rem;
+            flex: 1;
             line-height: 1.4;
         }
 
@@ -491,7 +511,7 @@
         .project-infrastructure { background: rgba(139, 92, 246, 0.15); color: var(--accent-purple); }
         .project-circuit-group { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
         .project-piggy-bank { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
-        .project-some-common { background: rgba(245, 158, 11, 0.15); color: var(--accent-yellow); }
+        .project-operations { background: rgba(245, 158, 11, 0.15); color: var(--accent-yellow); }
 
         .task-footer {
             display: flex;
@@ -538,6 +558,7 @@
             background: linear-gradient(135deg, var(--accent), var(--accent-purple));
         }
 
+        /* Empty State */
         .empty-state {
             text-align: center;
             padding: 2rem 1rem;
@@ -557,7 +578,6 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
-            padding: 2rem;
         }
 
         .modal-overlay.visible {
@@ -565,11 +585,11 @@
         }
 
         .modal {
-            background: var(--bg-modal);
+            background: var(--bg-secondary);
             border-radius: 12px;
             padding: 2rem;
-            max-width: 700px;
-            width: 100%;
+            max-width: 600px;
+            width: 90%;
             max-height: 90vh;
             overflow-y: auto;
             border: 1px solid var(--border);
@@ -579,25 +599,23 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .modal-title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 600;
             flex: 1;
-            padding-right: 1rem;
         }
 
         .modal-close {
             background: none;
             border: none;
             color: var(--text-secondary);
-            font-size: 2rem;
+            font-size: 1.5rem;
             cursor: pointer;
             padding: 0;
             line-height: 1;
-            flex-shrink: 0;
         }
 
         .modal-close:hover {
@@ -614,54 +632,12 @@
             color: var(--text-muted);
             text-transform: uppercase;
             margin-bottom: 0.75rem;
-            letter-spacing: 0.05em;
         }
 
-        .modal-field {
-            margin-bottom: 1rem;
-        }
-
-        .modal-label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 500;
+        .modal-section-content {
+            font-size: 0.925rem;
             color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .modal-input,
-        .modal-textarea,
-        .modal-select {
-            width: 100%;
-            padding: 0.75rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-primary);
-            font-size: 0.875rem;
-            font-family: inherit;
-        }
-
-        .modal-input:focus,
-        .modal-textarea:focus,
-        .modal-select:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .modal-textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .modal-select {
-            cursor: pointer;
-        }
-
-        .modal-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            line-height: 1.6;
         }
 
         .subtask-list {
@@ -688,7 +664,6 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            cursor: pointer;
         }
 
         .subtask-checkbox.done {
@@ -712,17 +687,8 @@
             color: var(--text-muted);
         }
 
-        .modal-footer {
-            display: flex;
-            justify-content: flex-end;
-            gap: 0.75rem;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
-        }
-
-        /* Ops Sections */
-        .ops-sections { display: none; 
+        /* Expandable Ops Sections */
+        .ops-sections {
             padding: 1rem;
             background: var(--bg-secondary);
             border-top: 1px solid var(--border);
@@ -816,9 +782,39 @@
             color: var(--text-muted);
             font-size: 0.8rem;
         }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .sidebar {
+                width: 240px;
+            }
+
+            .kanban-column {
+                min-width: 280px;
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .kanban-column {
+                min-width: 260px;
+                max-width: 260px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="logo">
             <span class="logo-icon">⚡</span>
@@ -852,11 +848,15 @@
         </div>
     </header>
 
+    <!-- Main Container -->
     <div class="container">
+        <!-- Sidebar - Agent Roster -->
         <aside class="sidebar">
             <div class="sidebar-section">
                 <h2 class="sidebar-title">Squad Roster</h2>
-                <div class="agent-list" id="agent-list"></div>
+                <div class="agent-list" id="agent-list">
+                    <!-- Agents will be loaded here -->
+                </div>
             </div>
 
             <div class="sidebar-section">
@@ -868,12 +868,15 @@
             </div>
         </aside>
 
+        <!-- Main Content -->
         <main class="main-content">
-            <div class="mission-bar">
+            <!-- Mission Statement Bar -->
+            <div class="mission-bar" id="mission-bar">
                 <p class="mission-title">Current Strategic Focus</p>
-                <p class="mission-text">Building production infrastructure before scaling revenue some-common. Context retention system → Website business launch.</p>
+                <p class="mission-text">Building production infrastructure before scaling revenue operations. Context retention system → Website business launch.</p>
             </div>
 
+            <!-- Filters -->
             <div class="filters-bar">
                 <div class="filter-group">
                     <span class="filter-label">Project:</span>
@@ -881,14 +884,18 @@
                     <span class="filter-chip" data-filter="infrastructure">🔧 Infrastructure</span>
                     <span class="filter-chip" data-filter="circuit-group">🎵 Circuit Group</span>
                     <span class="filter-chip" data-filter="piggy-bank">🐷 Piggy Bank</span>
-                    <span class="filter-chip" data-filter="some-common">⚙️ Some Common Projects</span>
+                    <span class="filter-chip" data-filter="operations">⚙️ Operations</span>
                 </div>
             </div>
 
+            <!-- Kanban Board -->
             <div class="kanban-container">
-                <div class="kanban-board" id="kanban-board"></div>
+                <div class="kanban-board" id="kanban-board">
+                    <!-- Columns will be loaded here -->
+                </div>
             </div>
 
+            <!-- Ops Sections -->
             <div class="ops-sections">
                 <div class="ops-section expanded">
                     <div class="ops-section-header" onclick="toggleOpsSection(this)">
@@ -900,7 +907,9 @@
                         <span class="ops-section-toggle">▼</span>
                     </div>
                     <div class="ops-section-body">
-                        <div class="ops-section-content" id="bot-health-content"></div>
+                        <div class="ops-section-content" id="bot-health-content">
+                            <!-- Bot health data -->
+                        </div>
                     </div>
                 </div>
 
@@ -995,78 +1004,54 @@
                 <h2 class="modal-title" id="modal-title"></h2>
                 <button class="modal-close" onclick="closeModal()">×</button>
             </div>
-
-            <div class="modal-section">
-                <h3 class="modal-section-title">Task Details</h3>
-                <div class="modal-field">
-                    <label class="modal-label">Description</label>
-                    <textarea class="modal-textarea" id="modal-description"></textarea>
-                </div>
-                <div class="modal-row">
-                    <div class="modal-field">
-                        <label class="modal-label">Project</label>
-                        <select class="modal-select" id="modal-project">
-                            <option value="infrastructure">🔧 Infrastructure</option>
-                            <option value="circuit-group">🎵 Circuit Group / AYITA</option>
-                            <option value="piggy-bank">🐷 Piggy Bank (Revenue)</option>
-                            <option value="some-common">⚙️ Some Common Projects</option>
-                        </select>
-                    </div>
-                    <div class="modal-field">
-                        <label class="modal-label">Assigned Agent</label>
-                        <select class="modal-select" id="modal-agent">
-                            <option value="boris">🤖 Boris</option>
-                            <option value="archie">🔍 Archie</option>
-                            <option value="penny">🎵 Penny</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="modal-row">
-                    <div class="modal-field">
-                        <label class="modal-label">Status</label>
-                        <select class="modal-select" id="modal-status">
-                            <option value="permanent">Permanent</option>
-                            <option value="backlog">Backlog</option>
-                            <option value="in_progress">In Progress</option>
-                            <option value="review">Review</option>
-                            <option value="done">Done</option>
-                        </select>
-                    </div>
-                    <div class="modal-field">
-                        <label class="modal-label">Priority</label>
-                        <select class="modal-select" id="modal-priority">
-                            <option value="">None</option>
-                            <option value="high">High</option>
-                            <option value="medium">Medium</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="modal-section" id="modal-description-section">
+                <h3 class="modal-section-title">Description</h3>
+                <div class="modal-section-content" id="modal-description"></div>
             </div>
-
             <div class="modal-section" id="modal-subtasks-section">
-                <h3 class="modal-section-title">Subtasks (<span id="subtask-progress">0/0</span>)</h3>
+                <h3 class="modal-section-title">Subtasks</h3>
                 <div class="subtask-list" id="modal-subtasks"></div>
             </div>
-
-            <div class="modal-section">
+            <div class="modal-section" id="modal-dod-section">
                 <h3 class="modal-section-title">Definition of Done</h3>
-                <div class="modal-field">
-                    <textarea class="modal-textarea" id="modal-dod" rows="3"></textarea>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
-                <button class="btn btn-primary" onclick="saveTask()">Save Changes</button>
+                <div class="modal-section-content" id="modal-dod"></div>
             </div>
         </div>
     </div>
 
     <script>
+        // Configuration
         const AGENTS = [
-            { id: 'boris', name: 'Boris', role: 'Master Controller', avatar: '🤖', status: 'live', lastActivity: '2 min ago', taskCount: 5 },
-            { id: 'archie', name: 'Archie', role: 'Knowledge Scout', avatar: '🔍', status: 'live', lastActivity: '15 min ago', taskCount: 2 },
-            { id: 'penny', name: 'Penny', role: 'Music Data Specialist', avatar: '🎵', status: 'idle', lastActivity: '2 hours ago', taskCount: 1 }
+            {
+                id: 'boris',
+                name: 'Boris',
+                role: 'Master Controller',
+                avatar: '🤖',
+                status: 'live',
+                lastActivity: '2 min ago',
+                currentTask: 'Building agent-centric dashboard',
+                taskCount: 5
+            },
+            {
+                id: 'archie',
+                name: 'Archie',
+                role: 'Knowledge Scout',
+                avatar: '🔍',
+                status: 'live',
+                lastActivity: '15 min ago',
+                currentTask: 'Scanning X for AI/tech intel',
+                taskCount: 2
+            },
+            {
+                id: 'penny',
+                name: 'Penny',
+                role: 'Music Data Specialist',
+                avatar: '🎵',
+                status: 'idle',
+                lastActivity: '2 hours ago',
+                currentTask: 'Awaiting next scan cycle',
+                taskCount: 1
+            }
         ];
 
         const COLUMNS = [
@@ -1077,11 +1062,11 @@
             { id: 'done', title: 'Done', color: 'done' }
         ];
 
+        // Load data
         let allTasks = [];
         let allProjects = [];
         let selectedAgent = null;
         let selectedProject = 'all';
-        let currentTask = null;
 
         async function loadData() {
             try {
@@ -1090,9 +1075,11 @@
                 allTasks = data.tasks;
                 allProjects = data.projects;
                 
+                // Assign tasks to agents (simple round-robin for demo)
                 allTasks.forEach((task, index) => {
                     if (!task.agent) {
-                        task.agent = AGENTS[index % AGENTS.length].id;
+                        const agentIndex = index % AGENTS.length;
+                        task.agent = AGENTS[agentIndex].id;
                     }
                 });
 
@@ -1120,7 +1107,10 @@
                         <span class="agent-status-indicator ${agent.status}">${agent.status}</span>
                     </div>
                     <div class="agent-meta">
-                        <span>${agent.taskCount} tasks</span>
+                        <span class="agent-task-count">
+                            <span>📋</span>
+                            <span>${agent.taskCount} tasks</span>
+                        </span>
                         <span>${agent.lastActivity}</span>
                     </div>
                 </div>
@@ -1132,7 +1122,7 @@
             container.innerHTML = AGENTS.map(agent => `
                 <div class="ops-item">
                     <div class="ops-item-title">${agent.avatar} ${agent.name} - ${agent.status.toUpperCase()}</div>
-                    <div class="ops-item-detail">Last active: ${agent.lastActivity} • ${agent.taskCount} active tasks</div>
+                    <div class="ops-item-detail">${agent.currentTask} • Last active: ${agent.lastActivity}</div>
                 </div>
             `).join('');
         }
@@ -1158,7 +1148,10 @@
                             <span class="column-count">${filteredTasks.length}</span>
                         </div>
                         <div class="column-body">
-                            ${filteredTasks.length === 0 ? '<div class="empty-state">No tasks</div>' : filteredTasks.map(task => renderTaskCard(task)).join('')}
+                            ${filteredTasks.length === 0 ? 
+                                '<div class="empty-state">No tasks</div>' :
+                                filteredTasks.map(task => renderTaskCard(task)).join('')
+                            }
                         </div>
                     </div>
                 `;
@@ -1166,13 +1159,17 @@
         }
 
         function renderTaskCard(task) {
-            const progress = task.subtasks ? Math.round((task.subtasks.filter(s => s.done).length / task.subtasks.length) * 100) : 0;
+            const progress = task.subtasks ? 
+                Math.round((task.subtasks.filter(s => s.done).length / task.subtasks.length) * 100) : 0;
+            
             const project = allProjects.find(p => p.id === task.project);
             const agent = AGENTS.find(a => a.id === task.agent);
 
             return `
-                <div class="task-card ${task.priority ? 'priority-' + task.priority : ''}" onclick='openTaskModal("${task.id}")'>
-                    <div class="task-title">${task.title}</div>
+                <div class="task-card ${task.priority ? 'priority-' + task.priority : ''}" onclick='openTaskModal(${JSON.stringify(task).replace(/'/g, "\\'")})'  >
+                    <div class="task-header">
+                        <div class="task-title">${task.title}</div>
+                    </div>
                     <div class="task-description">${task.description}</div>
                     <div class="task-meta">
                         ${project ? `<span class="task-project project-${project.id}">${project.icon} ${project.name}</span>` : ''}
@@ -1180,31 +1177,30 @@
                     </div>
                     <div class="task-footer">
                         <div class="task-progress">
-                            ${task.subtasks ? `<div class="progress-bar"><div class="progress-fill" style="width: ${progress}%"></div></div><span>${progress}%</span>` : ''}
+                            ${task.subtasks ? `
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: ${progress}%"></div>
+                                </div>
+                                <span>${progress}%</span>
+                            ` : ''}
                         </div>
-                        ${agent ? `<div class="task-agent"><div class="agent-mini-avatar">${agent.avatar}</div></div>` : ''}
+                        ${agent ? `
+                            <div class="task-agent">
+                                <div class="agent-mini-avatar">${agent.avatar}</div>
+                            </div>
+                        ` : ''}
                     </div>
                 </div>
             `;
         }
 
-        function openTaskModal(taskId) {
-            currentTask = allTasks.find(t => t.id === taskId);
-            if (!currentTask) return;
-
-            document.getElementById('modal-title').textContent = currentTask.title;
-            document.getElementById('modal-description').value = currentTask.description;
-            document.getElementById('modal-project').value = currentTask.project;
-            document.getElementById('modal-agent').value = currentTask.agent || 'boris';
-            document.getElementById('modal-status').value = currentTask.status;
-            document.getElementById('modal-priority').value = currentTask.priority || '';
-            document.getElementById('modal-dod').value = currentTask.dod || '';
-
-            if (currentTask.subtasks && currentTask.subtasks.length > 0) {
+        function openTaskModal(task) {
+            document.getElementById('modal-title').textContent = task.title;
+            document.getElementById('modal-description').textContent = task.description;
+            
+            if (task.subtasks && task.subtasks.length > 0) {
                 document.getElementById('modal-subtasks-section').style.display = 'block';
-                const done = currentTask.subtasks.filter(s => s.done).length;
-                document.getElementById('subtask-progress').textContent = `${done}/${currentTask.subtasks.length}`;
-                document.getElementById('modal-subtasks').innerHTML = currentTask.subtasks.map(subtask => `
+                document.getElementById('modal-subtasks').innerHTML = task.subtasks.map(subtask => `
                     <div class="subtask-item">
                         <div class="subtask-checkbox ${subtask.done ? 'done' : ''}"></div>
                         <div class="subtask-text ${subtask.done ? 'done' : ''}">${subtask.title}</div>
@@ -1214,34 +1210,20 @@
                 document.getElementById('modal-subtasks-section').style.display = 'none';
             }
 
+            if (task.dod) {
+                document.getElementById('modal-dod-section').style.display = 'block';
+                document.getElementById('modal-dod').textContent = task.dod;
+            } else {
+                document.getElementById('modal-dod-section').style.display = 'none';
+            }
+
             document.getElementById('modal-overlay').classList.add('visible');
         }
 
         function closeModal(event) {
             if (!event || event.target.id === 'modal-overlay') {
                 document.getElementById('modal-overlay').classList.remove('visible');
-                currentTask = null;
             }
-        }
-
-        function saveTask() {
-            if (!currentTask) return;
-
-            currentTask.description = document.getElementById('modal-description').value;
-            currentTask.project = document.getElementById('modal-project').value;
-            currentTask.agent = document.getElementById('modal-agent').value;
-            currentTask.status = document.getElementById('modal-status').value;
-            currentTask.priority = document.getElementById('modal-priority').value;
-            currentTask.dod = document.getElementById('modal-dod').value;
-
-            // In a real app, this would POST to the server
-            console.log('Task updated:', currentTask);
-            
-            closeModal();
-            renderKanban();
-            updateStats();
-            
-            alert('Changes saved! (In production, this would update the server)');
         }
 
         function selectAgent(agentId) {
@@ -1254,7 +1236,8 @@
         function updateStats() {
             const activeTasks = allTasks.filter(t => t.status === 'in_progress' || t.status === 'review');
             const completedTasks = allTasks.filter(t => t.status === 'done');
-            const completion = Math.round((completedTasks.length / allTasks.length) * 100);
+            const totalTasks = allTasks.length;
+            const completion = Math.round((completedTasks.length / totalTasks) * 100);
 
             document.getElementById('agents-active').textContent = AGENTS.filter(a => a.status === 'live').length;
             document.getElementById('tasks-queue').textContent = activeTasks.length;
@@ -1267,6 +1250,7 @@
             header.parentElement.classList.toggle('expanded');
         }
 
+        // Filter handlers
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.filter-chip').forEach(chip => {
                 chip.addEventListener('click', function() {
@@ -1277,6 +1261,7 @@
                 });
             });
 
+            // Initialize
             loadData();
         });
     </script>

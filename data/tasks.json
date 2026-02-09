@@ -264,7 +264,7 @@
       "title": "48-Hour API Cost Optimization Test",
       "description": "Reduce API costs by 30% through ClawRouter integration, Archie optimization, caching, and heartbeat efficiency. Autonomous execution approved.",
       "status": "backlog",
-      "project": "operations",
+      "project": "some-common",
       "priority": "high",
       "tags": [
         "optimization",
@@ -631,8 +631,8 @@
       "icon": "🐷"
     },
     {
-      "id": "operations",
-      "name": "Operations",
+      "id": "some-common",
+      "name": "Some Common Projects",
       "color": "#f59e0b",
       "icon": "⚙️"
     }
