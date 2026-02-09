@@ -4,7 +4,7 @@
       "id": "task_001",
       "title": "Mission Control Setup",
       "description": "Complete Mission Control dashboard deployment with GitHub Pages and webhook integration",
-      "status": "in_progress",
+      "status": "done",
       "project": "infrastructure",
       "priority": "high",
       "tags": [
@@ -35,12 +35,12 @@
         {
           "id": "sub_005",
           "title": "Configure webhook transform",
-          "done": false
+          "done": true
         },
         {
           "id": "sub_006",
           "title": "Enable real-time updates",
-          "done": false
+          "done": true
         }
       ],
       "dod": "Dashboard live on GitHub Pages, real-time updates working, David can view all projects",
@@ -102,7 +102,7 @@
           "done": false
         }
       ],
-      "dod": "Working end-to-end: form → database → DDEX file → validated against standard",
+      "dod": "Working end-to-end: form \u2192 database \u2192 DDEX file \u2192 validated against standard",
       "comments": [
         {
           "id": "comment_001",
@@ -606,7 +606,7 @@
           "done": false
         }
       ],
-      "dod": "Automated pipeline: David provides track → AI generates visuals → uploads to YouTube → monetized",
+      "dod": "Automated pipeline: David provides track \u2192 AI generates visuals \u2192 uploads to YouTube \u2192 monetized",
       "comments": [],
       "createdAt": "2026-02-09T11:40:00Z"
     }
@@ -616,25 +616,25 @@
       "id": "infrastructure",
       "name": "Infrastructure",
       "color": "#8b5cf6",
-      "icon": "🔧"
+      "icon": "\ud83d\udd27"
     },
     {
       "id": "circuit-group",
       "name": "Circuit Group / AYITA",
       "color": "#ef4444",
-      "icon": "🎵"
+      "icon": "\ud83c\udfb5"
     },
     {
       "id": "piggy-bank",
       "name": "Piggy Bank (Revenue)",
       "color": "#10b981",
-      "icon": "🐷"
+      "icon": "\ud83d\udc37"
     },
     {
       "id": "some-common",
       "name": "Some Common Projects",
       "color": "#f59e0b",
-      "icon": "⚙️"
+      "icon": "\u2699\ufe0f"
     }
   ],
   "activities": [
