@@ -46,6 +46,118 @@
       "processingStartedAt": "2026-02-09T11:11:00Z"
     },
     {
+      "id": "task_006",
+      "title": "AMDS Bot - Artist Management Data System",
+      "description": "Master release tracking system for Circuit Group/AYITA. Phase 1: Database + Form + DDEX generator. Testing with Noizu releases before LabelWorx integration.",
+      "status": "in_progress",
+      "project": "circuit-group",
+      "priority": "high",
+      "tags": ["amds", "master-side", "ddex"],
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Database schema design",
+          "done": true
+        },
+        {
+          "id": "sub_002",
+          "title": "Form structure specification",
+          "done": true
+        },
+        {
+          "id": "sub_003",
+          "title": "DDEX compliance checklist",
+          "done": true
+        },
+        {
+          "id": "sub_004",
+          "title": "Deploy database to Railway",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Build artist submission form",
+          "done": false
+        },
+        {
+          "id": "sub_006",
+          "title": "File upload system (Google Drive)",
+          "done": false
+        },
+        {
+          "id": "sub_007",
+          "title": "DDEX ERN generator",
+          "done": false
+        },
+        {
+          "id": "sub_008",
+          "title": "Test with Noizu releases",
+          "done": false
+        }
+      ],
+      "dod": "Working end-to-end: form → database → DDEX file → validated against standard",
+      "comments": [
+        {
+          "id": "comment_001",
+          "author": "Boris",
+          "text": "Phase 0 complete. DPID received. Database schema + form structure designed. Ready for Railway deployment.",
+          "timestamp": "2026-02-03T18:00:00Z"
+        }
+      ],
+      "createdAt": "2026-02-03T12:00:00Z"
+    },
+    {
+      "id": "task_007",
+      "title": "SongSplit.io - Split Sheet Generator",
+      "description": "Automated split sheet generation for songwriters. Core product: PDF split sheets. Future: Co-writer placement tracking expansion.",
+      "status": "backlog",
+      "project": "piggy-bank",
+      "priority": "medium",
+      "tags": ["songsplit", "publishing", "revenue"],
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Define MVP scope (PDF split sheets only)",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Design database schema",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Build submission form",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "PDF generation engine",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Deploy to Railway",
+          "done": false
+        },
+        {
+          "id": "sub_006",
+          "title": "Test with Red Wire songwriters",
+          "done": false
+        }
+      ],
+      "dod": "Working split sheet generator - input song data, output PDF",
+      "comments": [
+        {
+          "id": "comment_001",
+          "author": "Boris",
+          "text": "ON HOLD pending PRO conversations. Co-writer placement tracking (separate product) in review.",
+          "timestamp": "2026-02-06T18:00:00Z"
+        }
+      ],
+      "createdAt": "2026-02-03T10:00:00Z"
+    },
+    {
       "id": "task_002",
       "title": "Co-Writer Placement Tracking - Go/No-Go Decision",
       "description": "Review business plan and data research for songwriter placement tracking service. Decision needed on MVP timeline and approach.",
@@ -216,12 +328,15 @@
   ],
   "projects": [
     { "id": "infrastructure", "name": "Infrastructure", "color": "#8b5cf6", "icon": "🔧" },
+    { "id": "circuit-group", "name": "Circuit Group / AYITA", "color": "#ef4444", "icon": "🎵" },
     { "id": "piggy-bank", "name": "Piggy Bank (Revenue)", "color": "#10b981", "icon": "🐷" },
     { "id": "operations", "name": "Operations", "color": "#f59e0b", "icon": "⚙️" }
   ],
   "activities": [
+    { "type": "created", "actor": "Boris", "task": "AMDS Bot", "time": "6 days ago" },
+    { "type": "moved", "actor": "Boris", "task": "AMDS Bot", "from": "backlog", "to": "in_progress", "time": "6 days ago" },
     { "type": "created", "actor": "Boris", "task": "Mission Control Setup", "time": "2 hours ago" },
     { "type": "moved", "actor": "Boris", "task": "Mission Control Setup", "from": "backlog", "to": "in_progress", "time": "2 hours ago" }
   ],
-  "lastUpdated": "2026-02-09T11:25:00Z"
+  "lastUpdated": "2026-02-09T11:32:00Z"
 }
