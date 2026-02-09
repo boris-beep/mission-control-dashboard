@@ -7,7 +7,10 @@
       "status": "in_progress",
       "project": "infrastructure",
       "priority": "high",
-      "tags": ["setup", "infrastructure"],
+      "tags": [
+        "setup",
+        "infrastructure"
+      ],
       "subtasks": [
         {
           "id": "sub_001",
@@ -52,7 +55,11 @@
       "status": "in_progress",
       "project": "circuit-group",
       "priority": "high",
-      "tags": ["amds", "master-side", "ddex"],
+      "tags": [
+        "amds",
+        "master-side",
+        "ddex"
+      ],
       "subtasks": [
         {
           "id": "sub_001",
@@ -113,7 +120,11 @@
       "status": "backlog",
       "project": "piggy-bank",
       "priority": "medium",
-      "tags": ["songsplit", "publishing", "revenue"],
+      "tags": [
+        "songsplit",
+        "publishing",
+        "revenue"
+      ],
       "subtasks": [
         {
           "id": "sub_001",
@@ -164,7 +175,10 @@
       "status": "review",
       "project": "piggy-bank",
       "priority": "high",
-      "tags": ["business-plan", "revenue"],
+      "tags": [
+        "business-plan",
+        "revenue"
+      ],
       "subtasks": [
         {
           "id": "sub_001",
@@ -205,7 +219,10 @@
       "status": "backlog",
       "project": "piggy-bank",
       "priority": "high",
-      "tags": ["database", "revenue"],
+      "tags": [
+        "database",
+        "revenue"
+      ],
       "subtasks": [
         {
           "id": "sub_001",
@@ -249,7 +266,10 @@
       "status": "backlog",
       "project": "operations",
       "priority": "high",
-      "tags": ["optimization", "cost-reduction"],
+      "tags": [
+        "optimization",
+        "cost-reduction"
+      ],
       "subtasks": [
         {
           "id": "sub_001",
@@ -293,7 +313,10 @@
       "status": "backlog",
       "project": "piggy-bank",
       "priority": "high",
-      "tags": ["revenue", "sales"],
+      "tags": [
+        "revenue",
+        "sales"
+      ],
       "subtasks": [
         {
           "id": "sub_001",
@@ -324,19 +347,129 @@
       "dod": "Sales pipeline operational, first leads being processed",
       "comments": [],
       "createdAt": "2026-02-09T10:20:00Z"
+    },
+    {
+      "id": "task_008",
+      "title": "APEX - AI-Powered Music Rights Platform",
+      "description": "Next-generation RightsHub replacement. AI-powered rights management platform that actively manages business operations, not just stores data. Target: 10K+ independent labels/managers globally.",
+      "status": "backlog",
+      "project": "piggy-bank",
+      "priority": "medium",
+      "tags": [
+        "apex",
+        "rights-management",
+        "saas",
+        "revenue"
+      ],
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Finalize platform architecture (mobile-first)",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Design database schema (assets, contracts, rights, royalties)",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Build AI metadata extraction engine",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Automated split sheet generation",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Royalty reconciliation automation",
+          "done": false
+        },
+        {
+          "id": "sub_006",
+          "title": "Analytics & intelligence dashboard",
+          "done": false
+        },
+        {
+          "id": "sub_007",
+          "title": "Mobile app (iOS/Android)",
+          "done": false
+        },
+        {
+          "id": "sub_008",
+          "title": "Beta test with Circuit Group catalog",
+          "done": false
+        }
+      ],
+      "dod": "Working platform managing Circuit Group catalog, beta users onboarded, pricing model validated",
+      "comments": [
+        {
+          "id": "comment_001",
+          "author": "Boris",
+          "text": "Full analysis complete. RightsHub identified as legacy platform with $5M-15M market opportunity. Proposal delivered Feb 7.",
+          "timestamp": "2026-02-07T18:00:00Z"
+        }
+      ],
+      "createdAt": "2026-02-07T18:00:00Z"
     }
   ],
   "projects": [
-    { "id": "infrastructure", "name": "Infrastructure", "color": "#8b5cf6", "icon": "🔧" },
-    { "id": "circuit-group", "name": "Circuit Group / AYITA", "color": "#ef4444", "icon": "🎵" },
-    { "id": "piggy-bank", "name": "Piggy Bank (Revenue)", "color": "#10b981", "icon": "🐷" },
-    { "id": "operations", "name": "Operations", "color": "#f59e0b", "icon": "⚙️" }
+    {
+      "id": "infrastructure",
+      "name": "Infrastructure",
+      "color": "#8b5cf6",
+      "icon": "🔧"
+    },
+    {
+      "id": "circuit-group",
+      "name": "Circuit Group / AYITA",
+      "color": "#ef4444",
+      "icon": "🎵"
+    },
+    {
+      "id": "piggy-bank",
+      "name": "Piggy Bank (Revenue)",
+      "color": "#10b981",
+      "icon": "🐷"
+    },
+    {
+      "id": "operations",
+      "name": "Operations",
+      "color": "#f59e0b",
+      "icon": "⚙️"
+    }
   ],
   "activities": [
-    { "type": "created", "actor": "Boris", "task": "AMDS Bot", "time": "6 days ago" },
-    { "type": "moved", "actor": "Boris", "task": "AMDS Bot", "from": "backlog", "to": "in_progress", "time": "6 days ago" },
-    { "type": "created", "actor": "Boris", "task": "Mission Control Setup", "time": "2 hours ago" },
-    { "type": "moved", "actor": "Boris", "task": "Mission Control Setup", "from": "backlog", "to": "in_progress", "time": "2 hours ago" }
+    {
+      "type": "created",
+      "actor": "Boris",
+      "task": "AMDS Bot",
+      "time": "6 days ago"
+    },
+    {
+      "type": "moved",
+      "actor": "Boris",
+      "task": "AMDS Bot",
+      "from": "backlog",
+      "to": "in_progress",
+      "time": "6 days ago"
+    },
+    {
+      "type": "created",
+      "actor": "Boris",
+      "task": "Mission Control Setup",
+      "time": "2 hours ago"
+    },
+    {
+      "type": "moved",
+      "actor": "Boris",
+      "task": "Mission Control Setup",
+      "from": "backlog",
+      "to": "in_progress",
+      "time": "2 hours ago"
+    }
   ],
   "lastUpdated": "2026-02-09T11:32:00Z"
 }
