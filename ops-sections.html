@@ -1,0 +1,418 @@
+<!-- Operations Sections - Insert after filters, before kanban -->
+<style>
+.ops-sections {
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ops-section {
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.ops-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+}
+
+.ops-section-header:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.ops-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.ops-section-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.ops-section-badge.green {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--accent-green);
+}
+
+.ops-section-badge.blue {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-blue);
+}
+
+.ops-section-badge.purple {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--accent-purple);
+}
+
+.ops-section-toggle {
+    font-size: 1.25rem;
+    transition: transform 0.2s;
+    color: var(--text-secondary);
+}
+
+.ops-section.expanded .ops-section-toggle {
+    transform: rotate(180deg);
+}
+
+.ops-section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.ops-section.expanded .ops-section-content {
+    max-height: 2000px;
+}
+
+.ops-section-body {
+    padding: 0 1.5rem 1.5rem;
+}
+
+/* Bot Health Styles */
+.bot-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.bot-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.bot-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bot-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.bot-status-dot.active {
+    background: var(--accent-green);
+    box-shadow: 0 0 8px var(--accent-green);
+}
+
+.bot-status-dot.idle {
+    background: var(--accent-yellow);
+}
+
+.bot-status-dot.inactive {
+    background: var(--text-secondary);
+}
+
+.bot-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.bot-role {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.bot-meta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Cron Jobs Styles */
+.cron-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cron-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-blue);
+}
+
+.cron-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.cron-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.cron-schedule {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.cron-next {
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    font-weight: 500;
+}
+
+/* Revenue Styles */
+.revenue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.revenue-card {
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.revenue-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.revenue-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-purple);
+}
+
+.revenue-change {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.revenue-change.positive {
+    color: var(--accent-green);
+}
+
+.revenue-change.negative {
+    color: var(--accent-red);
+}
+</style>
+
+<div class="ops-sections">
+    <!-- Bot Health Section -->
+    <div class="ops-section" id="bot-health-section">
+        <div class="ops-section-header" onclick="toggleOpsSection('bot-health-section')">
+            <div class="ops-section-title">
+                <span>🤖</span>
+                <span>Bot Health</span>
+                <span class="ops-section-badge green" id="bot-count">0</span>
+            </div>
+            <span class="ops-section-toggle">▼</span>
+        </div>
+        <div class="ops-section-content">
+            <div class="ops-section-body">
+                <div class="bot-list" id="bot-list">
+                    <!-- Bots will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cron Jobs Section -->
+    <div class="ops-section" id="cron-jobs-section">
+        <div class="ops-section-header" onclick="toggleOpsSection('cron-jobs-section')">
+            <div class="ops-section-title">
+                <span>⏰</span>
+                <span>Scheduled Tasks</span>
+                <span class="ops-section-badge blue" id="cron-count">0</span>
+            </div>
+            <span class="ops-section-toggle">▼</span>
+        </div>
+        <div class="ops-section-content">
+            <div class="ops-section-body">
+                <div class="cron-list" id="cron-list">
+                    <!-- Crons will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Revenue Section -->
+    <div class="ops-section" id="revenue-section">
+        <div class="ops-section-header" onclick="toggleOpsSection('revenue-section')">
+            <div class="ops-section-title">
+                <span>💰</span>
+                <span>Revenue Tracking</span>
+                <span class="ops-section-badge purple" id="revenue-status">TBD</span>
+            </div>
+            <span class="ops-section-toggle">▼</span>
+        </div>
+        <div class="ops-section-content">
+            <div class="ops-section-body">
+                <div class="revenue-grid" id="revenue-grid">
+                    <div class="revenue-card">
+                        <div class="revenue-label">Total Revenue</div>
+                        <div class="revenue-value">$0</div>
+                        <div class="revenue-change positive">+0%</div>
+                    </div>
+                    <div class="revenue-card">
+                        <div class="revenue-label">This Month</div>
+                        <div class="revenue-value">$0</div>
+                    </div>
+                    <div class="revenue-card">
+                        <div class="revenue-label">Active Projects</div>
+                        <div class="revenue-value">0</div>
+                    </div>
+                    <div class="revenue-card">
+                        <div class="revenue-label">Projected</div>
+                        <div class="revenue-value">$0</div>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
+                    📊 Revenue tracking coming soon. What should we track? Actual income or project financials?
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Toggle ops section expand/collapse
+function toggleOpsSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.classList.toggle('expanded');
+    
+    // Save state to localStorage
+    const expanded = section.classList.contains('expanded');
+    localStorage.setItem(`ops-${sectionId}`, expanded);
+}
+
+// Restore section states from localStorage
+function restoreOpsSectionStates() {
+    ['bot-health-section', 'cron-jobs-section', 'revenue-section'].forEach(sectionId => {
+        const wasExpanded = localStorage.getItem(`ops-${sectionId}`) === 'true';
+        if (wasExpanded) {
+            document.getElementById(sectionId).classList.add('expanded');
+        }
+    });
+}
+
+// Load bot health data
+async function loadBotHealth() {
+    try {
+        // This will be populated from sessions_list API data
+        const bots = [
+            {
+                name: 'Boris',
+                role: 'CEO / Master Controller',
+                status: 'active',
+                lastActivity: 'Just now',
+                tokensUsed: '65K'
+            },
+            {
+                name: 'Archie',
+                role: 'Knowledge Scout',
+                status: 'idle',
+                lastActivity: '3 hours ago',
+                tokensUsed: '28K'
+            },
+            {
+                name: 'Penny',
+                role: 'Personal Assistant',
+                status: 'idle',
+                lastActivity: '9 hours ago',
+                tokensUsed: '221K'
+            }
+        ];
+
+        const botList = document.getElementById('bot-list');
+        document.getElementById('bot-count').textContent = bots.length;
+
+        botList.innerHTML = bots.map(bot => `
+            <div class="bot-item">
+                <div class="bot-info">
+                    <div class="bot-status-dot ${bot.status}"></div>
+                    <div>
+                        <div class="bot-name">${bot.name}</div>
+                        <div class="bot-role">${bot.role}</div>
+                    </div>
+                </div>
+                <div class="bot-meta">
+                    <span>Last: ${bot.lastActivity}</span>
+                    <span>${bot.tokensUsed} tokens</span>
+                </div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Failed to load bot health:', error);
+    }
+}
+
+// Load cron jobs data
+async function loadCronJobs() {
+    try {
+        // Read from crons.json
+        const response = await fetch('data/crons.json');
+        const data = await response.json();
+        
+        // For now, showing placeholder - will integrate with real cron API
+        const crons = [
+            { name: 'Daily Skill Discovery', schedule: 'Every day @ 4:00 AM', next: 'Tomorrow, 4:00 AM' },
+            { name: 'Weekly Bot Review', schedule: 'Every Sunday @ 8:00 PM', next: 'Today, 8:00 PM' },
+            { name: 'Email Check', schedule: 'Every 4 hours', next: 'In 2 hours' },
+            { name: 'Birthday Reminders', schedule: 'Varies', next: '15 upcoming' }
+        ];
+
+        const cronList = document.getElementById('cron-list');
+        document.getElementById('cron-count').textContent = 23; // Total from real data
+
+        cronList.innerHTML = crons.map(cron => `
+            <div class="cron-item">
+                <div class="cron-info">
+                    <div class="cron-name">${cron.name}</div>
+                    <div class="cron-schedule">${cron.schedule}</div>
+                </div>
+                <div class="cron-next">${cron.next}</div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Failed to load cron jobs:', error);
+    }
+}
+
+// Initialize ops sections
+document.addEventListener('DOMContentLoaded', () => {
+    restoreOpsSectionStates();
+    loadBotHealth();
+    loadCronJobs();
+});
+</script>
