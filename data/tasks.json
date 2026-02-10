@@ -102,7 +102,7 @@
           "done": false
         }
       ],
-      "dod": "Working end-to-end: form \u2192 database \u2192 DDEX file \u2192 validated against standard",
+      "dod": "Working end-to-end: form → database → DDEX file → validated against standard",
       "comments": [
         {
           "id": "comment_001",
@@ -606,7 +606,7 @@
           "done": false
         }
       ],
-      "dod": "Automated pipeline: David provides track \u2192 AI generates visuals \u2192 uploads to YouTube \u2192 monetized",
+      "dod": "Automated pipeline: David provides track → AI generates visuals → uploads to YouTube → monetized",
       "comments": [],
       "createdAt": "2026-02-09T11:40:00Z"
     },
@@ -777,6 +777,21 @@
       ],
       "createdAt": "2026-02-09T20:15:00Z",
       "agent": "penny"
+    },
+    {
+      "id": "task_1770735336842",
+      "title": "Contract: Harvey Tadman",
+      "description": "Exclusive songwriter agreement - Smash Bro Music LLC - K advance - 25 year retention - PRS",
+      "status": "review",
+      "priority": "high",
+      "owner": "Penny",
+      "project": "contracts",
+      "tags": [
+        "contract",
+        "publishing"
+      ],
+      "created": "2026-02-10T14:55:36.842Z",
+      "updated": "2026-02-10T14:55:36.843Z"
     }
   ],
   "projects": [
@@ -784,31 +799,31 @@
       "id": "infrastructure",
       "name": "Infrastructure",
       "color": "#8b5cf6",
-      "icon": "\ud83d\udd27"
+      "icon": "🔧"
     },
     {
       "id": "circuit-group",
       "name": "Circuit Group / AYITA",
       "color": "#ef4444",
-      "icon": "\ud83c\udfb5"
+      "icon": "🎵"
     },
     {
       "id": "piggy-bank",
       "name": "Piggy Bank (Revenue)",
       "color": "#10b981",
-      "icon": "\ud83d\udc37"
+      "icon": "🐷"
     },
     {
       "id": "some-common",
       "name": "Some Common Projects",
       "color": "#f59e0b",
-      "icon": "\u2699\ufe0f"
+      "icon": "⚙️"
     },
     {
       "id": "red-wire",
       "name": "Red Wire Publishing",
       "color": "#dc2626",
-      "icon": "\ud83d\udcdc"
+      "icon": "📜"
     }
   ],
   "activities": [
