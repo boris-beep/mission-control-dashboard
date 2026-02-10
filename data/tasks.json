@@ -767,6 +767,12 @@
           "author": "Boris",
           "text": "Build approach confirmed: Telegram conversational interface (not web form). Simpler, works from phone, natural interaction. Build time: ~90 min.",
           "timestamp": "2026-02-09T20:15:00Z"
+        },
+        {
+          "id": "comment_002",
+          "author": "Boris",
+          "text": "🚨 CRITICAL: No progress reported in 36 hours. Daily standup (Feb 10 8am) - Sent urgent status request via sessions_send (timeout) + INBOX file. Escalation: If no update within 4 hours, Boris takes over build.",
+          "timestamp": "2026-02-10T08:05:00Z"
         }
       ],
       "createdAt": "2026-02-09T20:15:00Z",
@@ -807,10 +813,17 @@
   ],
   "activities": [
     {
+      "type": "comment",
+      "actor": "Boris",
+      "task": "Red Wire Contract Generator",
+      "text": "Daily standup - urgent status check sent to Penny",
+      "time": "just now"
+    },
+    {
       "type": "created",
       "actor": "Boris",
       "task": "AMDS Bot",
-      "time": "6 days ago"
+      "time": "7 days ago"
     },
     {
       "type": "moved",
@@ -818,13 +831,13 @@
       "task": "AMDS Bot",
       "from": "backlog",
       "to": "in_progress",
-      "time": "6 days ago"
+      "time": "7 days ago"
     },
     {
       "type": "created",
       "actor": "Boris",
       "task": "Mission Control Setup",
-      "time": "2 hours ago"
+      "time": "1 day ago"
     },
     {
       "type": "moved",
@@ -832,8 +845,8 @@
       "task": "Mission Control Setup",
       "from": "backlog",
       "to": "in_progress",
-      "time": "2 hours ago"
+      "time": "1 day ago"
     }
   ],
-  "lastUpdated": "2026-02-09T20:19:00Z"
+  "lastUpdated": "2026-02-10T08:05:00Z"
 }
