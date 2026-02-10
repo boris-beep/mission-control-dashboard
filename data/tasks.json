@@ -807,6 +807,21 @@
       ],
       "created": "2026-02-10T15:35:42.377Z",
       "updated": "2026-02-10T15:35:42.378Z"
+    },
+    {
+      "id": "task_1770738170976",
+      "title": "Build Redline Analysis System",
+      "description": "Complete contract comparison tool with diff engine, impact analysis, counter-proposal generator, and MC integration. Supports DOCX/PDF/TXT. Location: /bots/penny/redline-analysis/",
+      "status": "done",
+      "priority": "urgent",
+      "owner": "Penny",
+      "project": "contracts",
+      "tags": [
+        "contract",
+        "publishing"
+      ],
+      "created": "2026-02-10T15:42:50.976Z",
+      "updated": "2026-02-10T15:42:50.976Z"
     }
   ],
   "projects": [
