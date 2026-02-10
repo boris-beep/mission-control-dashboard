@@ -816,284 +816,6 @@
             color: var(--text-muted);
             font-size: 0.8rem;
         }
-    
-        /* === MOBILE RESPONSIVE === */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .sidebar-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 199;
-        }
-
-        .sidebar-overlay.visible {
-            display: block;
-        }
-
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .sidebar {
-                position: fixed;
-                left: -280px;
-                top: 0;
-                bottom: 0;
-                width: 280px;
-                z-index: 200;
-                transition: left 0.3s ease;
-            }
-
-            .sidebar.mobile-open {
-                left: 0;
-            }
-
-            header {
-                padding: 0.75rem 1rem;
-            }
-
-            .logo {
-                flex-shrink: 0;
-            }
-
-            .logo-text h1 {
-                font-size: 0.95rem;
-                white-space: nowrap;
-            }
-
-            .logo-text p {
-                display: none;
-            }
-
-            .header-stats {
-                gap: 0.75rem;
-            }
-
-            .stat-item {
-                min-width: 50px;
-            }
-
-            .stat-value {
-                font-size: 1.125rem;
-            }
-
-            .stat-label {
-                font-size: 0.6rem;
-            }
-
-            .status-badge {
-                padding: 0.375rem 0.75rem;
-                font-size: 0.75rem;
-            }
-
-            .btn-primary {
-                padding: 0.5rem 0.875rem;
-                font-size: 0.8rem;
-            }
-
-            /* Mission bar - better text wrapping */
-            .mission-bar {
-                padding: 1rem;
-            }
-
-            .mission-title {
-                margin-bottom: 0.5rem;
-            }
-
-            .mission-text {
-                font-size: 0.85rem;
-                line-height: 1.6;
-            }
-
-            /* Filters - horizontal scroll, no wrapping */
-            .filters-bar {
-                padding: 0.75rem 1rem;
-                overflow-x: auto;
-                overflow-y: hidden;
-                -webkit-overflow-scrolling: touch;
-                white-space: nowrap;
-            }
-
-            .filter-group {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                white-space: nowrap;
-            }
-
-            .filter-label {
-                flex-shrink: 0;
-            }
-
-            .filter-chip {
-                flex-shrink: 0;
-                white-space: nowrap;
-            }
-
-            /* Kanban - better spacing and readability */
-            .kanban-container {
-                padding: 1rem;
-            }
-
-            .kanban-board {
-                gap: 1rem;
-            }
-
-            .kanban-column {
-                min-width: 300px;
-                max-width: 300px;
-            }
-
-            .column-header {
-                padding: 1rem;
-            }
-
-            .column-title {
-                font-size: 0.8rem;
-            }
-
-            .column-body {
-                padding: 1rem;
-                gap: 1rem;
-            }
-
-            /* Task cards - more breathing room */
-            .task-card {
-                padding: 1.25rem;
-                min-height: auto;
-            }
-
-            .task-title {
-                font-size: 0.95rem;
-                margin-bottom: 0.75rem;
-                line-height: 1.5;
-            }
-
-            .task-description {
-                font-size: 0.85rem;
-                line-height: 1.6;
-                margin-bottom: 0.875rem;
-                -webkit-line-clamp: 3;
-                max-height: 4.2em;
-            }
-
-            .task-meta {
-                gap: 0.5rem;
-                margin-bottom: 0.875rem;
-            }
-
-            .task-tag,
-            .task-project {
-                font-size: 0.7rem;
-                padding: 0.25rem 0.625rem;
-            }
-
-            /* Modal - full screen friendly */
-            .modal-overlay {
-                padding: 1rem;
-            }
-
-            .modal {
-                padding: 1.5rem;
-                max-width: 100%;
-                max-height: 85vh;
-            }
-
-            .modal-title {
-                font-size: 1.125rem;
-                line-height: 1.4;
-            }
-
-            .modal-row {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .modal-field {
-                margin-bottom: 1rem;
-            }
-
-            .modal-input,
-            .modal-textarea,
-            .modal-select {
-                font-size: 16px; /* Prevents zoom on iOS */
-            }
-
-            /* Touch targets */
-            .agent-card {
-                min-height: 52px;
-                padding: 1rem;
-            }
-
-            .filter-chip {
-                padding: 0.625rem 1rem;
-                min-height: 44px;
-            }
-
-            .btn {
-                min-height: 44px;
-                padding: 0.625rem 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header-stats {
-                display: none;
-            }
-
-            .logo-text h1 {
-                font-size: 0.875rem;
-            }
-
-            .kanban-column {
-                min-width: 280px;
-                max-width: 280px;
-            }
-
-            .modal {
-                padding: 1.25rem;
-            }
-        }
-
-        @media (max-width: 768px) and (orientation: landscape) {
-            .sidebar {
-                width: 240px;
-                left: -240px;
-            }
-
-            .kanban-column {
-                min-width: 280px;
-                max-width: 280px;
-            }
-        }
-
-
-        @media (max-width: 480px) {
-            .header-stats {
-                display: none;
-            }
-
-            .kanban-column {
-                min-width: 260px;
-                max-width: 260px;
-            }
-        }
-
     </style>
 </head>
 <body>
@@ -1105,7 +827,6 @@
                 <p>Agent Operations Center</p>
             </div>
         </div>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
 
         <div class="header-stats">
             <div class="stat-item">
@@ -1131,7 +852,6 @@
         </div>
     </header>
 
-    <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleMobileMenu()"></div>
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-section">
@@ -1346,7 +1066,7 @@
         const AGENTS = [
             { id: 'boris', name: 'Boris', role: 'Master Controller', avatar: '🤖', status: 'live', lastActivity: '2 min ago', taskCount: 0 },
             { id: 'archie', name: 'Archie', role: 'Knowledge Scout', avatar: '🔍', status: 'live', lastActivity: '15 min ago', taskCount: 0 },
-            { id: 'penny', name: 'Penny', role: 'Rising', avatar: '🎵', status: 'active', lastActivity: 'Building contract generator', taskCount: 1 }
+            { id: 'penny', name: 'Penny', role: 'Personal Assistant', avatar: '🎵', status: 'idle', lastActivity: '2 hours ago', taskCount: 0 }
         ];
 
         const COLUMNS = [
@@ -1546,13 +1266,6 @@
             document.getElementById('completion-rate').textContent = completion + '%';
             document.getElementById('queue-count').textContent = activeTasks.length;
             document.getElementById('priority-count').textContent = allTasks.filter(t => t.priority === 'high').length;
-        }
-
-        function toggleMobileMenu() {
-            const sidebar = document.querySelector('.sidebar');
-            const overlay = document.getElementById('sidebar-overlay');
-            sidebar.classList.toggle('mobile-open');
-            overlay.classList.toggle('visible');
         }
 
         function toggleOpsSection(header) {

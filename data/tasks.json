@@ -699,6 +699,78 @@
       "createdAt": "2026-02-09T17:55:00Z",
       "completedAt": "2026-02-09T17:58:00Z",
       "agent": "boris"
+    },
+    {
+      "id": "task_015",
+      "title": "Red Wire Contract Generator - Telegram Conversational Interface",
+      "description": "Build Telegram conversational contract generator for Red Wire exclusive songwriter agreements. Penny asks questions via Telegram, generates DOCX + PDF contracts, emails to David. 11 variable fields, conditional bonus advance logic, number-to-words conversion.",
+      "status": "in_progress",
+      "project": "red-wire",
+      "priority": "high",
+      "tags": [
+        "contracts",
+        "automation",
+        "red-wire",
+        "penny"
+      ],
+      "subtasks": [
+        {
+          "id": "sub_001",
+          "title": "Build conversation state handler",
+          "done": false
+        },
+        {
+          "id": "sub_002",
+          "title": "Implement question sequence logic (10 questions)",
+          "done": false
+        },
+        {
+          "id": "sub_003",
+          "title": "Build number-to-words converter",
+          "done": false
+        },
+        {
+          "id": "sub_004",
+          "title": "Build DOCX generator with variable replacement",
+          "done": false
+        },
+        {
+          "id": "sub_005",
+          "title": "Implement conditional bonus advance logic",
+          "done": false
+        },
+        {
+          "id": "sub_006",
+          "title": "Build PDF generator",
+          "done": false
+        },
+        {
+          "id": "sub_007",
+          "title": "Build email delivery system",
+          "done": false
+        },
+        {
+          "id": "sub_008",
+          "title": "Test with sample data (John Smith example)",
+          "done": false
+        },
+        {
+          "id": "sub_009",
+          "title": "David tests with real contract data",
+          "done": false
+        }
+      ],
+      "dod": "David can message Penny, answer questions, receive generated DOCX + PDF contract via email within 60 minutes",
+      "comments": [
+        {
+          "id": "comment_001",
+          "author": "Boris",
+          "text": "Build approach confirmed: Telegram conversational interface (not web form). Simpler, works from phone, natural interaction. Build time: ~90 min.",
+          "timestamp": "2026-02-09T20:15:00Z"
+        }
+      ],
+      "createdAt": "2026-02-09T20:15:00Z",
+      "agent": "penny"
     }
   ],
   "projects": [
@@ -725,6 +797,12 @@
       "name": "Some Common Projects",
       "color": "#f59e0b",
       "icon": "\u2699\ufe0f"
+    },
+    {
+      "id": "red-wire",
+      "name": "Red Wire Publishing",
+      "color": "#dc2626",
+      "icon": "\ud83d\udcdc"
     }
   ],
   "activities": [
@@ -757,5 +835,5 @@
       "time": "2 hours ago"
     }
   ],
-  "lastUpdated": "2026-02-09T11:32:00Z"
+  "lastUpdated": "2026-02-09T20:19:00Z"
 }
