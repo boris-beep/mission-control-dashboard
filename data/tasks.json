@@ -792,6 +792,21 @@
       ],
       "created": "2026-02-10T14:55:36.842Z",
       "updated": "2026-02-10T14:55:36.843Z"
+    },
+    {
+      "id": "task_1770737742377",
+      "title": "Harvey Tadman - Exclusive Songwriter Agreement",
+      "description": "Contract generation complete. K advance, 25-year retention. Google Doc: https://docs.google.com/document/d/1y1j7lLIF85KH7b36S_ODssSpzItxDqivP7PLenJNZlY/edit",
+      "status": "done",
+      "priority": "high",
+      "owner": "Penny",
+      "project": "contracts",
+      "tags": [
+        "contract",
+        "publishing"
+      ],
+      "created": "2026-02-10T15:35:42.377Z",
+      "updated": "2026-02-10T15:35:42.378Z"
     }
   ],
   "projects": [
