@@ -1298,8 +1298,10 @@
                         <label class="modal-label">Assigned Agent</label>
                         <select class="modal-select" id="modal-agent">
                             <option value="boris">🤖 Boris</option>
-                            <option value="archie">🔍 Archie</option>
                             <option value="penny">🎵 Penny</option>
+                            <option value="sage">📊 Sage</option>
+                            <option value="vix">🎬 Vix</option>
+                            <option value="tim">📈 Tim</option>
                         </select>
                     </div>
                 </div>
@@ -1347,8 +1349,10 @@
     <script>
         const AGENTS = [
             { id: 'boris', name: 'Boris', role: 'Master Controller', avatar: '🤖', status: 'live', lastActivity: '2 min ago', taskCount: 0 },
-            { id: 'archie', name: 'Archie', role: 'Knowledge Scout', avatar: '🔍', status: 'live', lastActivity: '15 min ago', taskCount: 0 },
-            { id: 'penny', name: 'Penny', role: 'Rising', avatar: '🎵', status: 'active', lastActivity: 'Building contract generator', taskCount: 1 }
+            { id: 'penny', name: 'Penny', role: 'Contract Manager', avatar: '🎵', status: 'active', lastActivity: 'Building contract generator', taskCount: 1 },
+            { id: 'sage', name: 'Sage', role: 'SEO Specialist', avatar: '📊', status: 'pending', lastActivity: 'Not deployed', taskCount: 0 },
+            { id: 'vix', name: 'Vix', role: 'YouTube Producer', avatar: '🎬', status: 'pending', lastActivity: 'Not deployed', taskCount: 0 },
+            { id: 'tim', name: 'Tim', role: 'Trading Analyst', avatar: '📈', status: 'pending', lastActivity: 'Not deployed', taskCount: 0 }
         ];
 
         const COLUMNS = [
