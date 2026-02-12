@@ -1494,8 +1494,8 @@
                 document.getElementById('modal-subtasks-section').style.display = 'block';
                 const done = currentTask.subtasks.filter(s => s.done).length;
                 document.getElementById('subtask-progress').textContent = `${done}/${currentTask.subtasks.length}`;
-                document.getElementById('modal-subtasks').innerHTML = currentTask.subtasks.map(subtask => `
-                    <div class="subtask-item">
+                document.getElementById('modal-subtasks').innerHTML = currentTask.subtasks.map((subtask, index) => `
+                    <div class="subtask-item" onclick="toggleSubtask(${index})">
                         <div class="subtask-checkbox ${subtask.done ? 'done' : ''}"></div>
                         <div class="subtask-text ${subtask.done ? 'done' : ''}">${subtask.title}</div>
                     </div>
@@ -1505,6 +1505,25 @@
             }
 
             document.getElementById('modal-overlay').classList.add('visible');
+        }
+
+        function toggleSubtask(index) {
+            if (!currentTask || !currentTask.subtasks) return;
+            
+            currentTask.subtasks[index].done = !currentTask.subtasks[index].done;
+            
+            // Update the display
+            const done = currentTask.subtasks.filter(s => s.done).length;
+            document.getElementById('subtask-progress').textContent = `${done}/${currentTask.subtasks.length}`;
+            document.getElementById('modal-subtasks').innerHTML = currentTask.subtasks.map((subtask, i) => `
+                <div class="subtask-item" onclick="toggleSubtask(${i})">
+                    <div class="subtask-checkbox ${subtask.done ? 'done' : ''}"></div>
+                    <div class="subtask-text ${subtask.done ? 'done' : ''}">${subtask.title}</div>
+                </div>
+            `).join('');
+            
+            // Update progress bar in kanban
+            renderKanban();
         }
 
         function closeModal(event) {

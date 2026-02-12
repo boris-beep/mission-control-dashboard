@@ -213,95 +213,6 @@
       "createdAt": "2026-02-06T18:00:00Z"
     },
     {
-      "id": "task_004",
-      "title": "48-Hour API Cost Optimization Test",
-      "description": "Reduce API costs by 30% through ClawRouter integration, Archie optimization, caching, and heartbeat efficiency. Autonomous execution approved.",
-      "status": "backlog",
-      "project": "some-common",
-      "priority": "high",
-      "tags": [
-        "optimization",
-        "cost-reduction"
-      ],
-      "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "Baseline cost measurement",
-          "done": false
-        },
-        {
-          "id": "sub_002",
-          "title": "Research and implement ClawRouter",
-          "done": false
-        },
-        {
-          "id": "sub_003",
-          "title": "Optimize Archie X scanning patterns",
-          "done": false
-        },
-        {
-          "id": "sub_004",
-          "title": "Implement context caching (SOUL.md, AGENTS.md, HEARTBEAT.md)",
-          "done": false
-        },
-        {
-          "id": "sub_005",
-          "title": "Optimize heartbeat protocols",
-          "done": false
-        },
-        {
-          "id": "sub_006",
-          "title": "Measure final results and document learnings",
-          "done": false
-        }
-      ],
-      "dod": "30% API cost reduction achieved, documented approach for scaling",
-      "comments": [],
-      "createdAt": "2026-02-09T09:00:00Z"
-    },
-    {
-      "id": "task_005",
-      "title": "Piggy Bank Bot - Revenue Engine Setup",
-      "description": "Set up complete sales infrastructure using new skills: Apollo (lead gen) + GoHighLevel (CRM) + YC outreach templates + DM automation.",
-      "status": "backlog",
-      "project": "piggy-bank",
-      "priority": "high",
-      "tags": [
-        "revenue",
-        "sales"
-      ],
-      "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "Configure Apollo.io integration",
-          "done": false
-        },
-        {
-          "id": "sub_002",
-          "title": "Set up GoHighLevel CRM",
-          "done": false
-        },
-        {
-          "id": "sub_003",
-          "title": "Implement YC cold outreach templates",
-          "done": false
-        },
-        {
-          "id": "sub_004",
-          "title": "Configure DM automation workflows",
-          "done": false
-        },
-        {
-          "id": "sub_005",
-          "title": "Define first revenue vertical to target",
-          "done": false
-        }
-      ],
-      "dod": "Sales pipeline operational, first leads being processed",
-      "comments": [],
-      "createdAt": "2026-02-09T10:20:00Z"
-    },
-    {
       "id": "task_008",
       "title": "APEX - AI-Powered Music Rights Platform",
       "description": "Next-generation RightsHub replacement. AI-powered rights management platform that actively manages business operations, not just stores data. Target: 10K+ independent labels/managers globally.",
@@ -738,21 +649,6 @@
       "agent": "penny"
     },
     {
-      "id": "task_1770735336842",
-      "title": "Contract: Harvey Tadman",
-      "description": "Exclusive songwriter agreement - Smash Bro Music LLC - K advance - 25 year retention - PRS",
-      "status": "review",
-      "priority": "high",
-      "owner": "Penny",
-      "project": "contracts",
-      "tags": [
-        "contract",
-        "publishing"
-      ],
-      "created": "2026-02-10T14:55:36.842Z",
-      "updated": "2026-02-10T14:55:36.843Z"
-    },
-    {
       "id": "task_1770737742377",
       "title": "Harvey Tadman - Exclusive Songwriter Agreement",
       "description": "Contract generation complete. K advance, 25-year retention. Google Doc: https://docs.google.com/document/d/1y1j7lLIF85KH7b36S_ODssSpzItxDqivP7PLenJNZlY/edit",
@@ -852,5 +748,5 @@
       "time": "1 day ago"
     }
   ],
-  "lastUpdated": "2026-02-12T21:56:40.995Z"
+  "lastUpdated": "2026-02-12T22:00:56.388Z"
 }
