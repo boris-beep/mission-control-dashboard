@@ -213,53 +213,6 @@
       "createdAt": "2026-02-06T18:00:00Z"
     },
     {
-      "id": "task_003",
-      "title": "Build Songwriter Database (If Approved)",
-      "description": "Build searchable songwriter database from scratch. Phase 1: Foundation (20K tracks), Phase 2: Continuous growth, Phase 3: Search functionality.",
-      "status": "backlog",
-      "project": "piggy-bank",
-      "priority": "high",
-      "tags": [
-        "database",
-        "revenue"
-      ],
-      "subtasks": [
-        {
-          "id": "sub_001",
-          "title": "Set up PostgreSQL database on Railway",
-          "done": false
-        },
-        {
-          "id": "sub_002",
-          "title": "Design database schema (tracks, songwriters, mappings)",
-          "done": false
-        },
-        {
-          "id": "sub_003",
-          "title": "Build initial scanner (top 1000 per genre)",
-          "done": false
-        },
-        {
-          "id": "sub_004",
-          "title": "Integrate ACRCloud API (songwriter credits)",
-          "done": false
-        },
-        {
-          "id": "sub_005",
-          "title": "Build Friday release scanner",
-          "done": false
-        },
-        {
-          "id": "sub_006",
-          "title": "Build search endpoint",
-          "done": false
-        }
-      ],
-      "dod": "20K+ tracks with searchable songwriter credits, Friday scanner running automatically",
-      "comments": [],
-      "createdAt": "2026-02-09T11:00:00Z"
-    },
-    {
       "id": "task_004",
       "title": "48-Hour API Cost Optimization Test",
       "description": "Reduce API costs by 30% through ClawRouter integration, Archie optimization, caching, and heartbeat efficiency. Autonomous execution approved.",
@@ -899,5 +852,5 @@
       "time": "1 day ago"
     }
   ],
-  "lastUpdated": "2026-02-11T08:00:00Z"
+  "lastUpdated": "2026-02-12T21:56:40.995Z"
 }
