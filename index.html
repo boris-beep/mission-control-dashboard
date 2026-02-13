@@ -161,6 +161,7 @@
         .container {
             display: flex;
             height: calc(100vh - 60px);
+            min-width: 0;
         }
 
         /* Sidebar */
@@ -262,6 +263,11 @@
         .agent-status-indicator.idle {
             background: rgba(245, 158, 11, 0.15);
             color: var(--accent-yellow);
+        }
+
+        .agent-status-indicator.offline {
+            background: rgba(107, 114, 128, 0.2);
+            color: #9ca3af;
         }
 
         .agent-meta {
@@ -544,6 +550,171 @@
             color: var(--text-muted);
             font-size: 0.875rem;
         }
+
+
+        /* Squad Chat Panel */
+        .chat-panel {
+            width: 360px;
+            min-width: 320px;
+            background: var(--bg-secondary);
+            border-left: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(180deg, rgba(59, 130, 246, 0.12), rgba(6, 182, 212, 0.05));
+        }
+
+        .chat-title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.375rem;
+        }
+
+        .chat-title {
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .chat-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .chat-status {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .chat-feed {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.625rem;
+        }
+
+        .chat-empty {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 1.25rem 0.75rem;
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            background: var(--bg-card);
+        }
+
+        .chat-message {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-card);
+            padding: 0.625rem;
+        }
+
+        .chat-message-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .chat-agent {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .chat-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .chat-time {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+        }
+
+        .chat-badge {
+            font-size: 0.63rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            border-radius: 999px;
+            padding: 0.12rem 0.45rem;
+            border: 1px solid transparent;
+        }
+
+        .chat-type-work, .chat-type-response {
+            background: rgba(16, 185, 129, 0.14);
+            color: #34d399;
+            border-color: rgba(16, 185, 129, 0.28);
+        }
+
+        .chat-type-finding, .chat-type-idea {
+            background: rgba(59, 130, 246, 0.14);
+            color: #60a5fa;
+            border-color: rgba(59, 130, 246, 0.28);
+        }
+
+        .chat-type-coordination, .chat-type-system {
+            background: rgba(139, 92, 246, 0.14);
+            color: #a78bfa;
+            border-color: rgba(139, 92, 246, 0.28);
+        }
+
+        .chat-type-alert {
+            background: rgba(239, 68, 68, 0.16);
+            color: #f87171;
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        .chat-priority-critical, .chat-priority-high {
+            background: rgba(239, 68, 68, 0.14);
+            color: #f87171;
+            border-color: rgba(239, 68, 68, 0.28);
+        }
+
+        .chat-priority-medium {
+            background: rgba(245, 158, 11, 0.14);
+            color: #fbbf24;
+            border-color: rgba(245, 158, 11, 0.28);
+        }
+
+        .chat-priority-low {
+            background: rgba(156, 163, 175, 0.14);
+            color: #d1d5db;
+            border-color: rgba(156, 163, 175, 0.28);
+        }
+
+        .chat-message-text {
+            font-size: 0.82rem;
+            line-height: 1.45;
+            color: var(--text-primary);
+            word-break: break-word;
+        }
+
+        .chat-message-text .mention {
+            color: #93c5fd;
+            background: rgba(59, 130, 246, 0.18);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 4px;
+            padding: 0.05rem 0.25rem;
+            font-weight: 600;
+        }
+
 
         /* Modal */
         .modal-overlay {
@@ -844,6 +1015,19 @@
         }
 
         
+        @media (max-width: 1200px) {
+            .chat-panel {
+                width: 300px;
+                min-width: 280px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .chat-panel {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .mobile-menu-btn {
                 display: block;
@@ -1267,6 +1451,21 @@
                 </div>
             </div>
         </main>
+
+        <aside class="chat-panel">
+            <div class="chat-header">
+                <div class="chat-title-row">
+                    <span class="chat-title">Squad Chat</span>
+                    <span class="chat-status" id="chat-count">0 msgs</span>
+                </div>
+                <div class="chat-subtitle">Live feed · polling every 5 seconds · last 250 messages</div>
+                <div class="chat-status" id="chat-status">Connecting...</div>
+            </div>
+            <div class="chat-feed" id="chat-feed">
+                <div class="chat-empty">Loading squad messages...</div>
+            </div>
+        </aside>
+
     </div>
 
     <!-- Modal -->
@@ -1299,9 +1498,7 @@
                         <select class="modal-select" id="modal-agent">
                             <option value="boris">🤖 Boris</option>
                             <option value="penny">🎵 Penny</option>
-                            <option value="sage">📊 Sage</option>
                             <option value="vix">🎬 Vix</option>
-                            <option value="tim">📈 Tim</option>
                         </select>
                     </div>
                 </div>
@@ -1347,12 +1544,11 @@
     </div>
 
     <script>
+
         const AGENTS = [
-            { id: 'boris', name: 'Boris', role: 'Master Controller', avatar: '🤖', status: 'live', lastActivity: '2 min ago', taskCount: 0 },
-            { id: 'penny', name: 'Penny', role: 'Contract Manager', avatar: '🎵', status: 'active', lastActivity: 'Building contract generator', taskCount: 1 },
-            { id: 'sage', name: 'Sage', role: 'SEO Specialist', avatar: '📊', status: 'pending', lastActivity: 'Not deployed', taskCount: 0 },
-            { id: 'vix', name: 'Vix', role: 'YouTube Producer', avatar: '🎬', status: 'pending', lastActivity: 'Not deployed', taskCount: 0 },
-            { id: 'tim', name: 'Tim', role: 'Trading Analyst', avatar: '📈', status: 'pending', lastActivity: 'Not deployed', taskCount: 0 }
+            { id: 'boris', name: 'Boris', role: 'Master Controller', avatar: '🤖', status: 'offline', lastActivity: 'No activity yet', taskCount: 0 },
+            { id: 'penny', name: 'Penny', role: 'Contract Manager', avatar: '🎵', status: 'offline', lastActivity: 'No activity yet', taskCount: 0 },
+            { id: 'vix', name: 'Vix', role: 'YouTube Producer', avatar: '🎬', status: 'offline', lastActivity: 'No activity yet', taskCount: 0 }
         ];
 
         const COLUMNS = [
@@ -1363,20 +1559,26 @@
             { id: 'done', title: 'Done', color: 'done' }
         ];
 
+        const CHAT_FEED_URL = 'data/squad-chat.jsonl';
+        const CHAT_POLL_INTERVAL_MS = 5000;
+        const CHAT_RENDER_LIMIT = 250;
+
         let allTasks = [];
         let allProjects = [];
         let selectedAgent = null;
         let selectedProject = 'all';
         let currentTask = null;
+        let chatMessages = [];
+        let chatPollHandle = null;
 
         async function loadData() {
             try {
-                const response = await fetch('data/tasks.json');
+                const response = await fetch('data/tasks.json', { cache: 'no-store' });
                 const data = await response.json();
-                allTasks = data.tasks;
-                allProjects = data.projects;
-                
-                allTasks.forEach((task, index) => {
+                allTasks = data.tasks || [];
+                allProjects = data.projects || [];
+
+                allTasks.forEach((task) => {
                     if (!task.agent) {
                         task.agent = 'boris';
                     }
@@ -1387,39 +1589,130 @@
                 renderBotHealth();
                 updateStats();
             } catch (error) {
-                console.error('Failed to load data:', error);
+                console.error('Failed to load task data:', error);
             }
         }
 
-        function renderAgents() {
-            // Calculate task counts dynamically
-            AGENTS.forEach(agent => {
-                agent.taskCount = allTasks.filter(t => t.agent === agent.id).length;
+        async function loadChatData({ silent = false } = {}) {
+            try {
+                const response = await fetch(`${CHAT_FEED_URL}?t=${Date.now()}`, { cache: 'no-store' });
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const raw = await response.text();
+                chatMessages = raw
+                    .split('\n')
+                    .map((line) => line.trim())
+                    .filter(Boolean)
+                    .map((line) => {
+                        try {
+                            return JSON.parse(line);
+                        } catch (error) {
+                            return null;
+                        }
+                    })
+                    .filter(Boolean)
+                    .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
+                    .slice(-CHAT_RENDER_LIMIT);
+
+                updateAgentActivityFromChat();
+                renderChatMessages();
+                renderAgents();
+                renderBotHealth();
+                updateStats();
+
+                const statusEl = document.getElementById('chat-status');
+                if (statusEl) {
+                    statusEl.textContent = `Updated ${formatRelativeTime(new Date().toISOString())}`;
+                }
+            } catch (error) {
+                if (!silent) {
+                    console.error('Failed to load squad chat:', error);
+                }
+                const statusEl = document.getElementById('chat-status');
+                if (statusEl) {
+                    statusEl.textContent = 'Feed unavailable';
+                }
+            }
+        }
+
+        function startChatPolling() {
+            if (chatPollHandle) {
+                clearInterval(chatPollHandle);
+            }
+            chatPollHandle = setInterval(() => {
+                loadChatData({ silent: true });
+            }, CHAT_POLL_INTERVAL_MS);
+        }
+
+        function getAgentById(agentId) {
+            return AGENTS.find((agent) => agent.id === agentId);
+        }
+
+        function updateAgentActivityFromChat() {
+            const now = Date.now();
+            AGENTS.forEach((agent) => {
+                const latestMessage = [...chatMessages].reverse().find((msg) => (msg.agentId || '').toLowerCase() === agent.id);
+
+                if (!latestMessage || !latestMessage.timestamp) {
+                    agent.status = 'offline';
+                    agent.lastActivity = 'No squad activity';
+                    return;
+                }
+
+                const lastTs = new Date(latestMessage.timestamp).getTime();
+                const minutesAgo = Math.floor((now - lastTs) / 60000);
+
+                if (minutesAgo <= 15) {
+                    agent.status = 'live';
+                } else if (minutesAgo <= 180) {
+                    agent.status = 'idle';
+                } else {
+                    agent.status = 'offline';
+                }
+
+                agent.lastActivity = `${formatRelativeTime(latestMessage.timestamp)} • ${latestMessage.type || 'update'}`;
             });
+        }
+
+        function renderAgents() {
+            AGENTS.forEach((agent) => {
+                agent.taskCount = allTasks.filter((task) => task.agent === agent.id).length;
+            });
+
             const container = document.getElementById('agent-list');
-            container.innerHTML = AGENTS.map(agent => `
-                <div class="agent-card ${selectedAgent === agent.id ? 'active' : ''}" onclick="selectAgent('${agent.id}')">
-                    <div class="agent-header">
-                        <div class="agent-info">
-                            <div class="agent-avatar">${agent.avatar}</div>
-                            <div>
-                                <div class="agent-name">${agent.name}</div>
-                                <div class="agent-role">${agent.role}</div>
+            if (!container) return;
+
+            container.innerHTML = AGENTS.map((agent) => {
+                const statusClass = agent.status === 'live' ? 'live' : (agent.status === 'idle' ? 'idle' : 'offline');
+
+                return `
+                    <div class="agent-card ${selectedAgent === agent.id ? 'active' : ''}" onclick="selectAgent('${agent.id}')">
+                        <div class="agent-header">
+                            <div class="agent-info">
+                                <div class="agent-avatar">${agent.avatar}</div>
+                                <div>
+                                    <div class="agent-name">${agent.name}</div>
+                                    <div class="agent-role">${agent.role}</div>
+                                </div>
                             </div>
+                            <span class="agent-status-indicator ${statusClass}">${agent.status}</span>
                         </div>
-                        <span class="agent-status-indicator ${agent.status}">${agent.status}</span>
+                        <div class="agent-meta">
+                            <span>${agent.taskCount} tasks</span>
+                            <span>${agent.lastActivity}</span>
+                        </div>
                     </div>
-                    <div class="agent-meta">
-                        <span>${agent.taskCount} tasks</span>
-                        <span>${agent.lastActivity}</span>
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         function renderBotHealth() {
             const container = document.getElementById('bot-health-content');
-            container.innerHTML = AGENTS.map(agent => `
+            if (!container) return;
+
+            container.innerHTML = AGENTS.map((agent) => `
                 <div class="ops-item">
                     <div class="ops-item-title">${agent.avatar} ${agent.name} - ${agent.status.toUpperCase()}</div>
                     <div class="ops-item-detail">Last active: ${agent.lastActivity} • ${agent.taskCount} active tasks</div>
@@ -1429,9 +1722,10 @@
 
         function renderKanban() {
             const container = document.getElementById('kanban-board');
-            
-            container.innerHTML = COLUMNS.map(column => {
-                const filteredTasks = allTasks.filter(task => {
+            if (!container) return;
+
+            container.innerHTML = COLUMNS.map((column) => {
+                const filteredTasks = allTasks.filter((task) => {
                     const statusMatch = task.status === column.id;
                     const agentMatch = !selectedAgent || task.agent === selectedAgent;
                     const projectMatch = selectedProject === 'all' || task.project === selectedProject;
@@ -1448,7 +1742,7 @@
                             <span class="column-count">${filteredTasks.length}</span>
                         </div>
                         <div class="column-body">
-                            ${filteredTasks.length === 0 ? '<div class="empty-state">No tasks</div>' : filteredTasks.map(task => renderTaskCard(task)).join('')}
+                            ${filteredTasks.length === 0 ? '<div class="empty-state">No tasks</div>' : filteredTasks.map((task) => renderTaskCard(task)).join('')}
                         </div>
                     </div>
                 `;
@@ -1456,17 +1750,17 @@
         }
 
         function renderTaskCard(task) {
-            const progress = task.subtasks ? Math.round((task.subtasks.filter(s => s.done).length / task.subtasks.length) * 100) : 0;
-            const project = allProjects.find(p => p.id === task.project);
-            const agent = AGENTS.find(a => a.id === task.agent);
+            const progress = task.subtasks ? Math.round((task.subtasks.filter((s) => s.done).length / task.subtasks.length) * 100) : 0;
+            const project = allProjects.find((p) => p.id === task.project);
+            const agent = AGENTS.find((a) => a.id === task.agent);
 
             return `
                 <div class="task-card ${task.priority ? 'priority-' + task.priority : ''}" onclick='openTaskModal("${task.id}")'>
                     <div class="task-title">${task.title}</div>
-                    <div class="task-description">${task.description}</div>
+                    <div class="task-description">${task.description || ''}</div>
                     <div class="task-meta">
                         ${project ? `<span class="task-project project-${project.id}">${project.icon} ${project.name}</span>` : ''}
-                        ${task.tags.map(tag => `<span class="task-tag">${tag}</span>`).join('')}
+                        ${(task.tags || []).map((tag) => `<span class="task-tag">${tag}</span>`).join('')}
                     </div>
                     <div class="task-footer">
                         <div class="task-progress">
@@ -1479,20 +1773,20 @@
         }
 
         function openTaskModal(taskId) {
-            currentTask = allTasks.find(t => t.id === taskId);
+            currentTask = allTasks.find((task) => task.id === taskId);
             if (!currentTask) return;
 
             document.getElementById('modal-title').textContent = currentTask.title;
-            document.getElementById('modal-description').value = currentTask.description;
-            document.getElementById('modal-project').value = currentTask.project;
+            document.getElementById('modal-description').value = currentTask.description || '';
+            document.getElementById('modal-project').value = currentTask.project || 'infrastructure';
             document.getElementById('modal-agent').value = currentTask.agent || 'boris';
-            document.getElementById('modal-status').value = currentTask.status;
+            document.getElementById('modal-status').value = currentTask.status || 'backlog';
             document.getElementById('modal-priority').value = currentTask.priority || '';
             document.getElementById('modal-dod').value = currentTask.dod || '';
 
             if (currentTask.subtasks && currentTask.subtasks.length > 0) {
                 document.getElementById('modal-subtasks-section').style.display = 'block';
-                const done = currentTask.subtasks.filter(s => s.done).length;
+                const done = currentTask.subtasks.filter((s) => s.done).length;
                 document.getElementById('subtask-progress').textContent = `${done}/${currentTask.subtasks.length}`;
                 document.getElementById('modal-subtasks').innerHTML = currentTask.subtasks.map((subtask, index) => `
                     <div class="subtask-item" onclick="toggleSubtask(${index})">
@@ -1509,11 +1803,10 @@
 
         function toggleSubtask(index) {
             if (!currentTask || !currentTask.subtasks) return;
-            
+
             currentTask.subtasks[index].done = !currentTask.subtasks[index].done;
-            
-            // Update the display
-            const done = currentTask.subtasks.filter(s => s.done).length;
+            const done = currentTask.subtasks.filter((s) => s.done).length;
+
             document.getElementById('subtask-progress').textContent = `${done}/${currentTask.subtasks.length}`;
             document.getElementById('modal-subtasks').innerHTML = currentTask.subtasks.map((subtask, i) => `
                 <div class="subtask-item" onclick="toggleSubtask(${i})">
@@ -1521,8 +1814,7 @@
                     <div class="subtask-text ${subtask.done ? 'done' : ''}">${subtask.title}</div>
                 </div>
             `).join('');
-            
-            // Update progress bar in kanban
+
             renderKanban();
         }
 
@@ -1543,15 +1835,12 @@
             currentTask.priority = document.getElementById('modal-priority').value;
             currentTask.dod = document.getElementById('modal-dod').value;
 
-            // In a real app, this would POST to the server
             console.log('Task updated:', currentTask);
-            
+
             closeModal();
             renderAgents();
             renderKanban();
             updateStats();
-            
-            // Changes saved and UI updated
         }
 
         function selectAgent(agentId) {
@@ -1562,15 +1851,80 @@
         }
 
         function updateStats() {
-            const activeTasks = allTasks.filter(t => t.status === 'in_progress' || t.status === 'review');
-            const completedTasks = allTasks.filter(t => t.status === 'done');
-            const completion = Math.round((completedTasks.length / allTasks.length) * 100);
+            const activeTasks = allTasks.filter((task) => task.status === 'in_progress' || task.status === 'review');
+            const completedTasks = allTasks.filter((task) => task.status === 'done');
+            const completion = allTasks.length > 0 ? Math.round((completedTasks.length / allTasks.length) * 100) : 0;
+            const activeAgents = AGENTS.filter((agent) => agent.status !== 'offline').length;
 
-            document.getElementById('agents-active').textContent = AGENTS.filter(a => a.status === 'live').length;
+            document.getElementById('agents-active').textContent = activeAgents;
             document.getElementById('tasks-queue').textContent = activeTasks.length;
-            document.getElementById('completion-rate').textContent = completion + '%';
+            document.getElementById('completion-rate').textContent = `${completion}%`;
             document.getElementById('queue-count').textContent = activeTasks.length;
-            document.getElementById('priority-count').textContent = allTasks.filter(t => t.priority === 'high').length;
+            document.getElementById('priority-count').textContent = allTasks.filter((task) => task.priority === 'high').length;
+
+            const chatCountEl = document.getElementById('chat-count');
+            if (chatCountEl) {
+                chatCountEl.textContent = `${chatMessages.length} msgs`;
+            }
+        }
+
+        function renderChatMessages() {
+            const container = document.getElementById('chat-feed');
+            if (!container) return;
+
+            if (chatMessages.length === 0) {
+                container.innerHTML = '<div class="chat-empty">No squad messages yet.</div>';
+                return;
+            }
+
+            const lastMessages = chatMessages.slice(-CHAT_RENDER_LIMIT).reverse();
+            container.innerHTML = lastMessages.map((message) => {
+                const agent = getAgentById((message.agentId || '').toLowerCase());
+                const avatar = message.agentEmoji || (agent ? agent.avatar : '🛰️');
+                const name = message.agentName || (agent ? agent.name : message.agentId || 'Unknown');
+                const type = (message.type || 'system').toLowerCase();
+                const priority = (message.priority || 'medium').toLowerCase();
+                const safeText = highlightMentions(escapeHtml(message.text || ''));
+
+                return `
+                    <div class="chat-message">
+                        <div class="chat-message-header">
+                            <div class="chat-agent"><span>${avatar}</span><span>${name}</span></div>
+                            <div class="chat-meta">
+                                <span class="chat-badge chat-type-${type}">${type}</span>
+                                <span class="chat-badge chat-priority-${priority}">${priority}</span>
+                                <span class="chat-time">${formatRelativeTime(message.timestamp)}</span>
+                            </div>
+                        </div>
+                        <div class="chat-message-text">${safeText}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function formatRelativeTime(isoString) {
+            if (!isoString) return 'unknown';
+            const ts = new Date(isoString).getTime();
+            if (Number.isNaN(ts)) return 'unknown';
+
+            const diffSec = Math.max(0, Math.floor((Date.now() - ts) / 1000));
+            if (diffSec < 60) return 'just now';
+            if (diffSec < 3600) return `${Math.floor(diffSec / 60)}m ago`;
+            if (diffSec < 86400) return `${Math.floor(diffSec / 3600)}h ago`;
+            return `${Math.floor(diffSec / 86400)}d ago`;
+        }
+
+        function escapeHtml(value) {
+            return value
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#39;');
+        }
+
+        function highlightMentions(value) {
+            return value.replace(/(^|\s)@([a-z0-9_-]+)/ig, '$1<span class="mention">@$2</span>');
         }
 
         function toggleMobileMenu() {
@@ -1584,17 +1938,19 @@
             header.parentElement.classList.toggle('expanded');
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.filter-chip').forEach(chip => {
+        document.addEventListener('DOMContentLoaded', async function() {
+            document.querySelectorAll('.filter-chip').forEach((chip) => {
                 chip.addEventListener('click', function() {
-                    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                    document.querySelectorAll('.filter-chip').forEach((c) => c.classList.remove('active'));
                     this.classList.add('active');
                     selectedProject = this.dataset.filter;
                     renderKanban();
                 });
             });
 
-            loadData();
+            await loadData();
+            await loadChatData();
+            startChatPolling();
         });
     </script>
 </body>
