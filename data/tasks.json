@@ -677,6 +677,21 @@
       ],
       "created": "2026-02-10T15:42:50.976Z",
       "updated": "2026-02-10T15:42:50.976Z"
+    },
+    {
+      "id": "task_1770942061805",
+      "title": "Contract: Rob Etherson",
+      "description": "Exclusive songwriter - £25K advance + £10K bonus, 17 year retention, PRS/IPI TBD",
+      "status": "review",
+      "priority": "high",
+      "owner": "Penny",
+      "project": "contracts",
+      "tags": [
+        "contract",
+        "publishing"
+      ],
+      "created": "2026-02-13T00:21:01.805Z",
+      "updated": "2026-02-13T00:21:01.806Z"
     }
   ],
   "projects": [
