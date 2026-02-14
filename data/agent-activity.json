@@ -1,46 +1,52 @@
 {
-  "updatedAt": "2026-02-14T14:10:05.196Z",
+  "updatedAt": "2026-02-14T14:20:04.781Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-14T14:10:00.425Z",
+      "lastSeen": "2026-02-14T14:20:00.423Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771078200425
+        "sessionUpdatedAtMs": 1771078800423
       }
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-14T12:00:14.414Z",
-      "source": "cron-check-inbox",
+      "lastSeen": "2026-02-14T14:14:46.181Z",
+      "source": "session-sync",
       "type": "system",
       "priority": "low",
-      "text": "Cron INBOX check started.",
-      "metadata": {}
+      "text": "Session activity detected",
+      "metadata": {
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771078486181
+      }
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-14T07:00:14.636Z",
-      "source": "cron-video-production",
+      "lastSeen": "2026-02-14T14:17:14.739Z",
+      "source": "session-sync",
       "type": "system",
       "priority": "low",
-      "text": "Nightly video production started.",
-      "metadata": {}
+      "text": "Session activity detected",
+      "metadata": {
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771078634739
+      }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-14T14:03:16.360Z",
+      "lastSeen": "2026-02-14T14:15:04.951Z",
       "source": "system-monitor",
       "type": "system",
       "priority": "low",
-      "text": "Cron complete: Squad Chat Publish Sync (2026-02-14T14:03:09.305Z).",
+      "text": "Cron complete: Squad Chat Publish Sync (2026-02-14T14:10:00.085Z).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771077796360_yrs6j9",
+        "messageId": "msg_1771078504951_5styo2",
         "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
         "schedule": "*/10 * * * *",
         "lastDurationMs": 0
@@ -62,14 +68,14 @@
     },
     "security": {
       "agentId": "security",
-      "lastSeen": "2026-02-14T10:02:31.231Z",
-      "source": "daily-skillguard-scan",
+      "lastSeen": "2026-02-14T14:18:25.537Z",
+      "source": "daily-health-check",
       "type": "alert",
       "priority": "critical",
-      "text": "🛡️ Security Scan - Feb 14, 2026 Scanned: 157 skills 🚨 THREAT DETECTED High-risk skills found: - abm-outbound (critical): Credential file access - apollo (critical): Credential file access - flight-tracker (critical): Credential file access - flightclaw (critical): Hidden file detected - ga4-analytics (critical): Credential file access - highlevel (critical): Possible gradual escalation: early content appears innocent, later content contains instruction-like patterns - lead-hunter (critical): Suspicious network activity - legaldoc-ai (critical): Credential file access - +21 additional flagged skills Action: Review and remove immediately",
+      "text": "🛡️ Skill Scan - 29 threats detected High-risk skills: - abm-outbound (critical): Credential file access - apollo (critical): Credential file access - flight-tracker (critical): Credential file access - flightclaw (critical): Hidden file detected - ga4-analytics (critical): Credential file access - highlevel (critical): Possible gradual escalation: early content appears innocent, later content contains instruction-like patterns - lead-hunter (critical): Suspicious network activity - legaldoc-ai (critical): Credential file access - +21 additional flagged skills Action: Review and remove immediately",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771063351231_1zgrmv",
+        "messageId": "msg_1771078705537_v7npxm",
         "scanned": 157,
         "threats": 29
       }
