@@ -208,6 +208,12 @@
           "author": "Boris",
           "text": "Business plan complete. Apple Music charts + MusicBrainz validated as viable MVP approach. Ready for review.",
           "timestamp": "2026-02-09T10:00:00Z"
+        },
+        {
+          "id": "c_1771035558991",
+          "author": "Boris",
+          "text": "CANCELLED: Decision made to merge co-writer placement tracking into APEX platform. APEX will handle DDEX feeds + songwriter placement in single unified platform. No separate product needed.",
+          "createdAt": "2026-02-13T20:19:18.991923Z"
         }
       ],
       "createdAt": "2026-02-06T18:00:00Z"
