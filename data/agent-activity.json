@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-14T00:20:05.616Z",
+  "updatedAt": "2026-02-14T00:30:07.682Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-14T00:20:00.394Z",
+      "lastSeen": "2026-02-14T00:30:00.411Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771028400394
+        "sessionUpdatedAtMs": 1771029000411
       }
     },
     "penny": {
@@ -39,15 +39,17 @@
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-14T00:00:28.699Z",
+      "lastSeen": "2026-02-14T00:30:07.682Z",
       "source": "system-monitor",
-      "type": "alert",
-      "priority": "critical",
-      "text": "Gateway process missing (previous PID 83863).",
+      "type": "system",
+      "priority": "low",
+      "text": "Cron complete: Squad Chat Publish Sync (2026-02-14T00:30:00.058Z).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771027228699_pb42ou",
-        "previousGatewayPid": "83863"
+        "messageId": "msg_1771029007682_nsvn60",
+        "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
+        "schedule": "*/10 * * * *",
+        "lastDurationMs": 0
       }
     }
   }
