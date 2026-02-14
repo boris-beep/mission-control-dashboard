@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-14T18:10:05.757Z",
+  "updatedAt": "2026-02-14T18:21:01.474Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-14T18:10:00.054Z",
+      "lastSeen": "2026-02-14T18:20:57.613Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771092600054
+        "sessionUpdatedAtMs": 1771093257613
       }
     },
     "codex": {
@@ -39,29 +39,29 @@
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-14T18:00:13.569Z",
+      "lastSeen": "2026-02-14T18:19:19.768Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771092013569
+        "sessionUpdatedAtMs": 1771093159768
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-14T18:01:11.549Z",
-      "source": "system-monitor",
+      "lastSeen": "2026-02-14T18:19:32.699Z",
+      "source": "mention-router",
       "type": "system",
       "priority": "low",
-      "text": "Cron complete: Squad Chat Publish Sync (2026-02-14T17:50:13.685Z).",
+      "text": "📬 Routed @boris mention from @system (msg msg_1771089528296_sncfxa).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771092071549_u5zrox",
-        "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
-        "schedule": "*/10 * * * *",
-        "lastDurationMs": 13150
+        "messageId": "msg_1771089528296_sncfxa",
+        "sender": "system",
+        "mention": "boris",
+        "targetAgentId": "main"
       }
     },
     "finance": {
