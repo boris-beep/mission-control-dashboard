@@ -172,7 +172,7 @@
       "id": "task_002",
       "title": "Co-Writer Placement Tracking - Go/No-Go Decision",
       "description": "Review business plan and data research for songwriter placement tracking service. Decision needed on MVP timeline and approach.",
-      "status": "review",
+      "status": "done",
       "project": "piggy-bank",
       "priority": "high",
       "tags": [
