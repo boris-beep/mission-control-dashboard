@@ -1458,7 +1458,7 @@
                     <span class="chat-title">Squad Chat</span>
                     <span class="chat-status" id="chat-count">0 msgs</span>
                 </div>
-                <div class="chat-subtitle">Live feed · polling every 5 seconds · last 250 messages</div>
+                <div class="chat-subtitle">Live feed · polling every 5 seconds · hybrid status (chat + activity)</div>
                 <div class="chat-status" id="chat-status">Connecting...</div>
             </div>
             <div class="chat-feed" id="chat-feed">
@@ -1547,8 +1547,11 @@
 
         const AGENTS = [
             { id: 'boris', name: 'Boris', role: 'Master Controller', avatar: '🤖', status: 'offline', lastActivity: 'No activity yet', taskCount: 0 },
-            { id: 'penny', name: 'Penny', role: 'Contract Manager', avatar: '🎵', status: 'offline', lastActivity: 'No activity yet', taskCount: 0 },
-            { id: 'vix', name: 'Vix', role: 'YouTube Producer', avatar: '🎬', status: 'offline', lastActivity: 'No activity yet', taskCount: 0 }
+            { id: 'penny', name: 'Penny', role: 'Contract Manager', avatar: '💼', status: 'offline', lastActivity: 'No activity yet', taskCount: 0 },
+            { id: 'vix', name: 'Vix', role: 'YouTube Producer', avatar: '🎬', status: 'offline', lastActivity: 'No activity yet', taskCount: 0 },
+            { id: 'finance', name: 'Finance Bot', role: 'Cost Tracker', avatar: '💰', status: 'offline', lastActivity: 'No activity yet', taskCount: 0 },
+            { id: 'security', name: 'Security Bot', role: 'Vulnerability Scanner', avatar: '🛡️', status: 'offline', lastActivity: 'No activity yet', taskCount: 0 },
+            { id: 'sage', name: 'Sage', role: 'SEO & Content', avatar: '🌿', status: 'offline', lastActivity: 'No activity yet', taskCount: 0 }
         ];
 
         const COLUMNS = [
@@ -1560,8 +1563,11 @@
         ];
 
         const CHAT_FEED_URL = 'data/squad-chat.jsonl';
+        const ACTIVITY_FEED_URL = 'data/agent-activity.json';
         const CHAT_POLL_INTERVAL_MS = 5000;
         const CHAT_RENDER_LIMIT = 250;
+        const LIVE_THRESHOLD_MINUTES = 10;
+        const IDLE_THRESHOLD_MINUTES = 60;
 
         let allTasks = [];
         let allProjects = [];
@@ -1569,7 +1575,11 @@
         let selectedProject = 'all';
         let currentTask = null;
         let chatMessages = [];
+        let agentActivityFeed = { updatedAt: null, agents: {} };
         let chatPollHandle = null;
+        let chatPollFailures = 0;
+        let chatPollInFlight = false;
+        let lastChatFingerprint = null;
 
         async function loadData() {
             try {
@@ -1593,28 +1603,77 @@
             }
         }
 
-        async function loadChatData({ silent = false } = {}) {
+        function parseChatFeed(raw) {
+            const lines = raw
+                .split('\n')
+                .map((line) => line.trim())
+                .filter(Boolean);
+
+            const messages = [];
+            let dropped = 0;
+
+            lines.forEach((line) => {
+                try {
+                    messages.push(JSON.parse(line));
+                } catch (error) {
+                    dropped += 1;
+                }
+            });
+
+            const newest = messages[messages.length - 1] || null;
+            const fingerprint = `${lines.length}:${newest ? (newest.id || newest.timestamp || 'unknown') : 'none'}`;
+
+            return {
+                messages,
+                dropped,
+                fingerprint,
+                lineCount: lines.length
+            };
+        }
+
+        async function loadAgentActivity({ silent = true } = {}) {
             try {
-                const response = await fetch(`${CHAT_FEED_URL}?t=${Date.now()}`, { cache: 'no-store' });
+                const response = await fetch(`${ACTIVITY_FEED_URL}?t=${Date.now()}`, { cache: 'no-store' });
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}`);
                 }
 
-                const raw = await response.text();
-                chatMessages = raw
-                    .split('\n')
-                    .map((line) => line.trim())
-                    .filter(Boolean)
-                    .map((line) => {
-                        try {
-                            return JSON.parse(line);
-                        } catch (error) {
-                            return null;
-                        }
-                    })
-                    .filter(Boolean)
-                    .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
-                    .slice(-CHAT_RENDER_LIMIT);
+                const data = await response.json();
+                if (data && typeof data === 'object' && data.agents && typeof data.agents === 'object') {
+                    agentActivityFeed = data;
+                }
+            } catch (error) {
+                if (!silent) {
+                    console.error('Failed to load agent activity feed:', error);
+                }
+            }
+        }
+
+        async function loadChatData({ silent = false } = {}) {
+            const statusEl = document.getElementById('chat-status');
+
+            try {
+                const [chatResponse] = await Promise.all([
+                    fetch(`${CHAT_FEED_URL}?t=${Date.now()}`, { cache: 'no-store' }),
+                    loadAgentActivity({ silent: true })
+                ]);
+
+                if (!chatResponse.ok) {
+                    throw new Error(`HTTP ${chatResponse.status}`);
+                }
+
+                const raw = await chatResponse.text();
+                const parsed = parseChatFeed(raw);
+                const hasChanged = parsed.fingerprint !== lastChatFingerprint;
+
+                lastChatFingerprint = parsed.fingerprint;
+                chatPollFailures = 0;
+
+                if (hasChanged) {
+                    chatMessages = parsed.messages
+                        .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp))
+                        .slice(-CHAT_RENDER_LIMIT);
+                }
 
                 updateAgentActivityFromChat();
                 renderChatMessages();
@@ -1622,17 +1681,22 @@
                 renderBotHealth();
                 updateStats();
 
-                const statusEl = document.getElementById('chat-status');
                 if (statusEl) {
-                    statusEl.textContent = `Updated ${formatRelativeTime(new Date().toISOString())}`;
+                    const baseStatus = hasChanged
+                        ? `Updated ${formatRelativeTime(new Date().toISOString())}`
+                        : `No new messages (${formatRelativeTime(new Date().toISOString())})`;
+
+                    statusEl.textContent = parsed.dropped > 0
+                        ? `${baseStatus} · ${parsed.dropped} malformed lines skipped`
+                        : baseStatus;
                 }
             } catch (error) {
+                chatPollFailures += 1;
                 if (!silent) {
                     console.error('Failed to load squad chat:', error);
                 }
-                const statusEl = document.getElementById('chat-status');
                 if (statusEl) {
-                    statusEl.textContent = 'Feed unavailable';
+                    statusEl.textContent = `Feed unavailable (retry ${chatPollFailures})`;
                 }
             }
         }
@@ -1641,8 +1705,18 @@
             if (chatPollHandle) {
                 clearInterval(chatPollHandle);
             }
-            chatPollHandle = setInterval(() => {
-                loadChatData({ silent: true });
+
+            chatPollHandle = setInterval(async () => {
+                if (chatPollInFlight) {
+                    return;
+                }
+
+                chatPollInFlight = true;
+                try {
+                    await loadChatData({ silent: true });
+                } finally {
+                    chatPollInFlight = false;
+                }
             }, CHAT_POLL_INTERVAL_MS);
         }
 
@@ -1652,27 +1726,59 @@
 
         function updateAgentActivityFromChat() {
             const now = Date.now();
-            AGENTS.forEach((agent) => {
-                const latestMessage = [...chatMessages].reverse().find((msg) => (msg.agentId || '').toLowerCase() === agent.id);
 
-                if (!latestMessage || !latestMessage.timestamp) {
+            AGENTS.forEach((agent) => {
+                const latestMessage = [...chatMessages]
+                    .reverse()
+                    .find((msg) => (msg.agentId || '').toLowerCase() === agent.id);
+
+                const feedEntry = agentActivityFeed
+                    && agentActivityFeed.agents
+                    && agentActivityFeed.agents[agent.id]
+                    ? agentActivityFeed.agents[agent.id]
+                    : null;
+
+                const candidateEvents = [];
+
+                if (latestMessage && latestMessage.timestamp) {
+                    candidateEvents.push({
+                        source: 'chat',
+                        ts: new Date(latestMessage.timestamp).getTime(),
+                        type: latestMessage.type || 'update',
+                        text: latestMessage.text || ''
+                    });
+                }
+
+                if (feedEntry && feedEntry.lastSeen) {
+                    candidateEvents.push({
+                        source: feedEntry.source || 'activity',
+                        ts: new Date(feedEntry.lastSeen).getTime(),
+                        type: feedEntry.type || 'activity',
+                        text: feedEntry.text || ''
+                    });
+                }
+
+                const validEvents = candidateEvents.filter((event) => Number.isFinite(event.ts));
+                if (validEvents.length === 0) {
                     agent.status = 'offline';
-                    agent.lastActivity = 'No squad activity';
+                    agent.lastActivity = 'No activity';
                     return;
                 }
 
-                const lastTs = new Date(latestMessage.timestamp).getTime();
-                const minutesAgo = Math.floor((now - lastTs) / 60000);
+                validEvents.sort((a, b) => b.ts - a.ts);
+                const latest = validEvents[0];
+                const minutesAgo = Math.floor((now - latest.ts) / 60000);
 
-                if (minutesAgo <= 15) {
+                if (minutesAgo <= LIVE_THRESHOLD_MINUTES) {
                     agent.status = 'live';
-                } else if (minutesAgo <= 180) {
+                } else if (minutesAgo <= IDLE_THRESHOLD_MINUTES) {
                     agent.status = 'idle';
                 } else {
                     agent.status = 'offline';
                 }
 
-                agent.lastActivity = `${formatRelativeTime(latestMessage.timestamp)} • ${latestMessage.type || 'update'}`;
+                const sourceLabel = latest.source === 'chat' ? latest.type : `${latest.type} (${latest.source})`;
+                agent.lastActivity = `${formatRelativeTime(new Date(latest.ts).toISOString())} • ${sourceLabel}`;
             });
         }
 
