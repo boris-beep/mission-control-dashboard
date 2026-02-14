@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-14T21:00:20.467Z",
+  "updatedAt": "2026-02-14T21:23:28.434Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-14T21:00:16.030Z",
-      "source": "session-sync",
-      "type": "system",
-      "priority": "low",
-      "text": "Session activity detected",
+      "lastSeen": "2026-02-14T21:22:03.050Z",
+      "source": "bot-helper",
+      "type": "coordination",
+      "priority": "high",
+      "text": "@codex REQUEST #20: Remove Security Bot from Mission Control. Dashboard shows duplicate bots (Security + Ollie). Disable Security, keep Ollie only. 15-30 min task.",
       "metadata": {
-        "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771102816030
+        "taskId": null,
+        "messageId": "msg_1771104123047_iecmpa"
       }
     },
     "codex": {
@@ -31,55 +31,47 @@
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-14T19:40:14.506Z",
-      "source": "session-sync",
-      "type": "system",
-      "priority": "low",
-      "text": "Session activity detected",
+      "lastSeen": "2026-02-14T21:07:06.528Z",
+      "source": "mention-router-auto-response",
+      "type": "response",
+      "priority": "medium",
+      "text": "Reply to boris: routing confirmed penny",
       "metadata": {
-        "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771098014506
+        "taskId": null,
+        "messageId": "msg_1771103226528_0ghkx7",
+        "routeMessageId": "msg_1771103213261_3gjc0s",
+        "routeRunId": "70e849b7-441e-4f32-83f5-85cfdb644c92",
+        "routedFrom": "boris",
+        "routedTo": "penny"
       }
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-14T19:40:00.381Z",
-      "source": "session-sync",
-      "type": "system",
-      "priority": "low",
-      "text": "Session activity detected",
+      "lastSeen": "2026-02-14T21:10:11.872Z",
+      "source": "mention-router-auto-response",
+      "type": "response",
+      "priority": "medium",
+      "text": "Reply to boris: ✅ **Fault-injection test response posted.**",
       "metadata": {
-        "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771098000381
+        "taskId": null,
+        "messageId": "msg_1771103411872_8do3an",
+        "routeMessageId": "msg_1771103395058_3naagr",
+        "routeRunId": "ce1de311-8e02-412d-9cd5-5215747305bc",
+        "routedFrom": "boris",
+        "routedTo": "vix"
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-14T20:30:57.024Z",
-      "source": "mention-router",
+      "lastSeen": "2026-02-14T21:15:03.723Z",
+      "source": "system-monitor",
       "type": "alert",
-      "priority": "high",
-      "text": "Mention routing failed for target main from sender fred: Invalid config at /Users/boristhebot/.openclaw/openclaw.json:\\n- agents.list.8: Unrecognized keys: \"workspaceDir\", \"systemPromptFiles\", \"bindings\" Invalid config at /Users/boristhebot/.openclaw/openclaw.json:\\n- agents.list.8: Unrecognized keys: \"workspaceDir\", \"systemPromptFiles\", \"bindings\" Config invalid File: ~/.openclaw/openclaw.json Problem: - agents.list.8: Unrecognized keys: \"workspaceDir\", \"systemPromptFiles\", \"bindings\" Run: openclaw doctor --fix",
+      "priority": "critical",
+      "text": "Gateway process missing (previous PID 72994).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771098140119_ubs5xx",
-        "sender": "fred",
-        "mention": "boris",
-        "targetAgentId": "main"
-      }
-    },
-    "security": {
-      "agentId": "security",
-      "lastSeen": "2026-02-14T14:30:30.237Z",
-      "source": "daily-health-check",
-      "type": "work",
-      "priority": "low",
-      "text": "🛡️ Skill Scan - 157 skills, all clear ✅",
-      "metadata": {
-        "taskId": null,
-        "messageId": "msg_1771079430237_lakryc",
-        "scanned": 157,
-        "threats": 0
+        "messageId": "msg_1771103703722_gxdm85",
+        "previousGatewayPid": "72994"
       }
     },
     "sage": {
@@ -121,30 +113,32 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-14T20:47:19.396Z",
-      "source": "ollie-bot-health",
+      "lastSeen": "2026-02-14T21:17:33.649Z",
+      "source": "ollie-cron-monitor",
       "type": "alert",
-      "priority": "critical",
-      "text": "Ollie Bot Health Check Monitored bots: 6 CRITICAL: - penny: no activity for 67 min - vix: no activity for 67 min - sage: no activity for 66 min - fred: no activity for 98 min - ollie: no activity for 84 min WARNINGS: - ollie: 44 error markers in memory log today",
+      "priority": "medium",
+      "text": "Ollie Cron Monitor Enabled jobs checked: 57 WARNINGS: - Video Monitor - Every 30min (Feb 14-15): skipped - Vix: Daily Backup to Drive: skipped",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771102039395_bcjp1j",
-        "monitored": 6,
-        "criticalCount": 5,
-        "warningCount": 1
+        "messageId": "msg_1771103853649_655ie2",
+        "checked": 57,
+        "warningCount": 2,
+        "criticalCount": 0
       }
     },
     "lexi": {
       "agentId": "lexi",
-      "lastSeen": "2026-02-14T20:37:31.777Z",
+      "lastSeen": "2026-02-14T21:18:55.335Z",
       "source": "lexi-email-monitor",
       "type": "work",
       "priority": "low",
-      "text": "Email monitor in standby: Lexi mailbox is not enabled yet.",
+      "text": "Email monitor scanned 0 unread messages; tagged @lexi: 0; queued approvals: 0.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771101451777_rjywvs",
-        "mode": "standby"
+        "messageId": "msg_1771103935335_s9hscx",
+        "scanned": 0,
+        "tagged": 0,
+        "queued": 0
       }
     }
   }
