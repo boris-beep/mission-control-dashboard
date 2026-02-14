@@ -1,28 +1,32 @@
 {
-  "updatedAt": "2026-02-14T18:21:01.474Z",
+  "updatedAt": "2026-02-14T18:30:14.617Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-14T18:20:57.613Z",
+      "lastSeen": "2026-02-14T18:30:00.053Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771093257613
+        "sessionUpdatedAtMs": 1771093800053
       }
     },
     "codex": {
       "agentId": "codex",
-      "lastSeen": "2026-02-14T16:00:00.000Z",
-      "source": "external",
-      "type": "system",
-      "priority": "low",
-      "text": "Codex virtual profile initialized for Mission Control visibility.",
+      "name": "Codex",
+      "emoji": "🛠️",
+      "status": "idle",
+      "lastSeen": "2026-02-14T18:27:29.332Z",
+      "sessionKey": "external",
+      "source": "request14-smoke",
+      "type": "work",
+      "priority": "medium",
+      "text": "REQUEST #14 codex visibility smoke: profile active in Mission Control.",
       "metadata": {
-        "sessionKey": "external",
-        "role": "DevOps & Infrastructure"
+        "taskId": null,
+        "messageId": "msg_1771093649331_55mx9h"
       }
     },
     "penny": {
@@ -39,29 +43,29 @@
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-14T18:19:19.768Z",
+      "lastSeen": "2026-02-14T18:26:39.972Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771093159768
+        "sessionUpdatedAtMs": 1771093599972
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-14T18:19:32.699Z",
-      "source": "mention-router",
+      "lastSeen": "2026-02-14T18:30:14.617Z",
+      "source": "system-monitor",
       "type": "system",
       "priority": "low",
-      "text": "📬 Routed @boris mention from @system (msg msg_1771089528296_sncfxa).",
+      "text": "Cron complete: Squad Chat Publish Sync (2026-02-14T18:21:15.577Z).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771089528296_sncfxa",
-        "sender": "system",
-        "mention": "boris",
-        "targetAgentId": "main"
+        "messageId": "msg_1771093814617_85x1uf",
+        "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
+        "schedule": "*/10 * * * *",
+        "lastDurationMs": 15443
       }
     },
     "finance": {
