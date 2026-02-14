@@ -1,16 +1,28 @@
 {
-  "updatedAt": "2026-02-14T17:50:04.123Z",
+  "updatedAt": "2026-02-14T18:01:11.549Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-14T17:50:00.067Z",
+      "lastSeen": "2026-02-14T18:00:51.614Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771091400067
+        "sessionUpdatedAtMs": 1771092051614
+      }
+    },
+    "codex": {
+      "agentId": "codex",
+      "lastSeen": "2026-02-14T16:00:00.000Z",
+      "source": "external",
+      "type": "system",
+      "priority": "low",
+      "text": "Codex virtual profile initialized for Mission Control visibility.",
+      "metadata": {
+        "sessionKey": "external",
+        "role": "DevOps & Infrastructure"
       }
     },
     "penny": {
@@ -27,29 +39,29 @@
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-14T17:20:46.535Z",
+      "lastSeen": "2026-02-14T18:00:13.569Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771089646535
+        "sessionUpdatedAtMs": 1771092013569
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-14T17:45:13.032Z",
+      "lastSeen": "2026-02-14T18:01:11.549Z",
       "source": "system-monitor",
       "type": "system",
       "priority": "low",
-      "text": "Cron complete: Squad Chat Publish Sync (2026-02-14T17:40:15.344Z).",
+      "text": "Cron complete: Squad Chat Publish Sync (2026-02-14T17:50:13.685Z).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771091113032_yz5p08",
+        "messageId": "msg_1771092071549_u5zrox",
         "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
         "schedule": "*/10 * * * *",
-        "lastDurationMs": 15415
+        "lastDurationMs": 13150
       }
     },
     "finance": {
