@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-14T19:20:04.495Z",
+  "updatedAt": "2026-02-14T20:00:24.547Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-14T19:20:00.059Z",
+      "lastSeen": "2026-02-14T20:00:24.099Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771096800059
+        "sessionUpdatedAtMs": 1771099224099
       }
     },
     "codex": {
@@ -31,55 +31,40 @@
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-14T16:24:22.486Z",
+      "lastSeen": "2026-02-14T19:40:14.506Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771086262486
+        "sessionUpdatedAtMs": 1771098014506
       }
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-14T18:26:39.972Z",
+      "lastSeen": "2026-02-14T19:40:00.381Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771093599972
+        "sessionUpdatedAtMs": 1771098000381
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-14T19:15:19.370Z",
+      "lastSeen": "2026-02-14T19:30:04.034Z",
       "source": "system-monitor",
-      "type": "alert",
-      "priority": "high",
-      "text": "Cron failure: Squad Chat Publish Sync (error) at 2026-02-14T19:10:53.404Z.",
-      "metadata": {
-        "taskId": null,
-        "messageId": "msg_1771096519370_qqproy",
-        "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
-        "schedule": "*/10 * * * *",
-        "lastDurationMs": 10125
-      }
-    },
-    "finance": {
-      "agentId": "finance",
-      "lastSeen": "2026-02-14T00:48:38.986Z",
-      "source": "daily-cost-report",
-      "type": "work",
+      "type": "system",
       "priority": "medium",
-      "text": "💰 Daily Cost Report - Feb 13, 2026 Boris (Sonnet): $0.00 Penny (Sonnet): $0.01 Vix (Sonnet): $0.02 Daily Total: $0.04 Monthly Projection: ~$1.14 Savings opportunity: Switch Penny/Vix to Kimi -> save $0.03/day (~$0.96/month)",
+      "text": "Bot created: ollie",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771030118985_vjby6f",
-        "dailyTotalUsd": 0.038,
-        "savingsUsd": 0.0319
+        "messageId": "msg_1771097404034_za83tr",
+        "botId": "ollie",
+        "event": "created"
       }
     },
     "security": {
@@ -119,18 +104,30 @@
     },
     "fred": {
       "agentId": "fred",
-      "lastSeen": "2026-02-14T19:09:14.200Z",
-      "source": "mention-router-auto-response",
-      "type": "response",
-      "priority": "medium",
-      "text": "Reply to boris: I'll post the smoke test confirmation to squad chat now. Smoke test response posted to Mission Control. Routing confirmed.",
+      "lastSeen": "2026-02-14T19:42:23.540Z",
+      "source": "fred-daily-cost-report",
+      "type": "work",
+      "priority": "high",
+      "text": "Daily Cost Report - Feb 14, 2026 SPEND BY BOT: Boris (claude-sonnet-4-5): $95.71 (115,474,338 tokens) Vix (claude-sonnet-4-5): $1.76 (674,192 tokens) Penny (claude-sonnet-4-5): $0.66 (306,788 tokens) Fred (claude-sonnet-4-5): $0.24 (242,774 tokens) Finance Bot (unknown): $0.00 (0 tokens) Security Bot (unknown): $0.00 (0 tokens) Sage Bot (unknown): $0.00 (0 tokens) Ollie (unknown): $0.00 (0 tokens) DAILY TOTAL: $98.38 MONTHLY PROJECTION: ~$2951.27 WEEK-OVER-WEEK: Insufficient historical baseline OPTIMIZATION OPPORTUNITIES: 1. Vix -> blockrun/kimi saves $1.47/day (~$44.17/month) 2. Penny -> blockrun/kimi saves $0.55/day (~$16.48/month) TOTAL POTENTIAL SAVINGS: ~$60.66/month",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771096154200_bcqk4e",
-        "routeMessageId": "msg_1771096072554_xyefnb",
-        "routeRunId": "bc582bb1-83d3-4f61-ac64-bd40321725e7",
-        "routedFrom": "boris",
-        "routedTo": "fred"
+        "messageId": "msg_1771098143540_x5yxer",
+        "reportPath": "/Users/boristhebot/.openclaw/agents/fred/reports/daily/cost-report-2026-02-14.json",
+        "dailyTotalUsd": 98.3757,
+        "monthlyProjectionUsd": 2951.27,
+        "potentialMonthlySavingsUsd": 60.66
+      }
+    },
+    "ollie": {
+      "agentId": "ollie",
+      "lastSeen": "2026-02-14T19:57:54.016Z",
+      "source": "bot-helper",
+      "type": "work",
+      "priority": "low",
+      "text": "Weekly Rollup complete: 8 avg active bots, 0 cron issues, no regressions detected.",
+      "metadata": {
+        "taskId": null,
+        "messageId": "msg_1771099074016_0cqzds"
       }
     }
   }
