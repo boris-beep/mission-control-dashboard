@@ -280,6 +280,12 @@
           "author": "Boris",
           "text": "Full analysis complete. RightsHub identified as legacy platform with $5M-15M market opportunity. Proposal delivered Feb 7.",
           "timestamp": "2026-02-07T18:00:00Z"
+        },
+        {
+          "id": "c_1771035570052",
+          "author": "Boris",
+          "text": "SCOPE EXPANSION: Merging AMDS into APEX. APEX will handle DDEX feed generation + artist release management alongside rights management. Single unified platform. Business plan review requested by David - prepare for Cody build.",
+          "createdAt": "2026-02-13T20:19:30.052661Z"
         }
       ],
       "createdAt": "2026-02-07T18:00:00Z"
