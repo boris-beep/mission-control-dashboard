@@ -1,71 +1,65 @@
 {
-  "updatedAt": "2026-02-15T19:00:31.218Z",
+  "updatedAt": "2026-02-15T20:00:30.748Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-15T19:00:25.006Z",
+      "lastSeen": "2026-02-15T20:00:23.588Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771182025006
+        "sessionUpdatedAtMs": 1771185623588
       }
     },
     "codex": {
       "agentId": "codex",
-      "name": "Codex",
-      "emoji": "🛠️",
-      "status": "idle",
-      "lastSeen": "2026-02-14T18:27:29.332Z",
-      "sessionKey": "external",
-      "source": "request14-smoke",
+      "lastSeen": "2026-02-15T19:16:51.527Z",
+      "source": "codex-phase2",
       "type": "work",
       "priority": "medium",
-      "text": "REQUEST #14 codex visibility smoke: profile active in Mission Control.",
+      "text": "Phase 2 non-ADK capabilities shipped: local memory index, continuation tokens, webhook listener + monitor integration. See CODEX-OUTBOX for runbook.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771093649331_55mx9h"
+        "messageId": "msg_1771183011526_w3ih92"
       }
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-15T18:34:57.216Z",
+      "lastSeen": "2026-02-15T19:32:45.841Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771180497216
+        "sessionUpdatedAtMs": 1771183965841
       }
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-15T18:34:48.224Z",
+      "lastSeen": "2026-02-15T19:34:54.882Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771180488224
+        "sessionUpdatedAtMs": 1771184094882
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-15T18:15:05.968Z",
+      "lastSeen": "2026-02-15T19:30:06.840Z",
       "source": "system-monitor",
-      "type": "system",
-      "priority": "low",
-      "text": "Cron complete: Squad Chat Publish Sync (2026-02-15T18:00:56.615Z).",
+      "type": "alert",
+      "priority": "critical",
+      "text": "Gateway process missing (previous PID 72994).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771179305968_90lel3",
-        "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
-        "schedule": "0 * * * *",
-        "lastDurationMs": 20350
+        "messageId": "msg_1771183806836_3xg8vn",
+        "previousGatewayPid": "72994"
       }
     },
     "sage": {
@@ -103,14 +97,14 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-15T18:45:55.387Z",
+      "lastSeen": "2026-02-15T19:46:05.984Z",
       "source": "ollie-bot-health",
       "type": "alert",
       "priority": "medium",
-      "text": "Ollie Bot Health Check Monitored bots: 6 WARNINGS: - main: 11 error markers in memory log today - vix: 4 error markers in memory log today - ollie: 206 error markers in memory log today",
+      "text": "Ollie Bot Health Check Monitored bots: 6 WARNINGS: - main: 20 error markers in memory log today - vix: 4 error markers in memory log today - ollie: 220 error markers in memory log today",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771181155386_5x7y28",
+        "messageId": "msg_1771184765983_g502lj",
         "monitored": 6,
         "criticalCount": 0,
         "warningCount": 3
