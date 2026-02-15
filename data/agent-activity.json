@@ -1,65 +1,67 @@
 {
-  "updatedAt": "2026-02-15T20:00:30.748Z",
+  "updatedAt": "2026-02-15T21:00:26.899Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-15T20:00:23.588Z",
+      "lastSeen": "2026-02-15T21:00:20.727Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771185623588
+        "sessionUpdatedAtMs": 1771189220727
       }
     },
     "codex": {
       "agentId": "codex",
-      "lastSeen": "2026-02-15T19:16:51.527Z",
-      "source": "codex-phase2",
+      "lastSeen": "2026-02-15T20:48:20.536Z",
+      "source": "codex-project-merge",
       "type": "work",
       "priority": "medium",
-      "text": "Phase 2 non-ADK capabilities shipped: local memory index, continuation tokens, webhook listener + monitor integration. See CODEX-OUTBOX for runbook.",
+      "text": "Mission Control updated: piggy-bank merged into Some Common (🐷) and top project filters now auto-list all active projects including contracts.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771183011526_w3ih92"
+        "messageId": "msg_1771188500535_hxkk56"
       }
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-15T19:32:45.841Z",
+      "lastSeen": "2026-02-15T20:38:52.965Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771183965841
+        "sessionUpdatedAtMs": 1771187932965
       }
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-15T19:34:54.882Z",
+      "lastSeen": "2026-02-15T20:58:54.600Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771184094882
+        "sessionUpdatedAtMs": 1771189134600
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-15T19:30:06.840Z",
+      "lastSeen": "2026-02-15T20:15:05.455Z",
       "source": "system-monitor",
-      "type": "alert",
-      "priority": "critical",
-      "text": "Gateway process missing (previous PID 72994).",
+      "type": "system",
+      "priority": "low",
+      "text": "Cron complete: Squad Chat Publish Sync (2026-02-15T20:00:56.024Z).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771183806836_3xg8vn",
-        "previousGatewayPid": "72994"
+        "messageId": "msg_1771186505454_wpk0g8",
+        "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
+        "schedule": "0 * * * *",
+        "lastDurationMs": 15487
       }
     },
     "sage": {
@@ -97,14 +99,14 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-15T19:46:05.984Z",
+      "lastSeen": "2026-02-15T20:46:09.237Z",
       "source": "ollie-bot-health",
       "type": "alert",
       "priority": "medium",
-      "text": "Ollie Bot Health Check Monitored bots: 6 WARNINGS: - main: 20 error markers in memory log today - vix: 4 error markers in memory log today - ollie: 220 error markers in memory log today",
+      "text": "Ollie Bot Health Check Monitored bots: 6 WARNINGS: - main: 20 error markers in memory log today - vix: 4 error markers in memory log today - ollie: 233 error markers in memory log today",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771184765983_g502lj",
+        "messageId": "msg_1771188369235_xpze0q",
         "monitored": 6,
         "criticalCount": 0,
         "warningCount": 3
