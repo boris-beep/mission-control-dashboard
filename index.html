@@ -1641,6 +1641,7 @@
         const CHAT_RENDER_LIMIT = 250;
         const LIVE_THRESHOLD_MINUTES = 10;
         const IDLE_THRESHOLD_MINUTES = 60;
+        const TASK_OVERRIDES_STORAGE_KEY = 'mc-task-overrides-v1';
 
         let allTasks = [];
         let allProjects = [];
@@ -1653,6 +1654,140 @@
         let chatPollFailures = 0;
         let chatPollInFlight = false;
         let lastChatFingerprint = null;
+        let taskOverrides = {};
+
+        function getBrowserStorage() {
+            try {
+                return window.localStorage || null;
+            } catch (error) {
+                return null;
+            }
+        }
+
+        function loadTaskOverridesFromStorage() {
+            const storage = getBrowserStorage();
+            if (!storage) return {};
+
+            try {
+                const raw = storage.getItem(TASK_OVERRIDES_STORAGE_KEY);
+                if (!raw) return {};
+                const parsed = JSON.parse(raw);
+                return parsed && typeof parsed === 'object' ? parsed : {};
+            } catch (error) {
+                console.warn('Failed to parse saved task overrides:', error);
+                return {};
+            }
+        }
+
+        function saveTaskOverridesToStorage() {
+            const storage = getBrowserStorage();
+            if (!storage) return;
+
+            try {
+                storage.setItem(TASK_OVERRIDES_STORAGE_KEY, JSON.stringify(taskOverrides));
+            } catch (error) {
+                console.warn('Failed to persist task overrides:', error);
+            }
+        }
+
+        function cloneSubtasks(subtasks) {
+            if (!Array.isArray(subtasks)) return undefined;
+            return subtasks.map((subtask) => ({
+                id: subtask.id,
+                title: subtask.title,
+                done: Boolean(subtask.done)
+            }));
+        }
+
+        function applyTaskOverrides(taskList) {
+            if (!Array.isArray(taskList)) return;
+
+            const activeTaskIds = new Set(taskList.map((task) => task.id));
+            taskList.forEach((task) => {
+                const override = taskOverrides[task.id];
+                if (!override || typeof override !== 'object') {
+                    return;
+                }
+
+                if (typeof override.description === 'string') task.description = override.description;
+                if (typeof override.project === 'string') task.project = override.project;
+                if (typeof override.agent === 'string') task.agent = override.agent;
+                if (typeof override.status === 'string') task.status = override.status;
+                if (typeof override.priority === 'string') task.priority = override.priority;
+                if (typeof override.dod === 'string') task.dod = override.dod;
+                if (Array.isArray(override.subtasks)) task.subtasks = cloneSubtasks(override.subtasks);
+            });
+
+            Object.keys(taskOverrides).forEach((taskId) => {
+                if (!activeTaskIds.has(taskId)) {
+                    delete taskOverrides[taskId];
+                }
+            });
+        }
+
+        function persistTaskOverride(task) {
+            if (!task || !task.id) return;
+
+            taskOverrides[task.id] = {
+                description: task.description || '',
+                project: task.project || 'infrastructure',
+                agent: task.agent || 'boris',
+                status: task.status || 'backlog',
+                priority: task.priority || '',
+                dod: task.dod || '',
+                subtasks: cloneSubtasks(task.subtasks),
+                savedAt: new Date().toISOString()
+            };
+
+            saveTaskOverridesToStorage();
+        }
+
+        function getProjectOptions() {
+            if (Array.isArray(allProjects) && allProjects.length > 0) {
+                return allProjects.map((project) => ({
+                    id: project.id,
+                    name: project.name || project.id,
+                    icon: project.icon || '📁'
+                }));
+            }
+
+            return [
+                { id: 'infrastructure', name: 'Infrastructure', icon: '🔧' },
+                { id: 'circuit-group', name: 'Circuit Group / AYITA', icon: '🎵' },
+                { id: 'piggy-bank', name: 'Piggy Bank (Revenue)', icon: '🐷' },
+                { id: 'some-common', name: 'Some Common Projects', icon: '⚙️' },
+                { id: 'red-wire', name: 'Red Wire Publishing', icon: '📜' }
+            ];
+        }
+
+        function syncTaskModalOptions(task = null) {
+            const projectSelect = document.getElementById('modal-project');
+            const agentSelect = document.getElementById('modal-agent');
+            if (!projectSelect || !agentSelect) return;
+
+            const projectOptions = getProjectOptions();
+            const projectValues = new Set(projectOptions.map((project) => project.id));
+            if (task && task.project && !projectValues.has(task.project)) {
+                projectOptions.push({ id: task.project, name: task.project, icon: '📁' });
+            }
+
+            projectSelect.innerHTML = projectOptions
+                .map((project) => `<option value="${project.id}">${project.icon} ${project.name}</option>`)
+                .join('');
+
+            const agentOptions = AGENTS.map((agent) => ({
+                id: agent.id,
+                label: `${agent.avatar} ${agent.name}`
+            }));
+            const agentValues = new Set(agentOptions.map((agent) => agent.id));
+            if (task && task.agent && !agentValues.has(task.agent)) {
+                agentOptions.push({ id: task.agent, label: `🛰️ ${task.agent}` });
+            }
+
+            agentSelect.innerHTML = agentOptions
+                .map((agent) => `<option value="${agent.id}">${agent.label}</option>`)
+                .join('');
+        }
 
         async function loadData() {
             try {
@@ -1666,6 +1801,8 @@
                         task.agent = 'boris';
                     }
                 });
+                applyTaskOverrides(allTasks);
+                syncTaskModalOptions();
 
                 renderAgents();
                 renderKanban();
@@ -1954,6 +2091,7 @@
         function openTaskModal(taskId) {
             currentTask = allTasks.find((task) => task.id === taskId);
             if (!currentTask) return;
+            syncTaskModalOptions(currentTask);
 
             document.getElementById('modal-title').textContent = currentTask.title;
             document.getElementById('modal-description').value = currentTask.description || '';
@@ -1994,6 +2132,7 @@
                 </div>
             `).join('');
 
+            persistTaskOverride(currentTask);
             renderKanban();
         }
 
@@ -2013,6 +2152,7 @@
             currentTask.status = document.getElementById('modal-status').value;
             currentTask.priority = document.getElementById('modal-priority').value;
             currentTask.dod = document.getElementById('modal-dod').value;
+            persistTaskOverride(currentTask);
 
             console.log('Task updated:', currentTask);
 
@@ -2146,6 +2286,8 @@
         }
 
         document.addEventListener('DOMContentLoaded', async function() {
+            taskOverrides = loadTaskOverridesFromStorage();
+            syncTaskModalOptions();
             document.querySelectorAll('.filter-chip').forEach((chip) => {
                 chip.addEventListener('click', function() {
                     document.querySelectorAll('.filter-chip').forEach((c) => c.classList.remove('active'));
