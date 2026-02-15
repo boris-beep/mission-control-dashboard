@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-15T04:00:19.039Z",
+  "updatedAt": "2026-02-15T05:00:37.074Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-15T04:00:14.637Z",
+      "lastSeen": "2026-02-15T05:00:32.709Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771128014637
+        "sessionUpdatedAtMs": 1771131632709
       }
     },
     "codex": {
@@ -31,41 +31,41 @@
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-14T21:31:19.327Z",
+      "lastSeen": "2026-02-15T04:34:03.379Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771104679327
+        "sessionUpdatedAtMs": 1771130043379
       }
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-15T03:36:47.493Z",
+      "lastSeen": "2026-02-15T04:34:32.462Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771126607493
+        "sessionUpdatedAtMs": 1771130072462
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-15T03:15:04.531Z",
+      "lastSeen": "2026-02-15T04:15:04.872Z",
       "source": "system-monitor",
       "type": "system",
       "priority": "low",
-      "text": "Cron complete: Squad Chat Publish Sync (2026-02-15T03:00:42.689Z).",
+      "text": "Cron complete: Squad Chat Publish Sync (2026-02-15T04:00:49.138Z).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771125304531_ki97fg",
+        "messageId": "msg_1771128904871_2900bq",
         "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
         "schedule": "0 * * * *",
-        "lastDurationMs": 16457
+        "lastDurationMs": 16320
       }
     },
     "sage": {
@@ -86,26 +86,31 @@
     },
     "fred": {
       "agentId": "fred",
-      "lastSeen": "2026-02-14T21:30:49.674Z",
-      "source": "bot-helper",
-      "type": "work",
-      "priority": "low",
-      "text": "Cost monitor check complete: 0 alerts, all thresholds OK.",
+      "lastSeen": "2026-02-15T04:07:16.044Z",
+      "source": "fred-cost-monitor",
+      "type": "alert",
+      "priority": "medium",
+      "text": "EFFICIENCY ALERT: Penny could save $1.08/day by moving to blockrun/kimi.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771104649674_ofn16o"
+        "messageId": "msg_1771128436043_7ky7py",
+        "avg7Usd": 0,
+        "todayUsd": 185.4914,
+        "projectedMonthlyUsd": 5564.74,
+        "budgetUsd": 600,
+        "alertKey": "efficiency-penny"
       }
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-15T03:46:57.822Z",
+      "lastSeen": "2026-02-15T04:46:43.052Z",
       "source": "ollie-cron-monitor",
       "type": "finding",
       "priority": "medium",
-      "text": "Pattern detected: Video Monitor - Every 30min (Feb 14-15): 28 failures in last 24h; Vix: Daily Backup to Drive: 28 failures in last 24h; Sage: Daily Backup to Drive: 3 failures in last 24h; Fred: Daily Backup to Drive: 3 failures in last 24h; Ollie: Daily Backup to Drive: 3 failures in last 24h",
+      "text": "Pattern detected: Video Monitor - Every 30min (Feb 14-15): 32 failures in last 24h; Vix: Daily Backup to Drive: 32 failures in last 24h; Sage: Daily Backup to Drive: 7 failures in last 24h; Fred: Daily Backup to Drive: 7 failures in last 24h; Ollie: Daily Backup to Drive: 7 failures in last 24h",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771127217822_pdbkmn",
+        "messageId": "msg_1771130803052_xhnzod",
         "patterns": 5
       }
     },
