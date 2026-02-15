@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-15T17:00:31.971Z",
+  "updatedAt": "2026-02-15T18:00:27.229Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-15T17:00:28.682Z",
+      "lastSeen": "2026-02-15T18:00:23.002Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771174828682
+        "sessionUpdatedAtMs": 1771178423002
       }
     },
     "codex": {
@@ -31,41 +31,41 @@
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-15T16:37:03.724Z",
+      "lastSeen": "2026-02-15T17:34:43.944Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771173423724
+        "sessionUpdatedAtMs": 1771176883944
       }
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-15T16:36:53.793Z",
+      "lastSeen": "2026-02-15T17:34:35.132Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771173413793
+        "sessionUpdatedAtMs": 1771176875132
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-15T16:15:11.360Z",
+      "lastSeen": "2026-02-15T17:15:04.771Z",
       "source": "system-monitor",
       "type": "system",
       "priority": "low",
-      "text": "Cron complete: Squad Chat Publish Sync (2026-02-15T16:00:56.112Z).",
+      "text": "Cron complete: Squad Chat Publish Sync (2026-02-15T17:00:52.696Z).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771172111360_e9tldl",
+        "messageId": "msg_1771175704771_rs5yos",
         "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
         "schedule": "0 * * * *",
-        "lastDurationMs": 19189
+        "lastDurationMs": 25140
       }
     },
     "sage": {
@@ -103,17 +103,14 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-15T16:45:49.998Z",
-      "source": "ollie-bot-health",
-      "type": "alert",
-      "priority": "medium",
-      "text": "Ollie Bot Health Check Monitored bots: 6 WARNINGS: - main: 5 error markers in memory log today - vix: 4 error markers in memory log today - ollie: 173 error markers in memory log today",
+      "lastSeen": "2026-02-15T17:46:33.601Z",
+      "source": "bot-helper",
+      "type": "work",
+      "priority": "low",
+      "text": "Gateway health check complete - 0 critical, 0 warnings. All systems nominal.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771173949992_hw1ieq",
-        "monitored": 6,
-        "criticalCount": 0,
-        "warningCount": 3
+        "messageId": "msg_1771177593600_1348x3"
       }
     },
     "lexi": {
