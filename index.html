@@ -326,6 +326,14 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-chip-list {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
         .filter-label {
@@ -505,6 +513,7 @@
         .project-circuit-group { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
         .project-piggy-bank { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
         .project-some-common { background: rgba(245, 158, 11, 0.15); color: var(--accent-yellow); }
+        .project-contracts { background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); }
 
         .task-footer {
             display: flex;
@@ -1416,12 +1425,9 @@
             <div class="filters-bar">
                 <div class="filter-group">
                     <span class="filter-label">Project:</span>
-                    <span class="filter-chip active" data-filter="all">All Projects</span>
-                    <span class="filter-chip" data-filter="infrastructure">🔧 Infrastructure</span>
-                    <span class="filter-chip" data-filter="circuit-group">🎵 Circuit Group</span>
-                    <span class="filter-chip" data-filter="piggy-bank">🐷 Piggy Bank</span>
-                    <span class="filter-chip" data-filter="some-common">⚙️ Some Common Projects</span>
-                    <span class="filter-chip" data-filter="red-wire">📜 Red Wire Publishing</span>
+                    <div class="filter-chip-list" id="project-filter-chips">
+                        <span class="filter-chip active" data-filter="all">All Projects</span>
+                    </div>
                 </div>
             </div>
 
@@ -1566,8 +1572,8 @@
                         <select class="modal-select" id="modal-project">
                             <option value="infrastructure">🔧 Infrastructure</option>
                             <option value="circuit-group">🎵 Circuit Group / AYITA</option>
-                            <option value="piggy-bank">🐷 Piggy Bank (Revenue)</option>
-                            <option value="some-common">⚙️ Some Common Projects</option>
+                            <option value="some-common">🐷 Some Common Projects</option>
+                            <option value="contracts">📄 Contracts</option>
                             <option value="red-wire">📜 Red Wire Publishing</option>
                         </select>
                     </div>
@@ -1649,6 +1655,13 @@
         const LIVE_THRESHOLD_MINUTES = 10;
         const IDLE_THRESHOLD_MINUTES = 60;
         const TASK_OVERRIDES_STORAGE_KEY = 'mc-task-overrides-v1';
+        const PROJECT_MERGE_MAP = {
+            'piggy-bank': 'some-common'
+        };
+        const PROJECT_VISUAL_OVERRIDES = {
+            'some-common': { name: 'Some Common Projects', icon: '🐷' },
+            'contracts': { name: 'Contracts', icon: '📄' }
+        };
 
         let allTasks = [];
         let allProjects = [];
@@ -1662,6 +1675,12 @@
         let chatPollInFlight = false;
         let lastChatFingerprint = null;
         let taskOverrides = {};
+
+        function normalizeProjectId(projectId) {
+            const normalized = String(projectId || '').trim();
+            if (!normalized) return 'infrastructure';
+            return PROJECT_MERGE_MAP[normalized] || normalized;
+        }
 
         function getBrowserStorage() {
             try {
@@ -1717,7 +1736,7 @@
                 }
 
                 if (typeof override.description === 'string') task.description = override.description;
-                if (typeof override.project === 'string') task.project = override.project;
+                if (typeof override.project === 'string') task.project = normalizeProjectId(override.project);
                 if (typeof override.agent === 'string') task.agent = override.agent;
                 if (typeof override.status === 'string') task.status = override.status;
                 if (typeof override.priority === 'string') task.priority = override.priority;
@@ -1737,7 +1756,7 @@
 
             taskOverrides[task.id] = {
                 description: task.description || '',
-                project: task.project || 'infrastructure',
+                project: normalizeProjectId(task.project || 'infrastructure'),
                 agent: task.agent || 'boris',
                 status: task.status || 'backlog',
                 priority: task.priority || '',
@@ -1750,21 +1769,73 @@
         }
 
         function getProjectOptions() {
-            if (Array.isArray(allProjects) && allProjects.length > 0) {
-                return allProjects.map((project) => ({
-                    id: project.id,
-                    name: project.name || project.id,
-                    icon: project.icon || '📁'
-                }));
+            const map = new Map();
+            const addProject = (id, name, icon, order = 999) => {
+                const normalizedId = normalizeProjectId(id);
+                const visualOverride = PROJECT_VISUAL_OVERRIDES[normalizedId] || {};
+                const existing = map.get(normalizedId);
+                const preferredName = (typeof name === 'string' && name.trim() && name.trim() !== normalizedId)
+                    ? name.trim()
+                    : null;
+                const preferredIcon = (typeof icon === 'string' && icon.trim() && icon.trim() !== '📁')
+                    ? icon.trim()
+                    : null;
+                const entry = {
+                    id: normalizedId,
+                    name: visualOverride.name || preferredName || (existing && existing.name) || normalizedId,
+                    icon: visualOverride.icon || preferredIcon || (existing && existing.icon) || '📁',
+                    order: existing ? Math.min(existing.order, order) : order
+                };
+                map.set(normalizedId, entry);
+            };
+
+            allProjects.forEach((project, index) => {
+                addProject(project.id, project.name, project.icon, index);
+            });
+
+            allTasks.forEach((task, index) => {
+                addProject(task.project, task.project, '📁', 200 + index);
+            });
+
+            if (map.size === 0) {
+                addProject('infrastructure', 'Infrastructure', '🔧', 0);
+                addProject('circuit-group', 'Circuit Group / AYITA', '🎵', 1);
+                addProject('some-common', 'Some Common Projects', '🐷', 2);
+                addProject('contracts', 'Contracts', '📄', 3);
+                addProject('red-wire', 'Red Wire Publishing', '📜', 4);
             }
 
-            return [
-                { id: 'infrastructure', name: 'Infrastructure', icon: '🔧' },
-                { id: 'circuit-group', name: 'Circuit Group / AYITA', icon: '🎵' },
-                { id: 'piggy-bank', name: 'Piggy Bank (Revenue)', icon: '🐷' },
-                { id: 'some-common', name: 'Some Common Projects', icon: '⚙️' },
-                { id: 'red-wire', name: 'Red Wire Publishing', icon: '📜' }
+            return Array.from(map.values())
+                .sort((a, b) => (a.order - b.order) || a.name.localeCompare(b.name))
+                .map(({ id, name, icon }) => ({ id, name, icon }));
+        }
+
+        function renderProjectFilters() {
+            const container = document.getElementById('project-filter-chips');
+            if (!container) return;
+
+            const projectOptions = getProjectOptions();
+            const available = new Set(projectOptions.map((project) => project.id));
+            if (selectedProject !== 'all' && !available.has(selectedProject)) {
+                selectedProject = 'all';
+            }
+
+            const chips = [
+                `<span class="filter-chip ${selectedProject === 'all' ? 'active' : ''}" data-filter="all">All Projects</span>`,
+                ...projectOptions.map((project) => (
+                    `<span class="filter-chip ${selectedProject === project.id ? 'active' : ''}" data-filter="${project.id}">${project.icon} ${project.name}</span>`
+                ))
             ];
+            container.innerHTML = chips.join('');
+
+            container.querySelectorAll('.filter-chip').forEach((chip) => {
+                chip.addEventListener('click', () => {
+                    selectedProject = chip.dataset.filter || 'all';
+                    renderProjectFilters();
+                    renderKanban();
+                    updateStats();
+                });
+            });
         }
 
         function syncTaskModalOptions(task = null) {
@@ -1807,8 +1878,10 @@
                     if (!task.agent) {
                         task.agent = 'boris';
                     }
+                    task.project = normalizeProjectId(task.project || 'infrastructure');
                 });
                 applyTaskOverrides(allTasks);
+                renderProjectFilters();
                 syncTaskModalOptions();
 
                 renderAgents();
@@ -2051,7 +2124,7 @@
                 const filteredTasks = allTasks.filter((task) => {
                     const statusMatch = task.status === column.id;
                     const agentMatch = !selectedAgent || task.agent === selectedAgent;
-                    const projectMatch = selectedProject === 'all' || task.project === selectedProject;
+                    const projectMatch = selectedProject === 'all' || normalizeProjectId(task.project) === selectedProject;
                     return statusMatch && agentMatch && projectMatch;
                 });
 
@@ -2074,7 +2147,8 @@
 
         function renderTaskCard(task) {
             const progress = task.subtasks ? Math.round((task.subtasks.filter((s) => s.done).length / task.subtasks.length) * 100) : 0;
-            const project = allProjects.find((p) => p.id === task.project);
+            const taskProjectId = normalizeProjectId(task.project);
+            const project = getProjectOptions().find((p) => p.id === taskProjectId);
             const agent = AGENTS.find((a) => a.id === task.agent);
 
             return `
@@ -2082,7 +2156,7 @@
                     <div class="task-title">${task.title}</div>
                     <div class="task-description">${task.description || ''}</div>
                     <div class="task-meta">
-                        ${project ? `<span class="task-project project-${project.id}">${project.icon} ${project.name}</span>` : ''}
+                        ${project ? `<span class="task-project project-${taskProjectId}">${project.icon} ${project.name}</span>` : ''}
                         ${(task.tags || []).map((tag) => `<span class="task-tag">${tag}</span>`).join('')}
                     </div>
                     <div class="task-footer">
@@ -2154,7 +2228,7 @@
             if (!currentTask) return;
 
             currentTask.description = document.getElementById('modal-description').value;
-            currentTask.project = document.getElementById('modal-project').value;
+            currentTask.project = normalizeProjectId(document.getElementById('modal-project').value);
             currentTask.agent = document.getElementById('modal-agent').value;
             currentTask.status = document.getElementById('modal-status').value;
             currentTask.priority = document.getElementById('modal-priority').value;
@@ -2295,14 +2369,6 @@
         document.addEventListener('DOMContentLoaded', async function() {
             taskOverrides = loadTaskOverridesFromStorage();
             syncTaskModalOptions();
-            document.querySelectorAll('.filter-chip').forEach((chip) => {
-                chip.addEventListener('click', function() {
-                    document.querySelectorAll('.filter-chip').forEach((c) => c.classList.remove('active'));
-                    this.classList.add('active');
-                    selectedProject = this.dataset.filter;
-                    renderKanban();
-                });
-            });
 
             await loadData();
             await loadChatData();
