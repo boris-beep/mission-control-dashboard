@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-16T00:00:23.557Z",
+  "updatedAt": "2026-02-16T01:00:22.340Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-16T00:00:21.295Z",
+      "lastSeen": "2026-02-16T01:00:18.555Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771200021295
+        "sessionUpdatedAtMs": 1771203618555
       }
     },
     "codex": {
@@ -27,41 +27,41 @@
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-15T23:36:05.088Z",
+      "lastSeen": "2026-02-16T00:35:32.560Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771198565088
+        "sessionUpdatedAtMs": 1771202132560
       }
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-15T23:35:59.877Z",
+      "lastSeen": "2026-02-16T00:35:26.491Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771198559877
+        "sessionUpdatedAtMs": 1771202126491
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-15T23:51:04.933Z",
-      "source": "mention-router",
+      "lastSeen": "2026-02-16T00:15:04.945Z",
+      "source": "system-monitor",
       "type": "system",
       "priority": "low",
-      "text": "📬 Routed mention to ollie from boris (msg msg_1771199189576_dwvukv).",
+      "text": "Cron complete: Squad Chat Publish Sync (2026-02-16T00:01:02.172Z).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771199189576_dwvukv",
-        "sender": "boris",
-        "mention": "ollie",
-        "targetAgentId": "ollie"
+        "messageId": "msg_1771200904945_4q63cz",
+        "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
+        "schedule": "0 * * * *",
+        "lastDurationMs": 14725
       }
     },
     "sage": {
@@ -99,18 +99,15 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-15T23:51:04.933Z",
-      "source": "mention-router-auto-response",
-      "type": "response",
+      "lastSeen": "2026-02-16T00:47:22.579Z",
+      "source": "ollie-cron-monitor",
+      "type": "finding",
       "priority": "medium",
-      "text": "Reply to boris: Connection error.",
+      "text": "Pattern detected: Ollie: Bot Health Check: 3 failures in last 24h; Video Monitor - Feb 15 (every 2 hours): 11 failures in last 24h; Vix: Daily Backup to Drive: 42 failures in last 24h; Sage: Daily Backup to Drive: 33 failures in last 24h; Fred: Daily Backup to Drive: 33 failures in last 24h; Ollie: Daily Backup to Drive: 33 failures in last 24h; Video Monitor - Every 30min (Feb 14-15): 42 failures in last 24h",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771199464933_qpbnto",
-        "routeMessageId": "msg_1771199189576_dwvukv",
-        "routeRunId": "a24dbf99-8dd4-40a4-9e11-77c21ed687c6",
-        "routedFrom": "boris",
-        "routedTo": "ollie"
+        "messageId": "msg_1771202842579_lqsc14",
+        "patterns": 7
       }
     },
     "lexi": {
