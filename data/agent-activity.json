@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-16T17:00:18.756Z",
+  "updatedAt": "2026-02-16T18:00:20.667Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-16T17:00:15.032Z",
+      "lastSeen": "2026-02-16T18:00:16.577Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771261215032
+        "sessionUpdatedAtMs": 1771264816577
       }
     },
     "codex": {
@@ -27,84 +27,92 @@
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-16T16:32:22.684Z",
+      "lastSeen": "2026-02-16T17:02:00.082Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771259542684
+        "sessionUpdatedAtMs": 1771261320082
       }
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-16T16:32:38.407Z",
+      "lastSeen": "2026-02-16T17:02:14.458Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771259558407
+        "sessionUpdatedAtMs": 1771261334458
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-16T16:55:32.985Z",
-      "source": "mention-router",
-      "type": "system",
-      "priority": "low",
-      "text": "📬 Routed mention to ollie from boris (msg msg_1771260452465_yy98ap).",
+      "lastSeen": "2026-02-16T17:53:28.671Z",
+      "source": "system-monitor",
+      "type": "alert",
+      "priority": "high",
+      "text": "Boris 3.0 is paused (cost-spike:82.04-per-hour).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771260452465_yy98ap",
-        "sender": "boris",
-        "mention": "ollie",
-        "targetAgentId": "ollie"
+        "messageId": "msg_1771264408670_0or6sq",
+        "boris3Health": {
+          "ok": true,
+          "issueKey": "paused:cost-spike:82.04-per-hour",
+          "pid": 10760,
+          "running": true,
+          "paused": true,
+          "pauseReason": "cost-spike:82.04-per-hour",
+          "lastTickAgeSeconds": 14
+        }
       }
     },
     "sage": {
       "agentId": "sage",
-      "lastSeen": "2026-02-16T16:33:08.237Z",
-      "source": "monitor-seo",
-      "type": "finding",
-      "priority": "medium",
-      "text": "Weekly SEO trend: current 65/100 vs baseline 58/100 (+7).",
-      "metadata": {
-        "taskId": null,
-        "messageId": "msg_1771259588237_n2rv05",
-        "currentScore": 65,
-        "baselineScore": 58,
-        "delta": 7
-      }
-    },
-    "fred": {
-      "agentId": "fred",
-      "lastSeen": "2026-02-16T16:43:31.652Z",
+      "lastSeen": "2026-02-16T17:02:22.101Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
-        "sessionFile": "/Users/boristhebot/.openclaw/agents/fred/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771260211652
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/sage/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771261342101
+      }
+    },
+    "fred": {
+      "agentId": "fred",
+      "lastSeen": "2026-02-16T17:47:12.023Z",
+      "source": "fred-daily-cost-report",
+      "type": "work",
+      "priority": "high",
+      "text": "Daily Cost Report - Feb 16, 2026 SPEND BY BOT: Boris (claude-haiku-4-5): $82.93 (283,999,231 tokens) Vix (claude-sonnet-4-5): $4.49 (1,709,087 tokens) Penny (claude-sonnet-4-5): $2.72 (956,057 tokens) Ollie (claude-haiku-4-5): $2.14 (7,533,013 tokens) Fred (claude-sonnet-4-5): $1.80 (1,324,995 tokens) Sage Bot (claude-haiku-4-5): $0.45 (853,669 tokens) Finance Bot (unknown): $0.00 (0 tokens) Security Bot (unknown): $0.00 (0 tokens) Lexi (unknown): $0.00 (0 tokens) boris-kimi (unknown): $0.00 (0 tokens) boris-haiku (unknown): $0.00 (0 tokens) DAILY TOTAL: $81.36 (gateway source) TRANSCRIPT TOTAL: $94.54 (gap $-13.18) MONTHLY PROJECTION: ~$2440.75 WEEK-OVER-WEEK: +5.1% vs 7-day avg ($77.41) OPTIMIZATION OPPORTUNITIES: No immediate low-risk switches detected.",
+      "metadata": {
+        "taskId": null,
+        "messageId": "msg_1771264032022_9n3w40",
+        "reportPath": "/Users/boristhebot/.openclaw/agents/fred/reports/daily/cost-report-2026-02-16.json",
+        "dailyTotalUsd": 81.3583,
+        "transcriptDailyTotalUsd": 94.5383,
+        "gatewayDailyTotalUsd": 81.3583,
+        "trackingGapUsd": -13.18,
+        "trackingGapPctOfGateway": -16.2,
+        "monthlyProjectionUsd": 2440.75,
+        "potentialMonthlySavingsUsd": 0
       }
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-16T16:55:32.986Z",
-      "source": "mention-router-auto-response",
-      "type": "response",
+      "lastSeen": "2026-02-16T17:46:09.144Z",
+      "source": "ollie-cron-monitor",
+      "type": "finding",
       "priority": "medium",
-      "text": "Reply to boris: Response posted. Standing by for gateway restart.",
+      "text": "Pattern detected: Vix: Daily Backup to Drive: 61 failures in last 24h; Sage: Daily Backup to Drive: 61 failures in last 24h; Fred: Daily Backup to Drive: 61 failures in last 24h; Ollie: Daily Backup to Drive: 61 failures in last 24h; Video Monitor - Every 30min (Feb 14-15): 61 failures in last 24h; Video Monitor - Feb 15 (every 2 hours): 61 failures in last 24h",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771260932985_38lwcs",
-        "routeMessageId": "msg_1771260452465_yy98ap",
-        "routeRunId": "afd55d26-d004-4bda-8f75-2f07a81e86fd",
-        "routedFrom": "boris",
-        "routedTo": "ollie"
+        "messageId": "msg_1771263969143_8t9f8j",
+        "patterns": 6
       }
     },
     "lexi": {
@@ -172,14 +180,14 @@
     },
     "security": {
       "agentId": "security",
-      "lastSeen": "2026-02-16T16:59:08.997Z",
+      "lastSeen": "2026-02-16T17:55:56.017Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/security/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771261148997.5876
+        "sessionUpdatedAtMs": 1771264556017.0967
       }
     }
   }
