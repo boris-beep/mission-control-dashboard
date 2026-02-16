@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-16T01:04:01.500Z",
+  "updatedAt": "2026-02-16T01:34:39.490Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-16T01:03:58.118Z",
+      "lastSeen": "2026-02-16T01:34:02.575Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771203838118
+        "sessionUpdatedAtMs": 1771205642575
       }
     },
     "codex": {
@@ -27,14 +27,14 @@
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-16T00:35:32.560Z",
+      "lastSeen": "2026-02-16T01:33:53.387Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771202132560
+        "sessionUpdatedAtMs": 1771205633387
       }
     },
     "vix": {
@@ -51,17 +51,19 @@
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-16T00:15:04.945Z",
+      "lastSeen": "2026-02-16T01:34:39.490Z",
       "source": "system-monitor",
-      "type": "system",
-      "priority": "low",
-      "text": "Cron complete: Squad Chat Publish Sync (2026-02-16T00:01:02.172Z).",
+      "type": "alert",
+      "priority": "high",
+      "text": "Routing metadata drift detected (changed=1, unresolved=0, missing=0).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771200904945_4q63cz",
-        "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
-        "schedule": "0 * * * *",
-        "lastDurationMs": 14725
+        "messageId": "msg_1771205679490_3iu1nj",
+        "ok": true,
+        "issueKey": "drift:1:0:0",
+        "changedEntries": 1,
+        "unresolvedEntries": 0,
+        "missingSessionFiles": 0
       }
     },
     "sage": {
@@ -99,15 +101,17 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-16T00:47:22.579Z",
-      "source": "ollie-cron-monitor",
-      "type": "finding",
-      "priority": "medium",
-      "text": "Pattern detected: Ollie: Bot Health Check: 3 failures in last 24h; Video Monitor - Feb 15 (every 2 hours): 11 failures in last 24h; Vix: Daily Backup to Drive: 42 failures in last 24h; Sage: Daily Backup to Drive: 33 failures in last 24h; Fred: Daily Backup to Drive: 33 failures in last 24h; Ollie: Daily Backup to Drive: 33 failures in last 24h; Video Monitor - Every 30min (Feb 14-15): 42 failures in last 24h",
+      "lastSeen": "2026-02-16T01:05:42.780Z",
+      "source": "ollie-bot-health",
+      "type": "alert",
+      "priority": "critical",
+      "text": "Ollie Bot Health Check Monitored bots: 6 CRITICAL: - main: session integrity issue (Session agent:main:main has non-relative sessionFile) WARNINGS: - penny: no activity for 30 min - vix: no activity for 30 min - sage: no activity for 30 min - fred: no activity for 30 min",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771202842579_lqsc14",
-        "patterns": 7
+        "messageId": "msg_1771203942780_opwxfb",
+        "monitored": 6,
+        "criticalCount": 1,
+        "warningCount": 4
       }
     },
     "lexi": {
