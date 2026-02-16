@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-16T13:02:14.068Z",
+  "updatedAt": "2026-02-16T15:04:50.243Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-16T13:02:12.740Z",
+      "lastSeen": "2026-02-16T15:04:46.493Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771246932740
+        "sessionUpdatedAtMs": 1771254286493
       }
     },
     "codex": {
@@ -27,41 +27,39 @@
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-16T04:36:11.570Z",
+      "lastSeen": "2026-02-16T14:47:50.046Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771216571570
+        "sessionUpdatedAtMs": 1771253270046
       }
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-16T04:35:15.644Z",
+      "lastSeen": "2026-02-16T15:03:59.039Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771216515644
+        "sessionUpdatedAtMs": 1771254239039
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-16T12:15:04.360Z",
+      "lastSeen": "2026-02-16T14:59:37.514Z",
       "source": "system-monitor",
-      "type": "system",
-      "priority": "low",
-      "text": "Cron complete: Squad Chat Publish Sync (2026-02-16T12:01:17.553Z).",
+      "type": "alert",
+      "priority": "critical",
+      "text": "Gateway process missing (previous PID 88060).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771244104360_wh90vu",
-        "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
-        "schedule": "0 * * * *",
-        "lastDurationMs": 33367
+        "messageId": "msg_1771253977513_xzrgsl",
+        "previousGatewayPid": "88060"
       }
     },
     "sage": {
@@ -82,29 +80,31 @@
     },
     "fred": {
       "agentId": "fred",
-      "lastSeen": "2026-02-16T03:31:45.395Z",
-      "source": "bot-helper",
+      "lastSeen": "2026-02-16T14:59:55.652Z",
+      "source": "fred-optimization-recommendations",
       "type": "work",
       "priority": "low",
-      "text": "💰 Cost Monitor Complete - Sunday 9:31 PM - No alerts triggered. Daily spend clean. All systems nominal.",
+      "text": "Optimization check (Feb 16, 2026): no positive-savings model switches identified.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771212705395_g6pmc5"
+        "messageId": "msg_1771253995652_ovmrjv",
+        "reportPath": "/Users/boristhebot/.openclaw/agents/fred/reports/daily/optimization-recommendations-2026-02-16.json",
+        "recommendations": 0
       }
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-16T12:47:46.334Z",
-      "source": "ollie-bot-health",
+      "lastSeen": "2026-02-16T15:03:23.954Z",
+      "source": "ollie-gateway-health",
       "type": "alert",
       "priority": "critical",
-      "text": "Ollie Bot Health Check Monitored bots: 6 CRITICAL: - main: session integrity issue (Session agent:main:main has non-relative sessionFile) WARNINGS: - ollie: 196 error markers in memory log today",
+      "text": "Ollie Gateway Health CRITICAL: - Gateway connectivity degraded",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771246066333_rzselw",
-        "monitored": 6,
-        "criticalCount": 1,
-        "warningCount": 1
+        "messageId": "msg_1771254203953_0s58i2",
+        "gatewayProcess": true,
+        "doctorOk": true,
+        "cronStatusOk": false
       }
     },
     "lexi": {
