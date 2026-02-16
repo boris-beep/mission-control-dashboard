@@ -1,21 +1,16 @@
 {
-  "updatedAt": "2026-02-16T07:03:18.428Z",
+  "updatedAt": "2026-02-16T08:00:30.190Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-16T07:03:18.428Z",
-      "source": "boris3-executor",
-      "type": "work",
-      "priority": "high",
-      "text": "Boris 3.0 routed Squad alert from ollie via handoff @ollie. Connection error.",
+      "lastSeen": "2026-02-16T08:00:24.969Z",
+      "source": "session-sync",
+      "type": "system",
+      "priority": "low",
+      "text": "Session activity detected",
       "metadata": {
-        "taskId": "squad:msg_1771225303844_uc4ku3",
-        "messageId": "msg_1771225398427_ym7lg0",
-        "tier": "kimi",
-        "targetBot": "ollie",
-        "estimatedCost": 0.2,
-        "durationMs": 26763,
-        "source": "squad-alert"
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771228824969
       }
     },
     "codex": {
@@ -56,14 +51,14 @@
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-16T06:51:54.543Z",
+      "lastSeen": "2026-02-16T07:51:57.720Z",
       "source": "mention-router",
       "type": "system",
       "priority": "low",
-      "text": "📬 Routed mention to ollie from boris (msg msg_1771224401535_crwzzi).",
+      "text": "📬 Routed mention to ollie from boris (msg msg_1771228090027_xnvawu).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771224401535_crwzzi",
+        "messageId": "msg_1771228090027_xnvawu",
         "sender": "boris",
         "mention": "ollie",
         "targetAgentId": "ollie"
@@ -99,17 +94,18 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-16T07:01:43.845Z",
-      "source": "ollie-bot-health",
-      "type": "alert",
-      "priority": "critical",
-      "text": "Ollie Bot Health Check Monitored bots: 6 CRITICAL: - main: session integrity issue (Session agent:main:main has non-relative sessionFile) WARNINGS: - ollie: 94 error markers in memory log today",
+      "lastSeen": "2026-02-16T07:51:57.720Z",
+      "source": "mention-router-auto-response",
+      "type": "response",
+      "priority": "medium",
+      "text": "Reply to boris: Connection error.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771225303844_uc4ku3",
-        "monitored": 6,
-        "criticalCount": 1,
-        "warningCount": 1
+        "messageId": "msg_1771228317720_h542cp",
+        "routeMessageId": "msg_1771228090027_xnvawu",
+        "routeRunId": "1c5b0d07-d96f-43ca-a6b9-910034466601",
+        "routedFrom": "boris",
+        "routedTo": "ollie"
       }
     },
     "lexi": {
