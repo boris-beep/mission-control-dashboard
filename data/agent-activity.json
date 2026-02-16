@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-16T15:04:50.243Z",
+  "updatedAt": "2026-02-16T16:00:38.473Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-16T15:04:46.493Z",
+      "lastSeen": "2026-02-16T16:00:18.551Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771254286493
+        "sessionUpdatedAtMs": 1771257618551
       }
     },
     "codex": {
@@ -27,84 +27,75 @@
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-16T14:47:50.046Z",
+      "lastSeen": "2026-02-16T15:41:02.130Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771253270046
+        "sessionUpdatedAtMs": 1771256462130
       }
     },
     "vix": {
       "agentId": "vix",
-      "lastSeen": "2026-02-16T15:03:59.039Z",
+      "lastSeen": "2026-02-16T15:41:17.704Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771254239039
+        "sessionUpdatedAtMs": 1771256477704
       }
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-16T14:59:37.514Z",
+      "lastSeen": "2026-02-16T16:00:38.473Z",
       "source": "system-monitor",
       "type": "alert",
       "priority": "critical",
-      "text": "Gateway process missing (previous PID 88060).",
+      "text": "Gateway process missing (previous PID 97706).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771253977513_xzrgsl",
-        "previousGatewayPid": "88060"
+        "messageId": "msg_1771257638472_gagrrm",
+        "previousGatewayPid": "97706"
       }
     },
     "sage": {
       "agentId": "sage",
-      "lastSeen": "2026-02-14T21:27:02.482Z",
-      "source": "mention-router-auto-response",
-      "type": "response",
-      "priority": "medium",
-      "text": "Reply to vix: Connection error.",
+      "lastSeen": "2026-02-16T15:41:25.947Z",
+      "source": "session-sync",
+      "type": "system",
+      "priority": "low",
+      "text": "Session activity detected",
       "metadata": {
-        "taskId": null,
-        "messageId": "msg_1771104422482_g3285n",
-        "routeMessageId": "msg_1771080721045_9bsk2y",
-        "routeRunId": "324e74f0-a7a3-47a2-84aa-c7aa8cfe6048",
-        "routedFrom": "vix",
-        "routedTo": "sage"
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/sage/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771256485947
       }
     },
     "fred": {
       "agentId": "fred",
-      "lastSeen": "2026-02-16T14:59:55.652Z",
-      "source": "fred-optimization-recommendations",
-      "type": "work",
+      "lastSeen": "2026-02-16T15:41:36.074Z",
+      "source": "session-sync",
+      "type": "system",
       "priority": "low",
-      "text": "Optimization check (Feb 16, 2026): no positive-savings model switches identified.",
+      "text": "Session activity detected",
       "metadata": {
-        "taskId": null,
-        "messageId": "msg_1771253995652_ovmrjv",
-        "reportPath": "/Users/boristhebot/.openclaw/agents/fred/reports/daily/optimization-recommendations-2026-02-16.json",
-        "recommendations": 0
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/fred/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771256496074
       }
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-16T15:03:23.954Z",
-      "source": "ollie-gateway-health",
-      "type": "alert",
-      "priority": "critical",
-      "text": "Ollie Gateway Health CRITICAL: - Gateway connectivity degraded",
+      "lastSeen": "2026-02-16T15:44:04.880Z",
+      "source": "session-sync",
+      "type": "system",
+      "priority": "low",
+      "text": "Session activity detected",
       "metadata": {
-        "taskId": null,
-        "messageId": "msg_1771254203953_0s58i2",
-        "gatewayProcess": true,
-        "doctorOk": true,
-        "cronStatusOk": false
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/ollie/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771256644880
       }
     },
     "lexi": {
@@ -132,6 +123,54 @@
       "metadata": {
         "taskId": null,
         "messageId": "msg_1771164176608_1a6jgm"
+      }
+    },
+    "finance": {
+      "agentId": "finance",
+      "lastSeen": "2026-02-15T22:37:54.544Z",
+      "source": "session-sync",
+      "type": "system",
+      "priority": "low",
+      "text": "Session activity detected",
+      "metadata": {
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/finance/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771195074544
+      }
+    },
+    "boris-kimi": {
+      "agentId": "boris-kimi",
+      "lastSeen": "2026-02-16T13:09:35.401Z",
+      "source": "session-sync",
+      "type": "system",
+      "priority": "low",
+      "text": "Session activity detected",
+      "metadata": {
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771247375401
+      }
+    },
+    "boris-haiku": {
+      "agentId": "boris-haiku",
+      "lastSeen": "2026-02-15T22:59:07.344Z",
+      "source": "session-sync",
+      "type": "system",
+      "priority": "low",
+      "text": "Session activity detected",
+      "metadata": {
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-haiku/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771196347344
+      }
+    },
+    "security": {
+      "agentId": "security",
+      "lastSeen": "2026-02-16T15:55:06.025Z",
+      "source": "session-sync",
+      "type": "system",
+      "priority": "low",
+      "text": "Session activity detected",
+      "metadata": {
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/security/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771257306025.5715
       }
     }
   }
