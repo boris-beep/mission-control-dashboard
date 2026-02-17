@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-17T11:00:17.264Z",
+  "updatedAt": "2026-02-17T12:00:30.085Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-17T11:00:13.184Z",
+      "lastSeen": "2026-02-17T12:00:13.303Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771326013184
+        "sessionUpdatedAtMs": 1771329613303
       }
     },
     "codex": {
@@ -51,15 +51,15 @@
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-17T10:49:38.813Z",
+      "lastSeen": "2026-02-17T12:00:30.085Z",
       "source": "system-monitor",
-      "type": "system",
-      "priority": "medium",
-      "text": "Gateway online (PID 63644).",
+      "type": "alert",
+      "priority": "critical",
+      "text": "Gateway process missing (previous PID 63644).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771325378812_8exf28",
-        "gatewayPid": "63644"
+        "messageId": "msg_1771329630084_zgn37o",
+        "previousGatewayPid": "63644"
       }
     },
     "sage": {
@@ -88,17 +88,17 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-17T10:58:27.647Z",
+      "lastSeen": "2026-02-17T11:04:16.165Z",
       "source": "boris3-bot-nonresponse",
       "type": "alert",
       "priority": "critical",
       "text": "ollie did not respond for >5 minutes on Squad alert from ollie; escalating.",
       "metadata": {
-        "taskId": "squad:msg_1771317174953_qsnjjn",
-        "messageId": "msg_1771325907646_zz6gfk",
+        "taskId": "squad:msg_1771317523237_6rakdg",
+        "messageId": "msg_1771326256164_maku8b",
         "tier": "kimi",
         "agent": "ollie",
-        "totalDurationMs": 301309
+        "totalDurationMs": 301326
       }
     },
     "lexi": {
