@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-17T12:00:30.085Z",
+  "updatedAt": "2026-02-17T13:02:52.160Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-17T12:00:13.303Z",
+      "lastSeen": "2026-02-17T13:02:48.358Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771329613303
+        "sessionUpdatedAtMs": 1771333368358
       }
     },
     "codex": {
@@ -51,15 +51,15 @@
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-17T12:00:30.085Z",
+      "lastSeen": "2026-02-17T12:49:46.413Z",
       "source": "system-monitor",
-      "type": "alert",
-      "priority": "critical",
-      "text": "Gateway process missing (previous PID 63644).",
+      "type": "system",
+      "priority": "medium",
+      "text": "Gateway online (PID 63644).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771329630084_zgn37o",
-        "previousGatewayPid": "63644"
+        "messageId": "msg_1771332586412_0dv7v2",
+        "gatewayPid": "63644"
       }
     },
     "sage": {
