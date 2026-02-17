@@ -1,16 +1,17 @@
 {
-  "updatedAt": "2026-02-17T01:00:11.367Z",
+  "updatedAt": "2026-02-17T02:00:19.594Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-17T01:00:09.154Z",
-      "source": "session-sync",
-      "type": "system",
-      "priority": "low",
-      "text": "Session activity detected",
+      "lastSeen": "2026-02-17T02:00:19.594Z",
+      "source": "boris3-coordination",
+      "type": "coordination",
+      "priority": "high",
+      "text": "@ollie Coordinating task: Squad alert from ollie",
       "metadata": {
-        "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771290009154
+        "taskId": "squad:msg_1771292598073_289pu5",
+        "messageId": "msg_1771293619593_wfpyud",
+        "source": "squad-alert"
       }
     },
     "codex": {
@@ -51,17 +52,17 @@
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-17T00:55:36.905Z",
+      "lastSeen": "2026-02-17T01:55:35.286Z",
       "source": "mention-router",
       "type": "system",
       "priority": "low",
-      "text": "📬 Routed mention to main from system (msg msg_1771286770405_0f480i).",
+      "text": "📬 Routed mention to ollie from boris (msg msg_1771293301849_mf65ce).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771286770405_0f480i",
-        "sender": "system",
-        "mention": "boris",
-        "targetAgentId": "main"
+        "messageId": "msg_1771293301849_mf65ce",
+        "sender": "boris",
+        "mention": "ollie",
+        "targetAgentId": "ollie"
       }
     },
     "sage": {
@@ -78,29 +79,29 @@
     },
     "fred": {
       "agentId": "fred",
-      "lastSeen": "2026-02-17T00:30:24.661Z",
+      "lastSeen": "2026-02-17T01:30:44.856Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/fred/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771288224661
+        "sessionUpdatedAtMs": 1771291844856
       }
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-17T00:56:35.705Z",
+      "lastSeen": "2026-02-17T02:00:17.907Z",
       "source": "boris3-bot-nonresponse",
       "type": "alert",
       "priority": "critical",
       "text": "ollie did not respond for >5 minutes on Squad alert from ollie; escalating.",
       "metadata": {
-        "taskId": "squad:msg_1771288744085_qxlccr",
-        "messageId": "msg_1771289795704_o8ou0r",
+        "taskId": "squad:msg_1771292252035_5xxsry",
+        "messageId": "msg_1771293617905_iau5kd",
         "tier": "kimi",
         "agent": "ollie",
-        "totalDurationMs": 300571
+        "totalDurationMs": 316042
       }
     },
     "lexi": {
@@ -168,14 +169,14 @@
     },
     "security": {
       "agentId": "security",
-      "lastSeen": "2026-02-17T00:56:06.383Z",
+      "lastSeen": "2026-02-17T01:56:19.265Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/security/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771289766383.2825
+        "sessionUpdatedAtMs": 1771293379265.3628
       }
     }
   }
