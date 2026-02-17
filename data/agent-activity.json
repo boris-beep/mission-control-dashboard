@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026-02-17T09:00:21.017Z",
+  "updatedAt": "2026-02-17T10:07:10.040Z",
   "agents": {
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-17T09:00:17.743Z",
+      "lastSeen": "2026-02-17T10:07:06.366Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771318817743
+        "sessionUpdatedAtMs": 1771322826366
       }
     },
     "codex": {
@@ -51,17 +51,17 @@
     },
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-17T08:04:28.245Z",
+      "lastSeen": "2026-02-17T09:04:32.139Z",
       "source": "system-monitor",
       "type": "system",
       "priority": "low",
-      "text": "Cron complete: Squad Chat Publish Sync (2026-02-17T08:00:26.282Z).",
+      "text": "Cron complete: Squad Chat Publish Sync (2026-02-17T09:00:36.868Z).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771315468245_18e3se",
+        "messageId": "msg_1771319072139_xuzs5g",
         "jobId": "c5e4f2e4-7e5d-40a2-89f9-8845856e71f6",
         "schedule": "0 * * * *",
-        "lastDurationMs": 14108
+        "lastDurationMs": 13726
       }
     },
     "sage": {
@@ -90,17 +90,17 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-17T08:56:08.094Z",
+      "lastSeen": "2026-02-17T10:06:01.465Z",
       "source": "boris3-bot-nonresponse",
       "type": "alert",
       "priority": "critical",
       "text": "ollie did not respond for >5 minutes on Squad alert from ollie; escalating.",
       "metadata": {
-        "taskId": "squad:msg_1771309833314_yj5mfe",
-        "messageId": "msg_1771318568093_esa43h",
+        "taskId": "squad:msg_1771314026322_86end2",
+        "messageId": "msg_1771322761464_p8r33v",
         "tier": "kimi",
         "agent": "ollie",
-        "totalDurationMs": 301203
+        "totalDurationMs": 301368
       }
     },
     "lexi": {
