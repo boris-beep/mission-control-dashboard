@@ -1,31 +1,29 @@
 {
-  "updatedAt": "2026-02-18T21:03:42.631Z",
+  "updatedAt": "2026-02-18T22:00:26.064Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-18T21:00:26.892Z",
+      "lastSeen": "2026-02-18T22:00:26.064Z",
       "source": "system-monitor",
       "type": "alert",
       "priority": "critical",
       "text": "Gateway process missing (previous PID 95600).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771448426890_nluy54",
+        "messageId": "msg_1771452026063_las7np",
         "previousGatewayPid": "95600"
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-18T21:03:42.630Z",
-      "source": "boris3-timeout-guard",
-      "type": "alert",
-      "priority": "high",
-      "text": "Boris 3.0 auto-sleep engaged after 2812 minutes (max 1440). Use wake command to resume.",
+      "lastSeen": "2026-02-18T22:00:11.161Z",
+      "source": "session-sync",
+      "type": "system",
+      "priority": "low",
+      "text": "Session activity detected",
       "metadata": {
-        "taskId": null,
-        "messageId": "msg_1771448622629_g6hzzd",
-        "elapsedMin": 2812,
-        "maxMinutes": 1440
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771452011161
       }
     },
     "penny": {
@@ -46,14 +44,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-18T21:00:12.396Z",
+      "lastSeen": "2026-02-18T22:00:10.796Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771448412396
+        "sessionUpdatedAtMs": 1771452010796
       }
     },
     "boris-haiku": {
