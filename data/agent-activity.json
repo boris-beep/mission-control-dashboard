@@ -1,30 +1,40 @@
 {
-  "updatedAt": "2026-02-18T13:02:58.603Z",
+  "updatedAt": "2026-02-18T14:02:53.489Z",
   "agents": {
+    "system": {
+      "agentId": "system",
+      "lastSeen": "2026-02-18T14:01:14.304Z",
+      "source": "system-monitor",
+      "type": "alert",
+      "priority": "high",
+      "text": "Boris 3.0 is paused (max-continuous-runtime:2389m).",
+      "metadata": {
+        "taskId": null,
+        "suppressed": true,
+        "suppressionReason": "critical-only-policy",
+        "boris3Health": {
+          "ok": true,
+          "issueKey": "paused:max-continuous-runtime:2389m",
+          "pid": 87865,
+          "running": true,
+          "paused": true,
+          "pauseReason": "max-continuous-runtime:2389m",
+          "lastTickAgeSeconds": 35
+        }
+      }
+    },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-18T13:02:56.550Z",
+      "lastSeen": "2026-02-18T14:02:53.488Z",
       "source": "boris3-timeout-guard",
       "type": "alert",
       "priority": "high",
-      "text": "Boris 3.0 auto-sleep engaged after 2331 minutes (max 1440). Use wake command to resume.",
+      "text": "Boris 3.0 auto-sleep engaged after 2391 minutes (max 1440). Use wake command to resume.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771419776549_vhcgvf",
-        "elapsedMin": 2331,
+        "messageId": "msg_1771423373487_lshfzk",
+        "elapsedMin": 2391,
         "maxMinutes": 1440
-      }
-    },
-    "codex": {
-      "agentId": "codex",
-      "lastSeen": "2026-02-15T20:48:20.536Z",
-      "source": "codex-project-merge",
-      "type": "work",
-      "priority": "medium",
-      "text": "Mission Control updated: piggy-bank merged into Some Common (🐷) and top project filters now auto-list all active projects including contracts.",
-      "metadata": {
-        "taskId": null,
-        "messageId": "msg_1771188500535_hxkk56"
       }
     },
     "penny": {
@@ -39,137 +49,16 @@
         "sessionUpdatedAtMs": 1771281070356
       }
     },
-    "vix": {
-      "agentId": "vix",
-      "lastSeen": "2026-02-16T22:31:17.832Z",
-      "source": "session-sync",
-      "type": "system",
-      "priority": "low",
-      "text": "Session activity detected",
-      "metadata": {
-        "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771281077832
-      }
-    },
-    "system": {
-      "agentId": "system",
-      "lastSeen": "2026-02-18T13:02:58.603Z",
-      "source": "system-monitor",
-      "type": "alert",
-      "priority": "high",
-      "text": "Boris 3.0 is paused (max-continuous-runtime:2331m).",
-      "metadata": {
-        "taskId": null,
-        "suppressed": true,
-        "suppressionReason": "critical-only-policy",
-        "boris3Health": {
-          "ok": true,
-          "issueKey": "paused:max-continuous-runtime:2331m",
-          "pid": 87865,
-          "running": true,
-          "paused": true,
-          "pauseReason": "max-continuous-runtime:2331m",
-          "lastTickAgeSeconds": 2
-        }
-      }
-    },
-    "sage": {
-      "agentId": "sage",
-      "lastSeen": "2026-02-16T22:31:51.432Z",
-      "source": "session-sync",
-      "type": "system",
-      "priority": "low",
-      "text": "Session activity detected",
-      "metadata": {
-        "sessionFile": "/Users/boristhebot/.openclaw/agents/sage/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771281111432
-      }
-    },
-    "fred": {
-      "agentId": "fred",
-      "lastSeen": "2026-02-17T13:03:54.875Z",
-      "source": "fred-cost-monitor",
-      "type": "alert",
-      "priority": "high",
-      "text": "BUDGET ALERT: projected $1122.96 of $600.00 (187%).",
-      "metadata": {
-        "taskId": null,
-        "messageId": "msg_1771333434874_rytuxf",
-        "avg7Usd": 78.7238,
-        "todayUsd": 37.432,
-        "transcriptUsd": 43.4528,
-        "gatewayUsd": 37.432,
-        "trackingGapUsd": -6.0208,
-        "trackingGapPct": -16.08,
-        "projectedMonthlyUsd": 1122.96,
-        "budgetUsd": 600,
-        "alertKey": "budget-threshold"
-      }
-    },
-    "ollie": {
-      "agentId": "ollie",
-      "lastSeen": "2026-02-17T11:04:16.165Z",
-      "source": "boris3-bot-nonresponse",
-      "type": "alert",
-      "priority": "critical",
-      "text": "ollie did not respond for >5 minutes on Squad alert from ollie; escalating.",
-      "metadata": {
-        "taskId": "squad:msg_1771317523237_6rakdg",
-        "messageId": "msg_1771326256164_maku8b",
-        "tier": "kimi",
-        "agent": "ollie",
-        "totalDurationMs": 301326
-      }
-    },
-    "lexi": {
-      "agentId": "lexi",
-      "lastSeen": "2026-02-14T21:18:55.335Z",
-      "source": "lexi-email-monitor",
-      "type": "work",
-      "priority": "low",
-      "text": "Email monitor scanned 0 unread messages; tagged @lexi: 0; queued approvals: 0.",
-      "metadata": {
-        "taskId": null,
-        "messageId": "msg_1771103935335_s9hscx",
-        "scanned": 0,
-        "tagged": 0,
-        "queued": 0
-      }
-    },
-    "ollie-bot-health": {
-      "agentId": "ollie-bot-health",
-      "lastSeen": "2026-02-15T14:02:56.609Z",
-      "source": "bot-helper",
-      "type": "finding",
-      "priority": "medium",
-      "text": "Health check false positive loop: 137 error markers are health check alerts counting themselves. Real issues: Vix has 4 YouTube alerts (resolved), backup crons skipped yesterday. System healthy, monitoring needs tuning.",
-      "metadata": {
-        "taskId": null,
-        "messageId": "msg_1771164176608_1a6jgm"
-      }
-    },
-    "finance": {
-      "agentId": "finance",
-      "lastSeen": "2026-02-15T22:37:54.544Z",
-      "source": "session-sync",
-      "type": "system",
-      "priority": "low",
-      "text": "Session activity detected",
-      "metadata": {
-        "sessionFile": "/Users/boristhebot/.openclaw/agents/finance/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771195074544
-      }
-    },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-18T13:02:34.394Z",
+      "lastSeen": "2026-02-18T14:00:39.815Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771419754394
+        "sessionUpdatedAtMs": 1771423239815
       }
     },
     "boris-haiku": {
@@ -184,16 +73,16 @@
         "sessionUpdatedAtMs": 1771196347344
       }
     },
-    "security": {
-      "agentId": "security",
-      "lastSeen": "2026-02-17T04:03:09.850Z",
+    "vix": {
+      "agentId": "vix",
+      "lastSeen": "2026-02-16T22:31:17.832Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
-        "sessionFile": "/Users/boristhebot/.openclaw/agents/security/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771300989850
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/vix/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771281077832
       }
     }
   }
