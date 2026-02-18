@@ -1,64 +1,68 @@
 {
-  "updatedAt": "2026-02-18T19:03:37.419Z",
+  "updatedAt": "2026-02-18T20:03:43.781Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-18T19:00:19.445Z",
+      "lastSeen": "2026-02-18T20:00:29.187Z",
       "source": "system-monitor",
       "type": "alert",
       "priority": "high",
-      "text": "Boris 3.0 is paused (max-continuous-runtime:2688m).",
+      "text": "Boris 3.0 is paused (max-continuous-runtime:2748m).",
       "metadata": {
         "taskId": null,
         "suppressed": true,
         "suppressionReason": "critical-only-policy",
         "boris3Health": {
           "ok": true,
-          "issueKey": "paused:max-continuous-runtime:2688m",
+          "issueKey": "paused:max-continuous-runtime:2748m",
           "pid": 87865,
           "running": true,
           "paused": true,
-          "pauseReason": "max-continuous-runtime:2688m",
-          "lastTickAgeSeconds": 29
+          "pauseReason": "max-continuous-runtime:2748m",
+          "lastTickAgeSeconds": 33
         }
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-18T19:03:37.419Z",
+      "lastSeen": "2026-02-18T20:03:43.781Z",
       "source": "boris3-timeout-guard",
       "type": "alert",
       "priority": "high",
-      "text": "Boris 3.0 auto-sleep engaged after 2692 minutes (max 1440). Use wake command to resume.",
+      "text": "Boris 3.0 auto-sleep engaged after 2752 minutes (max 1440). Use wake command to resume.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771441417418_oztjn4",
-        "elapsedMin": 2692,
+        "messageId": "msg_1771445023780_vx4qd3",
+        "elapsedMin": 2752,
         "maxMinutes": 1440
       }
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-16T22:31:10.356Z",
-      "source": "session-sync",
-      "type": "system",
+      "lastSeen": "2026-02-18T19:21:23.343Z",
+      "source": "finance-weekly-review",
+      "type": "response",
       "priority": "low",
-      "text": "Session activity detected",
+      "text": "Finance weekly review (120d): 38 tx, 0 approvals needed. Top flags: none. Largest flagged: none. Queue CSV: /Users/boristhebot/.openclaw/workspace/finance/reports/review-queue-2026-02-18.csv. Report: /Users/boristhebot/.openclaw/workspace/finance/reports/weekly-review-2026-02-18.md.",
       "metadata": {
-        "sessionFile": "/Users/boristhebot/.openclaw/agents/penny/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771281070356
+        "taskId": null,
+        "messageId": "msg_1771442483343_82qwvd",
+        "days": 120,
+        "needsReviewCount": 0,
+        "reportFile": "/Users/boristhebot/.openclaw/workspace/finance/reports/weekly-review-2026-02-18.md",
+        "queueCsv": "/Users/boristhebot/.openclaw/workspace/finance/reports/review-queue-2026-02-18.csv"
       }
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-18T19:00:44.961Z",
+      "lastSeen": "2026-02-18T20:00:14.312Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771441244961
+        "sessionUpdatedAtMs": 1771444814312
       }
     },
     "boris-haiku": {
