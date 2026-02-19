@@ -1,29 +1,29 @@
 {
-  "updatedAt": "2026-02-19T12:00:35.980Z",
+  "updatedAt": "2026-02-19T14:00:45.544Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-19T12:00:35.979Z",
+      "lastSeen": "2026-02-19T14:00:45.543Z",
       "source": "system-monitor",
       "type": "alert",
       "priority": "critical",
       "text": "Gateway process missing (previous PID 95600).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771502435978_aajhh2",
+        "messageId": "msg_1771509645541_ws128i",
         "previousGatewayPid": "95600"
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-19T12:00:14.139Z",
+      "lastSeen": "2026-02-19T14:00:13.612Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771502414139
+        "sessionUpdatedAtMs": 1771509613612
       }
     },
     "penny": {
@@ -46,14 +46,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-19T12:00:14.153Z",
+      "lastSeen": "2026-02-19T14:00:13.287Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771502414153
+        "sessionUpdatedAtMs": 1771509613287
       }
     },
     "boris-haiku": {
