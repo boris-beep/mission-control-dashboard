@@ -1,31 +1,33 @@
 {
-  "updatedAt": "2026-02-19T18:01:21.192Z",
+  "updatedAt": "2026-02-19T19:02:12.804Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-19T18:00:49.789Z",
+      "lastSeen": "2026-02-19T19:01:03.406Z",
       "source": "system-monitor",
-      "type": "system",
-      "priority": "medium",
-      "text": "Gateway online (PID 1384).",
+      "type": "alert",
+      "priority": "critical",
+      "text": "Gateway process missing (previous PID 1384).",
       "metadata": {
         "taskId": null,
-        "suppressed": true,
-        "suppressionReason": "critical-only-policy",
-        "gatewayPid": "1384"
+        "messageId": "msg_1771527663406_kibg7c",
+        "previousGatewayPid": "1384"
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-19T18:01:21.192Z",
-      "source": "boris3-coordination",
-      "type": "coordination",
+      "lastSeen": "2026-02-19T19:02:12.804Z",
+      "source": "boris3-executor",
+      "type": "alert",
       "priority": "high",
-      "text": "@ollie Coordinating task: Squad alert from ollie",
+      "text": "Boris 3.0 task failed (handoff:ollie): Squad alert from ollie. Error: env: node: No such file or directory",
       "metadata": {
-        "taskId": "squad:msg_1771470159729_lehpzw",
-        "messageId": "msg_1771524081192_ktp7uw",
-        "source": "squad-alert"
+        "taskId": "squad:msg_1771527074056_636yzy",
+        "messageId": "msg_1771527732803_k4x12s",
+        "tier": "kimi",
+        "targetBot": "ollie",
+        "timedOut": false,
+        "estimatedCost": 0.2
       }
     },
     "penny": {
@@ -44,14 +46,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-19T18:01:16.925Z",
+      "lastSeen": "2026-02-19T19:02:09.364Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771524076925
+        "sessionUpdatedAtMs": 1771527729364
       }
     },
     "boris-haiku": {
@@ -80,17 +82,17 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-19T18:00:23.999Z",
+      "lastSeen": "2026-02-19T19:02:12.788Z",
       "source": "boris3-bot-nonresponse",
       "type": "alert",
       "priority": "critical",
       "text": "ollie did not respond for >5 minutes on Squad alert from ollie; escalating.",
       "metadata": {
-        "taskId": "squad:msg_1771469810638_um8gdx",
-        "messageId": "msg_1771524023995_gkcvn0",
+        "taskId": "squad:msg_1771527074056_636yzy",
+        "messageId": "msg_1771527732783_c5z214",
         "tier": "kimi",
         "agent": "ollie",
-        "totalDurationMs": 301047
+        "totalDurationMs": 20322
       }
     }
   }
