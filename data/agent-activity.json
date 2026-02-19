@@ -1,59 +1,62 @@
 {
-  "updatedAt": "2026-02-19T14:00:45.544Z",
+  "updatedAt": "2026-02-19T16:01:21.791Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-19T14:00:45.543Z",
+      "lastSeen": "2026-02-19T16:01:21.791Z",
       "source": "system-monitor",
-      "type": "alert",
-      "priority": "critical",
-      "text": "Gateway process missing (previous PID 95600).",
+      "type": "system",
+      "priority": "low",
+      "text": "Webhook listener online (pid 3434).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771509645541_ws128i",
-        "previousGatewayPid": "95600"
+        "suppressed": true,
+        "suppressionReason": "critical-only-policy",
+        "webhookHealth": {
+          "ok": true,
+          "issueKey": "running",
+          "pid": 3434,
+          "running": true,
+          "totalAccepted": 1
+        }
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-19T14:00:13.612Z",
+      "lastSeen": "2026-02-19T16:00:21.367Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771509613612
+        "sessionUpdatedAtMs": 1771516821367
       }
     },
     "penny": {
       "agentId": "penny",
-      "lastSeen": "2026-02-18T23:15:55.021Z",
+      "lastSeen": "2026-02-19T14:46:36.898Z",
       "source": "finance-weekly-autopilot",
-      "type": "response",
-      "priority": "medium",
-      "text": "Finance weekly report ready (2026-02-18). Strict: PASS (unresolved chase: 0). - QB: 52 tx | income 500 | expense 13638.45 | net -13138.45 | review 24 - Wise: 18 tx | income 13840.54 | expense 13840.54 | net 0 | review 0 Review queue: 24. Drive: https://drive.google.com/drive/folders/1mxNkTvARURL9IHwUygPChnGvgf5WZREq",
+      "type": "alert",
+      "priority": "critical",
+      "text": "Finance weekly autopilot failed: Strict reconcile failed. Mapping template generated for unresolved categories.. Report: /Users/boristhebot/.openclaw/workspace/finance/reports/weekly-autopilot-2026-02-19T14-46-24-459Z.json",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771456555020_8zrtic",
-        "reportPath": "/Users/boristhebot/.openclaw/workspace/finance/reports/weekly-autopilot-2026-02-18T23-15-40-235Z.json",
-        "dateKey": "2026-02-18",
-        "driveUrl": "https://drive.google.com/drive/folders/1mxNkTvARURL9IHwUygPChnGvgf5WZREq",
-        "strictPass": true,
-        "unresolved": 0,
-        "queueCount": 24
+        "messageId": "msg_1771512396897_47z4yy",
+        "reportPath": "/Users/boristhebot/.openclaw/workspace/finance/reports/weekly-autopilot-2026-02-19T14-46-24-459Z.json",
+        "failedStep": "chase-mapping-template"
       }
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-19T14:00:13.287Z",
+      "lastSeen": "2026-02-19T16:00:21.394Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771509613287
+        "sessionUpdatedAtMs": 1771516821394
       }
     },
     "boris-haiku": {
