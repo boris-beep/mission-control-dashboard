@@ -1,36 +1,30 @@
 {
-  "updatedAt": "2026-02-19T16:01:21.791Z",
+  "updatedAt": "2026-02-19T17:01:05.839Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-19T16:01:21.791Z",
+      "lastSeen": "2026-02-19T17:00:46.278Z",
       "source": "system-monitor",
       "type": "system",
-      "priority": "low",
-      "text": "Webhook listener online (pid 3434).",
+      "priority": "medium",
+      "text": "Gateway online (PID 1384).",
       "metadata": {
         "taskId": null,
         "suppressed": true,
         "suppressionReason": "critical-only-policy",
-        "webhookHealth": {
-          "ok": true,
-          "issueKey": "running",
-          "pid": 3434,
-          "running": true,
-          "totalAccepted": 1
-        }
+        "gatewayPid": "1384"
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-19T16:00:21.367Z",
+      "lastSeen": "2026-02-19T17:00:29.090Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771516821367
+        "sessionUpdatedAtMs": 1771520429090
       }
     },
     "penny": {
@@ -49,14 +43,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-19T16:00:21.394Z",
+      "lastSeen": "2026-02-19T17:01:03.011Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771516821394
+        "sessionUpdatedAtMs": 1771520463011
       }
     },
     "boris-haiku": {
@@ -85,17 +79,15 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-19T04:00:55.655Z",
-      "source": "boris3-bot-nonresponse",
+      "lastSeen": "2026-02-19T16:46:28.056Z",
+      "source": "boris3-codex-burst",
       "type": "alert",
       "priority": "critical",
-      "text": "ollie did not respond for >5 minutes on Squad alert from ollie; escalating.",
+      "text": "Codex escalation failures reached 3 in 15m. Routing degraded; manual check required.",
       "metadata": {
-        "taskId": "squad:msg_1771322412854_tycbnl",
-        "messageId": "msg_1771473655654_fvplpk",
-        "tier": "kimi",
-        "agent": "ollie",
-        "totalDurationMs": 300968
+        "taskId": "squad:msg_1771382705596_hfs6ix",
+        "messageId": "msg_1771519588056_1z16yd",
+        "failuresInWindow": 3
       }
     }
   }
