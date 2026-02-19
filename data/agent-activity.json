@@ -1,33 +1,31 @@
 {
-  "updatedAt": "2026-02-19T19:02:12.804Z",
+  "updatedAt": "2026-02-19T20:02:40.719Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-19T19:01:03.406Z",
-      "source": "system-monitor",
-      "type": "alert",
-      "priority": "critical",
-      "text": "Gateway process missing (previous PID 1384).",
+      "lastSeen": "2026-02-19T20:02:27.978Z",
+      "source": "boris3",
+      "type": "system",
+      "priority": "medium",
+      "text": "Boris 3.0 wake signal accepted. Resuming orchestrator loop.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771527663406_kibg7c",
-        "previousGatewayPid": "1384"
+        "messageId": "msg_1771531347978_m2ypyj",
+        "wakeRequestedAt": "2026-02-19T20:02:27.978Z"
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-19T19:02:12.804Z",
-      "source": "boris3-executor",
+      "lastSeen": "2026-02-19T20:02:21.680Z",
+      "source": "boris3-cost-guard",
       "type": "alert",
-      "priority": "high",
-      "text": "Boris 3.0 task failed (handoff:ollie): Squad alert from ollie. Error: env: node: No such file or directory",
+      "priority": "critical",
+      "text": "Boris 3.0 circuit breaker: hourly spend spike $22.35 (> $20/hr). Orchestrator paused.",
       "metadata": {
-        "taskId": "squad:msg_1771527074056_636yzy",
-        "messageId": "msg_1771527732803_k4x12s",
-        "tier": "kimi",
-        "targetBot": "ollie",
-        "timedOut": false,
-        "estimatedCost": 0.2
+        "taskId": null,
+        "messageId": "msg_1771531341680_r7ajta",
+        "spike": 22.353856499999992,
+        "threshold": 20
       }
     },
     "penny": {
@@ -46,14 +44,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-19T19:02:09.364Z",
+      "lastSeen": "2026-02-19T20:02:37.231Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771527729364
+        "sessionUpdatedAtMs": 1771531357231
       }
     },
     "boris-haiku": {
@@ -82,17 +80,17 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-19T19:02:12.788Z",
+      "lastSeen": "2026-02-19T20:01:36.643Z",
       "source": "boris3-bot-nonresponse",
       "type": "alert",
       "priority": "critical",
       "text": "ollie did not respond for >5 minutes on Squad alert from ollie; escalating.",
       "metadata": {
-        "taskId": "squad:msg_1771527074056_636yzy",
-        "messageId": "msg_1771527732783_c5z214",
+        "taskId": "squad:msg_1771530179636_0nh6zl",
+        "messageId": "msg_1771531296642_0r149y",
         "tier": "kimi",
         "agent": "ollie",
-        "totalDurationMs": 20322
+        "totalDurationMs": 20533
       }
     }
   }
