@@ -1,40 +1,37 @@
 {
-  "updatedAt": "2026-02-20T20:08:55.806Z",
+  "updatedAt": "2026-02-20T21:07:29.188Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-20T20:07:25.403Z",
+      "lastSeen": "2026-02-20T21:07:29.188Z",
       "source": "system-monitor",
-      "type": "alert",
-      "priority": "high",
-      "text": "Boris 3.0 is paused (cost-spike:29.49-per-hour).",
+      "type": "system",
+      "priority": "low",
+      "text": "Cron complete: Squad Activity Sync (2026-02-20T21:02:46.074Z).",
       "metadata": {
         "taskId": null,
         "suppressed": true,
         "suppressionReason": "critical-only-policy",
-        "boris3Health": {
-          "ok": true,
-          "issueKey": "paused:cost-spike:29.49-per-hour",
-          "pid": 62339,
-          "running": true,
-          "paused": true,
-          "pauseReason": "cost-spike:29.49-per-hour",
-          "lastTickAgeSeconds": 2
-        }
+        "jobId": "34409bb5-3762-4587-93fd-ac9f1d5573a5",
+        "schedule": "0 * * * *",
+        "lastDurationMs": 5753
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-20T20:08:55.806Z",
-      "source": "boris3-cost-guard",
+      "lastSeen": "2026-02-20T21:07:04.667Z",
+      "source": "session-budget-guard",
       "type": "alert",
-      "priority": "critical",
-      "text": "Boris 3.0 circuit breaker: hourly spend spike $30.36 (> $20/hr). Orchestrator paused.",
+      "priority": "high",
+      "text": "Session budget guard rotated main session (totalTokens>=100000). Old: b4aec858-dc1f-4ffa-99aa-2cc9c4f289b3, new: 7c03f3df-1033-4f2f-bee4-1ab7a07733f4. Handoff summary recorded.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771618135806_n0x4bi",
-        "spike": 30.359257550000002,
-        "threshold": 20
+        "suppressed": true,
+        "suppressionReason": "critical-only-policy",
+        "oldSessionId": "b4aec858-dc1f-4ffa-99aa-2cc9c4f289b3",
+        "newSessionId": "7c03f3df-1033-4f2f-bee4-1ab7a07733f4",
+        "reason": "totalTokens>=100000",
+        "handoffOpenItems": 0
       }
     },
     "penny": {
@@ -53,14 +50,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-20T20:02:46.089Z",
+      "lastSeen": "2026-02-20T21:02:46.085Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771617766089
+        "sessionUpdatedAtMs": 1771621366085
       }
     },
     "boris-haiku": {
