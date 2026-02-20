@@ -1,35 +1,35 @@
 {
-  "updatedAt": "2026-02-20T21:07:29.188Z",
+  "updatedAt": "2026-02-20T22:07:33.095Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-20T21:07:29.188Z",
+      "lastSeen": "2026-02-20T22:07:33.095Z",
       "source": "system-monitor",
       "type": "system",
       "priority": "low",
-      "text": "Cron complete: Squad Activity Sync (2026-02-20T21:02:46.074Z).",
+      "text": "Cron complete: Squad Activity Sync (2026-02-20T22:03:05.421Z).",
       "metadata": {
         "taskId": null,
         "suppressed": true,
         "suppressionReason": "critical-only-policy",
         "jobId": "34409bb5-3762-4587-93fd-ac9f1d5573a5",
         "schedule": "0 * * * *",
-        "lastDurationMs": 5753
+        "lastDurationMs": 7171
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-20T21:07:04.667Z",
+      "lastSeen": "2026-02-20T22:07:02.876Z",
       "source": "session-budget-guard",
       "type": "alert",
       "priority": "high",
-      "text": "Session budget guard rotated main session (totalTokens>=100000). Old: b4aec858-dc1f-4ffa-99aa-2cc9c4f289b3, new: 7c03f3df-1033-4f2f-bee4-1ab7a07733f4. Handoff summary recorded.",
+      "text": "Session budget guard rotated main session (totalTokens>=100000). Old: 7c03f3df-1033-4f2f-bee4-1ab7a07733f4, new: 2bd43c25-8472-4203-9b48-854baaae9983. Handoff summary recorded.",
       "metadata": {
         "taskId": null,
         "suppressed": true,
         "suppressionReason": "critical-only-policy",
-        "oldSessionId": "b4aec858-dc1f-4ffa-99aa-2cc9c4f289b3",
-        "newSessionId": "7c03f3df-1033-4f2f-bee4-1ab7a07733f4",
+        "oldSessionId": "7c03f3df-1033-4f2f-bee4-1ab7a07733f4",
+        "newSessionId": "2bd43c25-8472-4203-9b48-854baaae9983",
         "reason": "totalTokens>=100000",
         "handoffOpenItems": 0
       }
@@ -50,14 +50,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-20T21:02:46.085Z",
+      "lastSeen": "2026-02-20T22:03:05.422Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771621366085
+        "sessionUpdatedAtMs": 1771624985422
       }
     },
     "boris-haiku": {
