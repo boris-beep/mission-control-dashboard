@@ -1,32 +1,40 @@
 {
-  "updatedAt": "2026-02-20T19:07:21.224Z",
+  "updatedAt": "2026-02-20T20:08:55.806Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-20T19:07:21.224Z",
+      "lastSeen": "2026-02-20T20:07:25.403Z",
       "source": "system-monitor",
-      "type": "system",
-      "priority": "low",
-      "text": "Cron complete: Squad Activity Sync (2026-02-20T19:02:46.076Z).",
+      "type": "alert",
+      "priority": "high",
+      "text": "Boris 3.0 is paused (cost-spike:29.49-per-hour).",
       "metadata": {
         "taskId": null,
         "suppressed": true,
         "suppressionReason": "critical-only-policy",
-        "jobId": "34409bb5-3762-4587-93fd-ac9f1d5573a5",
-        "schedule": "0 * * * *",
-        "lastDurationMs": 4564
+        "boris3Health": {
+          "ok": true,
+          "issueKey": "paused:cost-spike:29.49-per-hour",
+          "pid": 62339,
+          "running": true,
+          "paused": true,
+          "pauseReason": "cost-spike:29.49-per-hour",
+          "lastTickAgeSeconds": 2
+        }
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-20T19:02:01.185Z",
-      "source": "session-sync",
-      "type": "system",
-      "priority": "low",
-      "text": "Session activity detected",
+      "lastSeen": "2026-02-20T20:08:55.806Z",
+      "source": "boris3-cost-guard",
+      "type": "alert",
+      "priority": "critical",
+      "text": "Boris 3.0 circuit breaker: hourly spend spike $30.36 (> $20/hr). Orchestrator paused.",
       "metadata": {
-        "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771614121185
+        "taskId": null,
+        "messageId": "msg_1771618135806_n0x4bi",
+        "spike": 30.359257550000002,
+        "threshold": 20
       }
     },
     "penny": {
@@ -45,14 +53,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-20T19:02:46.087Z",
+      "lastSeen": "2026-02-20T20:02:46.089Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771614166087
+        "sessionUpdatedAtMs": 1771617766089
       }
     },
     "boris-haiku": {
