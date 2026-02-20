@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-02-20T00:04:34.650Z",
+  "updatedAt": "2026-02-20T01:06:25.370Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-20T00:01:10.434Z",
+      "lastSeen": "2026-02-20T01:06:14.245Z",
       "source": "system-monitor",
       "type": "system",
       "priority": "medium",
@@ -17,15 +17,14 @@
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-20T00:04:27.563Z",
-      "source": "boris3-coordination",
-      "type": "coordination",
-      "priority": "high",
-      "text": "@ollie Coordinating task: Squad alert from ollie",
+      "lastSeen": "2026-02-20T01:06:21.403Z",
+      "source": "session-sync",
+      "type": "system",
+      "priority": "low",
+      "text": "Session activity detected",
       "metadata": {
-        "taskId": "squad:msg_1771543549025_q6v7za",
-        "messageId": "msg_1771545867563_vtpm86",
-        "source": "squad-alert"
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771549581403
       }
     },
     "penny": {
@@ -44,14 +43,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-20T00:04:31.863Z",
+      "lastSeen": "2026-02-20T01:06:21.688Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771545871863
+        "sessionUpdatedAtMs": 1771549581688
       }
     },
     "boris-haiku": {
@@ -80,17 +79,17 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-20T00:03:42.475Z",
+      "lastSeen": "2026-02-20T01:06:15.467Z",
       "source": "boris3-bot-nonresponse",
       "type": "alert",
       "priority": "critical",
       "text": "ollie did not respond for >5 minutes on Squad alert from ollie; escalating.",
       "metadata": {
-        "taskId": "squad:msg_1771543472114_0q1fxe",
-        "messageId": "msg_1771545822475_gu0403",
+        "taskId": "squad:msg_1771547241099_stncp4",
+        "messageId": "msg_1771549575466_ub64bt",
         "tier": "kimi",
         "agent": "ollie",
-        "totalDurationMs": 20584
+        "totalDurationMs": 20590
       }
     }
   }
