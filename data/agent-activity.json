@@ -1,34 +1,32 @@
 {
-  "updatedAt": "2026-02-20T10:07:59.660Z",
+  "updatedAt": "2026-02-20T11:06:52.445Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-20T10:06:48.890Z",
+      "lastSeen": "2026-02-20T11:06:52.445Z",
       "source": "system-monitor",
       "type": "system",
-      "priority": "medium",
-      "text": "Routing metadata health check recovered to OK.",
+      "priority": "low",
+      "text": "Cron complete: Squad Activity Sync (2026-02-20T11:02:46.085Z).",
       "metadata": {
         "taskId": null,
         "suppressed": true,
         "suppressionReason": "critical-only-policy",
-        "ok": true,
-        "issueKey": "ok",
-        "changedEntries": 0,
-        "unresolvedEntries": 0,
-        "missingSessionFiles": 0
+        "jobId": "34409bb5-3762-4587-93fd-ac9f1d5573a5",
+        "schedule": "0 * * * *",
+        "lastDurationMs": 7114
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-20T10:03:00.867Z",
+      "lastSeen": "2026-02-20T10:34:45.044Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771581780867
+        "sessionUpdatedAtMs": 1771583685044
       }
     },
     "penny": {
@@ -47,14 +45,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-20T10:07:55.792Z",
+      "lastSeen": "2026-02-20T11:02:46.097Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771582075792
+        "sessionUpdatedAtMs": 1771585366097
       }
     },
     "boris-haiku": {
