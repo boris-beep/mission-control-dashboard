@@ -1,29 +1,30 @@
 {
-  "updatedAt": "2026-02-19T23:04:28.285Z",
+  "updatedAt": "2026-02-20T00:04:34.650Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-19T23:02:33.788Z",
-      "source": "boris3",
+      "lastSeen": "2026-02-20T00:01:10.434Z",
+      "source": "system-monitor",
       "type": "system",
       "priority": "medium",
-      "text": "Boris 3.0 wake signal accepted. Resuming orchestrator loop.",
+      "text": "Gateway online (PID 1384).",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771542153788_hr3wty",
-        "wakeRequestedAt": "2026-02-19T23:02:33.787Z"
+        "suppressed": true,
+        "suppressionReason": "critical-only-policy",
+        "gatewayPid": "1384"
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-19T23:04:19.260Z",
+      "lastSeen": "2026-02-20T00:04:27.563Z",
       "source": "boris3-coordination",
       "type": "coordination",
       "priority": "high",
       "text": "@ollie Coordinating task: Squad alert from ollie",
       "metadata": {
-        "taskId": "squad:msg_1771539833329_b8kgoo",
-        "messageId": "msg_1771542259260_xmd73h",
+        "taskId": "squad:msg_1771543549025_q6v7za",
+        "messageId": "msg_1771545867563_vtpm86",
         "source": "squad-alert"
       }
     },
@@ -43,14 +44,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-19T23:04:25.633Z",
+      "lastSeen": "2026-02-20T00:04:31.863Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771542265633
+        "sessionUpdatedAtMs": 1771545871863
       }
     },
     "boris-haiku": {
@@ -79,17 +80,17 @@
     },
     "ollie": {
       "agentId": "ollie",
-      "lastSeen": "2026-02-19T23:04:19.235Z",
+      "lastSeen": "2026-02-20T00:03:42.475Z",
       "source": "boris3-bot-nonresponse",
       "type": "alert",
       "priority": "critical",
       "text": "ollie did not respond for >5 minutes on Squad alert from ollie; escalating.",
       "metadata": {
-        "taskId": "squad:msg_1771539812805_wbsabz",
-        "messageId": "msg_1771542259234_afu7v8",
+        "taskId": "squad:msg_1771543472114_0q1fxe",
+        "messageId": "msg_1771545822475_gu0403",
         "tier": "kimi",
         "agent": "ollie",
-        "totalDurationMs": 20450
+        "totalDurationMs": 20584
       }
     }
   }
