@@ -1,31 +1,39 @@
 {
-  "updatedAt": "2026-02-21T13:05:22.768Z",
+  "updatedAt": "2026-02-21T14:02:14.401Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-21T13:03:26.996Z",
+      "lastSeen": "2026-02-21T14:00:14.743Z",
       "source": "system-monitor",
-      "type": "system",
-      "priority": "medium",
-      "text": "Gateway online (PID 47323).",
+      "type": "alert",
+      "priority": "high",
+      "text": "Boris 3.0 is paused (max-continuous-runtime:2201m).",
       "metadata": {
         "taskId": null,
         "suppressed": true,
         "suppressionReason": "critical-only-policy",
-        "gatewayPid": "47323"
+        "boris3Health": {
+          "ok": true,
+          "issueKey": "paused:max-continuous-runtime:2201m",
+          "pid": 62339,
+          "running": true,
+          "paused": true,
+          "pauseReason": "max-continuous-runtime:2201m",
+          "lastTickAgeSeconds": 18
+        }
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-21T13:05:16.324Z",
+      "lastSeen": "2026-02-21T14:02:14.401Z",
       "source": "boris3-timeout-guard",
       "type": "alert",
       "priority": "high",
-      "text": "Boris 3.0 auto-sleep engaged after 2147 minutes (max 1440). Use wake command to resume.",
+      "text": "Boris 3.0 auto-sleep engaged after 2204 minutes (max 1440). Use wake command to resume.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771679116324_dlpo7m",
-        "elapsedMin": 2147,
+        "messageId": "msg_1771682534400_i3bi0q",
+        "elapsedMin": 2204,
         "maxMinutes": 1440
       }
     },
