@@ -1,33 +1,37 @@
 {
-  "updatedAt": "2026-02-20T23:10:05.969Z",
+  "updatedAt": "2026-02-21T00:07:40.348Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-20T23:10:05.969Z",
-      "source": "sessionfile-guard",
+      "lastSeen": "2026-02-21T00:07:40.348Z",
+      "source": "system-monitor",
       "type": "system",
-      "priority": "medium",
-      "text": "SessionFile guard fixed 1 entry(s) across 1 file(s).",
+      "priority": "low",
+      "text": "Cron complete: Squad Activity Sync (2026-02-21T00:03:26.485Z).",
       "metadata": {
         "taskId": null,
         "suppressed": true,
         "suppressionReason": "critical-only-policy",
-        "changedEntries": 1,
-        "changedFiles": 1,
-        "unresolvedEntries": 0,
-        "missingSessionFiles": 0
+        "jobId": "34409bb5-3762-4587-93fd-ac9f1d5573a5",
+        "schedule": "0 * * * *",
+        "lastDurationMs": 5924
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-20T23:02:26.011Z",
-      "source": "session-sync",
-      "type": "system",
-      "priority": "low",
-      "text": "Session activity detected",
+      "lastSeen": "2026-02-21T00:07:06.679Z",
+      "source": "session-budget-guard",
+      "type": "alert",
+      "priority": "medium",
+      "text": "Session budget warning: main session at 97479 tokens (1.097MB transcript). Soft threshold reached; hard rotate at 100000 tokens / 1.5MB.",
       "metadata": {
-        "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771628546011
+        "taskId": null,
+        "suppressed": true,
+        "suppressionReason": "critical-only-policy",
+        "totalTokens": 97479,
+        "transcriptMb": 1.097,
+        "softTokens": 70000,
+        "hardTokens": 100000
       }
     },
     "penny": {
@@ -46,14 +50,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-20T23:02:46.847Z",
+      "lastSeen": "2026-02-21T00:03:26.486Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771628566847
+        "sessionUpdatedAtMs": 1771632206486
       }
     },
     "boris-haiku": {
