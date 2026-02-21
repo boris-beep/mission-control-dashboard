@@ -1,39 +1,39 @@
 {
-  "updatedAt": "2026-02-21T10:16:38.063Z",
+  "updatedAt": "2026-02-21T11:02:13.752Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-21T10:15:04.065Z",
+      "lastSeen": "2026-02-21T11:00:03.100Z",
       "source": "system-monitor",
       "type": "alert",
       "priority": "high",
-      "text": "Boris 3.0 is paused (max-continuous-runtime:1976m).",
+      "text": "Boris 3.0 is paused (max-continuous-runtime:2021m).",
       "metadata": {
         "taskId": null,
         "suppressed": true,
         "suppressionReason": "critical-only-policy",
         "boris3Health": {
           "ok": true,
-          "issueKey": "paused:max-continuous-runtime:1976m",
+          "issueKey": "paused:max-continuous-runtime:2021m",
           "pid": 62339,
           "running": true,
           "paused": true,
-          "pauseReason": "max-continuous-runtime:1976m",
-          "lastTickAgeSeconds": 43
+          "pauseReason": "max-continuous-runtime:2021m",
+          "lastTickAgeSeconds": 4
         }
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-21T10:16:38.062Z",
+      "lastSeen": "2026-02-21T11:02:13.751Z",
       "source": "boris3-timeout-guard",
       "type": "alert",
       "priority": "high",
-      "text": "Boris 3.0 auto-sleep engaged after 1978 minutes (max 1440). Use wake command to resume.",
+      "text": "Boris 3.0 auto-sleep engaged after 2024 minutes (max 1440). Use wake command to resume.",
       "metadata": {
         "taskId": null,
-        "messageId": "msg_1771668998061_bdcbem",
-        "elapsedMin": 1978,
+        "messageId": "msg_1771671733750_ctkv2d",
+        "elapsedMin": 2024,
         "maxMinutes": 1440
       }
     },
