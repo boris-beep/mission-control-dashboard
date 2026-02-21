@@ -1,40 +1,38 @@
 {
-  "updatedAt": "2026-02-21T11:02:13.752Z",
+  "updatedAt": "2026-02-21T12:03:10.545Z",
   "agents": {
     "system": {
       "agentId": "system",
-      "lastSeen": "2026-02-21T11:00:03.100Z",
+      "lastSeen": "2026-02-21T12:00:03.563Z",
       "source": "system-monitor",
       "type": "alert",
       "priority": "high",
-      "text": "Boris 3.0 is paused (max-continuous-runtime:2021m).",
+      "text": "Boris 3.0 is paused (max-continuous-runtime:2081m).",
       "metadata": {
         "taskId": null,
         "suppressed": true,
         "suppressionReason": "critical-only-policy",
         "boris3Health": {
           "ok": true,
-          "issueKey": "paused:max-continuous-runtime:2021m",
+          "issueKey": "paused:max-continuous-runtime:2081m",
           "pid": 62339,
           "running": true,
           "paused": true,
-          "pauseReason": "max-continuous-runtime:2021m",
-          "lastTickAgeSeconds": 4
+          "pauseReason": "max-continuous-runtime:2081m",
+          "lastTickAgeSeconds": 5
         }
       }
     },
     "boris": {
       "agentId": "boris",
-      "lastSeen": "2026-02-21T11:02:13.751Z",
-      "source": "boris3-timeout-guard",
-      "type": "alert",
-      "priority": "high",
-      "text": "Boris 3.0 auto-sleep engaged after 2024 minutes (max 1440). Use wake command to resume.",
+      "lastSeen": "2026-02-21T12:02:59.452Z",
+      "source": "session-sync",
+      "type": "system",
+      "priority": "low",
+      "text": "Session activity detected",
       "metadata": {
-        "taskId": null,
-        "messageId": "msg_1771671733750_ctkv2d",
-        "elapsedMin": 2024,
-        "maxMinutes": 1440
+        "sessionFile": "/Users/boristhebot/.openclaw/agents/main/sessions/sessions.json",
+        "sessionUpdatedAtMs": 1771675379452
       }
     },
     "penny": {
@@ -53,14 +51,14 @@
     },
     "boris-kimi": {
       "agentId": "boris-kimi",
-      "lastSeen": "2026-02-21T10:03:33.578Z",
+      "lastSeen": "2026-02-21T12:03:07.924Z",
       "source": "session-sync",
       "type": "system",
       "priority": "low",
       "text": "Session activity detected",
       "metadata": {
         "sessionFile": "/Users/boristhebot/.openclaw/agents/boris-kimi/sessions/sessions.json",
-        "sessionUpdatedAtMs": 1771668213578
+        "sessionUpdatedAtMs": 1771675387924
       }
     },
     "boris-haiku": {
